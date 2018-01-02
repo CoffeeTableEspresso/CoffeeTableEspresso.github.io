@@ -1,6 +1,10 @@
+body {
+    background-color: #300a24;
+    color: white;
+}
+
 div {
     display: block;
     font-family: "Lucida Console", Monaco, monospace;
     background-color: purple;
-    color: white;
 }
