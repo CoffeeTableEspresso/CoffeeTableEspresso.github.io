@@ -9,3 +9,15 @@ body {
 div {
     display: block;
 }
+
+a:unvisited {
+    color: purple;
+}
+
+a:visited {
+    color: hotpink;
+}
+
+a:active {
+    color: red;
+}
