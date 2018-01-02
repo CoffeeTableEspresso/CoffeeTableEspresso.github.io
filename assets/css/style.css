@@ -10,7 +10,7 @@ div {
     display: block;
 }
 
-a:unvisited {
+a:link {
     color: purple;
 }
 
