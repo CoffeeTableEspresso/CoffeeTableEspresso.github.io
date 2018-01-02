@@ -1,8 +1,6 @@
 div {
     display: block;
-    font-family: "Lucida Console", Monaco, monospace
-}
-
-h1 {
-    color:#008000;
+    font-family: "Lucida Console", Monaco, monospace;
+    background-color: purple;
+    color: white;
 }
