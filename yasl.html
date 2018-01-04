@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="my website">
+<base href="/">
+<title>CoffeeTableEspresso - YASL</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  
+  <div>
+    <h1> about </h1>
+    <p> YASL (Yet Another Scripting Language) is a language i'm currently working on. 
+        i'm writing a bytecode interpreter for YASL at the moment, which can be found 
+        <a href="https://github.com/CoffeeTableEspresso/YASL"> here </a>. 
+        i will write up proper documentation in the future, once either 
+        (a) someone harasses me or 
+        (b) i feel like it and have some free time. 
+    </p>
+    <h1> features </h1> 
+    <p> currently, YASL supports ints and floats (both 64-bit), and adding, subtracting, multiplying, dividing 
+        (dividing always returns a float, as that's what you want in almost all cases), negation, and global variables.
+    </p>
+    <p> in the near future (i.e. once i get some time after co-op job appls), i'll be trying to add booleans, strings,
+        (and some basic associated operations), ternary operators, if-(else-)statements, and loops. once that's complete, 
+        i'll move on to functions, and eventually more complicated data structures like lists, associative arrays, and classes.
+    </p>
+    <h1> syntax </h1>
+    <p> usual infix notation for operators. </p>
+    <p> variables are declared with (e.g.) `var x = 5`. 
+        currently, `var` must be used whenever a variable is to change value, but that should be fixed soon 
+        (just a few lines extra code in the parser).
+    </p>    
+    <p> values can be printed using `print value`. </p>
+  </div>
+  
+</body>
+</html>
