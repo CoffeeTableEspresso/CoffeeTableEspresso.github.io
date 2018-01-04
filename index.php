@@ -10,6 +10,7 @@
   
   <!-- Header -->
     <!-- include includes/header.html here -->
+    <?php include('includes/header.html'); ?>
   
   <div>
     <h1> about </h1>
