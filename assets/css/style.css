@@ -8,6 +8,8 @@ body {
 
 div {
     display: block;
+    padding-top: 5em;
+    padding-left: 5em;
 }
 
 a:link {
