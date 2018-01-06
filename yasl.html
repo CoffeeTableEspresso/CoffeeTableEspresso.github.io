@@ -44,6 +44,15 @@
         when i add operators for reference equality later or when i add more complicated types like strings.) i'll add reference 
         equality later, probably as <code>===</code> and <code>!==</code>.
     </p>
+    <p> oh, semantics of value equality: </p>
+    <ul>
+      <li><code>nil</code> compared with anything returns <code>nil</code>.</li>
+      <li>ints and floats can be compared with each other and return the expected values. (e.g. <code>1 == 1.0</code> 
+          returns <code>true</code>.)</li>
+      <li>booleans compared with each other as expected.</li>
+      <li>all other comparisons across types return <code>false</code>. (e.g. <code>1 == true</code> 
+          returns <code>false</code>.)</li>
+    </ul>
     <h1> 05/01/2018 </h1>
     <p> added <code>nil</code> value. </p>
     <p> i figured out how to do if-statements and while-loops, but i need to implement scopes first. </p>
