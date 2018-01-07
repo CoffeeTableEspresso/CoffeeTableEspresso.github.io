@@ -1,0 +1,58 @@
+<h1> 07/01/2018</h1>
+    <p> figured out how to implement nested scopes, will actually implement them soon. i plan on using nested envs while walking 
+        the AST to figure out where to store everything in memory at runtime. i'll post a better explanation when i acutally write up
+        the code. it's easy to say "i know how to do X", it's another to actually do X. maybe i'm overlooking something. i'll try implementing
+        if-statements and while-loops tmr/tonight. once i have those, it'll be easy to do any other kind of loop,  and to extend
+        if-statements to if-else-statements and if-elseif-....-elseif-else-statements.
+    </p>
+    <p> right now i'm doing a bunch of job appls, need something for this summer. </p>
+    <h1> 06/01/2018 </h1>
+    <p> added <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, and <code>&lt;=</code>. i basically reused the same macro as for the 
+        binary operators, although i changed it a bit, because i wanted to return a bool, not an int.
+    </p>
+    <p> added <code>==</code> and <code>!=</code>, which are for value equality. (what i mean by value equality, is (e.g.) two strings
+        are value-equal if they contain the same characters, even if they are stored in different spots in memory. i'll clarify more
+        when i add operators for reference equality later or when i add more complicated types like strings.) i'll add reference 
+        equality later, probably as <code>===</code> and <code>!==</code>.
+    </p>
+    <p> oh, semantics of value equality: </p>
+    <ul>
+      <li><code>nil</code> compared with anything returns <code>nil</code>.</li>
+      <li>ints and floats can be compared with each other and return the expected values. (e.g. <code>1 == 1.0</code> 
+          returns <code>true</code>.)</li>
+      <li>booleans compared with each other as expected.</li>
+      <li>all other comparisons across types return <code>false</code>. (e.g. <code>1 == true</code> 
+          returns <code>false</code>.)</li>
+    </ul>
+    <h1> 05/01/2018 </h1>
+    <p> added <code>nil</code> value. </p>
+    <p> i figured out how to do if-statements and while-loops, but i need to implement scopes first. </p>
+    <p> i implemented the ternary operator (same as C, unless i f*cked something up), using branch if false
+        and unconditional branch. 
+    </p>
+    <p> i decided that <code>false</code> and <code>nil</code> are falsey, and everything else is truthy. this
+        seems like the cleanest way to do things. i'm not a big fan of the python way of having the trivial instances of 
+        everything (empty string, empty list, empty anything, None, false, 0, etc) be falsey. it just feels like too many.
+    </p>
+    <p> once i figure out scopes i'll add while-loops and if statements. </p>
+    <p> actually, i guess adding <code>!</code>, <code>and</code>, <code>or</code>, comparators, etc is probably the next step now that i have 
+      the ternary operator and booleans. 
+    </p>
+    <p> added <code>!</code>, <code>and</code>, <code>or</code>. will work on comparators later. 
+        <code>and</code> and <code>or</code> shortcircuit, which took me a while to figure out how to implement
+        without adding registers to my VM. long story short, i got it working, but i had to add a "duplicate" instruction
+        to the VM, to let me get away with only evaluating the left condition once.
+    </p>
+    <p> the idea is, push the left side onto the stack, duplicate it, push the size of the right side + 1 onto the stack,
+        branch if the left side is truthy (for <code>or</code>) or falsey (for <code>and</code>) 
+        (this skips over all the stuff for the right side if we branch), pop top of stack 
+        (this gets rid of the second copy of the left side from stack), then push the right side to stack. 
+        this is not the best explanation, since i haven't actually explained how my VM or bytecodes actually work, 
+        but hopefully it gives an idea.
+    </p>
+    <p> maybe there's a better way to do this, but nothing comes to mind. </p>
+    <p> cleaned up the code for the binary operators a lot by making it into a macro, since it was basically the same for add,
+        multiply and subtract.
+    </p>
+    <h1> 04/01/2018 </h1>
+    <p> added booleans. </p>
