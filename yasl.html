@@ -16,26 +16,26 @@
     <p> YASL (Yet Another Scripting Language) is a language i'm currently working on. 
         i'm writing a bytecode interpreter for YASL at the moment, which can be found 
         <a href="https://github.com/CoffeeTableEspresso/YASL"> here</a>. 
-        i will write up proper documentation in the future, once either 
-        (a) someone harasses me or 
-        (b) i feel like it and have some free time. 
     </p>
-    <h1> features </h1> 
-    <p> currently, YASL supports ints and floats (both 64-bit), and adding, subtracting, multiplying, dividing 
-        (dividing always returns a float, as that's what you want in almost all cases), negation, and global variables.
+    <h1> types </h1> 
+    <p> currently, for numeric types, YASL supports ints (64-bit) and floats (64-bit), and the usual adding, subtracting, multiplying, dividing 
+        (dividing always returns a float, as that's what you want in almost all cases), negation of the two types, with the 
+        expected conversion of ints to floats when using both ints and floats in an expression.
     </p>
-    <p> in the near future (i.e. once i get some time after co-op job appls), i'll be trying to add booleans, strings,
-        (and some basic associated operations), ternary operators, if-(else-)statements, and loops. once that's complete, 
-        i'll move on to functions, and eventually more complicated data structures like lists, associative arrays, and classes.
+    <p> YASL also supports bools, (<code>true</code> and <code>false</code>), as well as a <code>nil</code> value. negation of bools
+        can be done with the usual <code>!</code> notation.  YASL also supports <code>and</code> and <code>or</code>, for all types,
+        with <code>false</code> and <code>nil</code> being falsey, and everything else being truthy. <code>and</code> and <code>or</code> 
+        shortcircuit, and will return either their first or second operand.
     </p>
+    <h1> control flow </h1>
+    <p> YASL currently has the ternary operator and if-statements for control flow. </p>
     <h1> syntax </h1>
-    <p> usual infix notation for operators. </p>
+    <p> YASL uses the "usual" infix notation for operators. </p>
     <p> variables are declared with (e.g.) <code>var x = 5</code>. 
-        currently, <code>var</code> must be used whenever a variable is to change value, but that should be fixed soon 
-        (just a few lines extra code in the parser).
+        currently, <code>var</code> must be used whenever a variable is to change value, but assignments will be added soon.
     </p>    
     <p> values can be printed using <code>print value</code>. </p>
-    <h1> "blog" </h1>
+    <h1> blog </h1>
     <p> i'm currently "blogging" (i.e. incoherently vomiting onto a webpage) about writing YASL. i doubt anyone will read it,
         but for completeness' sake i'll include a link here: <a href="blog.html">my "blog"</a>. this is mostly just for my
         future reference, but feel free to read thru.
