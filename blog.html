@@ -16,6 +16,25 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 08/01/2018 </h1>
+    <p> i seriously need to: </p>
+    <ul>
+      <li> add automatic semicolon insertion à la Go. i think the problems with my technique are becoming apparent. i shouldn't
+        really add more features until i clear this up. 
+      </li>
+      <li> write a function to turn a constant int to a bunch of bytes in the interpreter.
+        i've copied the same lambda around like 5 times by now. i actually need to really refactor a lot of pieces of the code.
+        e.g. i want to make a few different branch instructions for different sizes of ints. i think i have enough opcodes left that 
+        this should be fine.
+      </li>
+      <li> actually, while i'm at it i'll clean up all my code, and add proper error messages. 
+        things are gonna get bad soon if i don't.
+      </li>
+    </ul>
+    <p> i also added if-else-statements, which is what made these problems apparent in the first place. 
+        if-elseif-...-elseif-else-statements can be done with nested if-else-statements, i'll add those once i sort out the 
+        semi-colon thing described above.
+    </p>
     <h1> 07/01/2018</h1>
     <p> figured out how to implement nested scopes, will actually implement them soon. i plan on using nested envs while walking 
         the AST to figure out where to store everything in memory at runtime. i'll post a better explanation when i acutally write up
