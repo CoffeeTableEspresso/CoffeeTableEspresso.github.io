@@ -16,6 +16,19 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 10/01/2018 </h1>
+    <p> added assignment expressions. i decided that assignment is an expression, and declaration is a statement. this may not
+        be the best choice, seeing as this causes a lot of C errors from assignments in if/for/while conditions. may change this
+        in the future to either disallow assignments in these places or make assignments a statement. i like being able to assign
+        multiple variables to the same value all at once tho, without having to add a separate construct for this.
+    </p>
+    <p> the big thing with adding assignments was that it let me add (non useless) while loops. had to use a backwards and a forward branch. 
+        couldn't think of a clever way to optimise things based on the size of the jump, because each jump size depends on 
+        the other. i'm sure i could get close, like within 9 bytes or something.
+    </p>
+    <p> looks like functions are next. should be pretty straightforward. i think i have a small bug where expression statements 
+        end up filling up the stack with their values, i'll have to fix that first, otherwise functions will have a bunch of problems.
+    </p>
     <h1> 09/01/2018 </h1>
     <p> got automatic semicolon insertion working nicely, just have to clean my code up a bit before i commit. </p>
     <p> added if-elseif-else-statements. also am going to add more branch opcodes, to deal with different length jumps in addresses. 
