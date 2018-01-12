@@ -21,6 +21,18 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 11/01/2018 </h1>
+    <p> functions should be pretty straightforward, i've already set up most of the stuff i need (e.g. frame pointer) ahead of time.
+        i'll fix that up once i'm done job appls.
+    </p>
+    <p> i'd love to write a full C compiler one day, but it would involve a lot of work because of the ambiguity. e.g. if i write
+        <code>(A)*B</code>, am i multiplying <code>A</code> and <code>B</code> or am i dereferencing <code>B</code> and casting
+        it to type <code>A</code>? who knows, unless i can see the rest of the source code, and this is where the problems come in.
+        there's a lot more examples too, BTW (i'll add more examples later, i'm braindead right now which is why i'm blogging):
+    </p>
+    <ul>
+      <li><code>A * B</code>: declaring a pointer to something of type <code>A</code> or multiplication?</li>
+    </ul>
     <h1> 10/01/2018 </h1>
     <p> added assignment expressions. i decided that assignment is an expression, and declaration is a statement. this may not
         be the best choice, seeing as this causes a lot of C errors from assignments in if/for/while conditions. may change this
