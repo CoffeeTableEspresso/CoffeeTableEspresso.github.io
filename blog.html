@@ -28,11 +28,15 @@
     <p> i'd love to write a full C compiler one day, but it would involve a lot of work because of the ambiguity. e.g. if i write
         <code>(A)*B</code>, am i multiplying <code>A</code> and <code>B</code> or am i dereferencing <code>B</code> and casting
         it to type <code>A</code>? who knows, unless i can see the rest of the source code, and this is where the problems come in.
-        there's a lot more examples too, BTW (i'll add more examples later, i'm braindead right now which is why i'm blogging):
+        there's a lot more examples too, BTW. (here's a few one line ones; things get really f*cked up when you're dealing with
+        scopes. maybe i'll post about it later.):
     </p>
     <ul>
-      <li><code>A * B</code>: declaring a pointer to something of type <code>A</code> or multiplication?</li>
-      <li><code>(A)-B</code>: casting <code>-B</code> to type <code>A</code> or subtracting?</li>
+      <li><code>(A)*B;</code>: mentioned above.
+      <li><code>A * B;</code>: declaring a pointer to something of type <code>A</code> or multiplication?</li>
+      <li><code>(A)-B;</code>: casting <code>-B</code> to type <code>A</code> or subtracting?</li>
+      <li><code>(A)+B;</code>: casting <code>+B</code> to type <code>A</code> or adding?</li>
+      <li> a bunch more of the really f*cked up ones take up multiple lines, so i'll omit them or post them in a later post.</li>
     </ul>
     <h1> 10/01/2018 </h1>
     <p> added assignment expressions. i decided that assignment is an expression, and declaration is a statement. this may not
