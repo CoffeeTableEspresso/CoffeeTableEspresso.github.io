@@ -21,40 +21,54 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
-    <h1> 11/01/2018 </h1>
-    <p> functions should be pretty straightforward, i've already set up most of the stuff i need (e.g. frame pointer) ahead of time.
-        i'll fix that up once i'm done job appls.
+    <h1> 14/01/2018 </h1>
+    <p> just got back from my first hackathon, <a href="https://www.nwhacks.io/">nwHacks 2018</a>. our team didn't win (or 
+        even do very well), but it was very fun. the best part was being in a room full of ppl who really care about CS. 
+        courses at school are fine, but most of the ppl there don't give a f*ck about CS. at nwHacks tho, everyone loves 
+        CS. the excitement in their voices when they talked about their projects (or really anything to do with CS) was 
+        wonderful to hear. 
     </p>
-    <p> i'd love to write a full C compiler one day, but it would involve a lot of work because of the ambiguity. e.g. if i write
-        <code>(A)*B</code>, am i multiplying <code>A</code> and <code>B</code> or am i dereferencing <code>B</code> and casting
-        it to type <code>A</code>? who knows, unless i can see the rest of the source code, and this is where the problems come in.
-        there's a lot more examples too, BTW. (here's a few one line ones; things get really f*cked up when you're dealing with
-        scopes. maybe i'll post about it later.):
+    <p> i also got a bunch of swag. google gave out blankets and pillows, as if they need the publicity. </p>
+    <p> i'm back to job appls this evening. got an interview lined up for Tu morning, waiting to hear back from a bunch of 
+        other places.
+    </p>
+    <p> i've figured out how to deal with expression-statements filling up the stack, i'll implement/explain tmr. </p>
+    <h1> 11/01/2018 </h1>
+    <p> functions should be pretty straightforward, i've already set up most of the stuff i need (e.g. frame pointer) ahead 
+        of time. i'll fix that up once i'm done job appls.
+    </p>
+    <p> i'd love to write a full C compiler one day, but it would involve a lot of work because of the ambiguity. e.g. if i 
+        write <code>(A)*B</code>, am i multiplying <code>A</code> and <code>B</code> or am i dereferencing <code>B</code> 
+        and casting it to type <code>A</code>? who knows, unless i can see the rest of the source code, and this is where 
+        the problems come in. there's a lot more examples too, BTW. (here's a few one line ones; things get really f*cked 
+        up when you're dealing with scopes. maybe i'll post about it later.):
     </p>
     <ul>
       <li><code>(A)*B;</code>: mentioned above.
       <li><code>A * B;</code>: declaring a pointer to something of type <code>A</code> or multiplication?</li>
       <li><code>(A)-B;</code>: casting <code>-B</code> to type <code>A</code> or subtracting?</li>
       <li><code>(A)+B;</code>: casting <code>+B</code> to type <code>A</code> or adding?</li>
-      <li> a bunch more of the really f*cked up ones take up multiple lines, so i'll omit them or post them in a later post.</li>
+      <li> lots of the really f*cked up ones take up multiple lines, so i'll omit them or make them a post later.</li>
     </ul>
     <h1> 10/01/2018 </h1>
-    <p> added assignment expressions. i decided that assignment is an expression, and declaration is a statement. this may not
-        be the best choice, seeing as this causes a lot of C errors from assignments in if/for/while conditions. may change this
-        in the future to either disallow assignments in these places or make assignments a statement. i like being able to assign
-        multiple variables to the same value all at once tho, without having to add a separate construct for this.
+    <p> added assignment expressions. i decided that assignment is an expression, and declaration is a statement. this may 
+        not be the best choice, seeing as this causes a lot of C errors from assignments in if/for/while conditions. may 
+        change this in the future to either disallow assignments in these places or make assignments a statement. i like 
+        being able to assign multiple variables to the same value all at once tho, without having to add a separate 
+        construct for this.
     </p>
-    <p> the big thing with adding assignments was that it let me add (non useless) while loops. had to use a backwards and a forward branch. 
-        couldn't think of a clever way to optimise things based on the size of the jump, because each jump size depends on 
-        the other. i'm sure i could get close, like within 9 bytes or something.
+    <p> the big thing with adding assignments was that it let me add (non useless) while loops. had to use a backwards and a
+        forward branch. couldn't think of a clever way to optimise things based on the size of the jump, because each jump 
+        size depends on the other. i'm sure i could get close, like within 9 bytes or something.
     </p>
-    <p> looks like functions are next. should be pretty straightforward. i think i have a small bug where expression statements 
-        end up filling up the stack with their values, i'll have to fix that first, otherwise functions will have a bunch of problems.
+    <p> looks like functions are next. should be pretty straightforward. i think i have a small bug where expression 
+        statements end up filling up the stack with their values, i'll have to fix that first, otherwise functions will have 
+        a bunch of problems.
     </p>
     <h1> 09/01/2018 </h1>
     <p> got automatic semicolon insertion working nicely, just have to clean my code up a bit before i commit. </p>
-    <p> added if-elseif-else-statements. also am going to add more branch opcodes, to deal with different length jumps in addresses. 
-        (so i don't have to deal with wasting 8 bytes of opcode jumping over a print statement, e.g.)
+    <p> added if-elseif-else-statements. also am going to add more branch opcodes, to deal with different length jumps in 
+        addresses. (so i don't have to deal with wasting 8 bytes of opcode jumping over a print statement, e.g.)
     </p>
     <p> next step is assignment statements, then while-loops. 
         while-loops are basically useless without assignment statements, since i'd only be able to declare local variables,
@@ -63,13 +77,13 @@
     <h1> 08/01/2018 </h1>
     <p> i seriously need to: </p>
     <ul>
-      <li> add automatic semicolon insertion à la Go. i think the problems with my technique are becoming apparent. i shouldn't
-        really add more features until i clear this up. 
+      <li> add automatic semicolon insertion à la Go. i think the problems with my technique are becoming apparent. i 
+        shouldn't really add more features until i clear this up. 
       </li>
       <li> write a function to turn a constant int to a bunch of bytes in the interpreter.
-        i've copied the same lambda around like 5 times by now. i actually need to really refactor a lot of pieces of the code.
-        e.g. i want to make a few different branch instructions for different sizes of ints. i think i have enough opcodes left that 
-        this should be fine.
+        i've copied the same lambda around like 5 times by now. i actually need to really refactor a lot of pieces of the 
+        code. e.g. i want to make a few different branch instructions for different sizes of ints. i think i have enough 
+        opcodes left that this should be fine.
       </li>
       <li> actually, while i'm at it i'll clean up all my code, and add proper error messages. 
         things are gonna get bad soon if i don't.
@@ -80,26 +94,27 @@
         semi-colon thing described above.
     </p>
     <h1> 07/01/2018</h1>
-    <p> figured out how to implement nested scopes, will actually implement them soon. i plan on using nested envs while walking 
-        the AST to figure out where to store everything in memory at runtime. i'll post a better explanation when i acutally write up
-        the code. it's easy to say "i know how to do X", it's another to actually do X. maybe i'm overlooking something. i'll try implementing
-        if-statements and while-loops tmr/tonight. once i have those, it'll be easy to do any other kind of loop,  and to extend
-        if-statements to if-else-statements and if-elseif-....-elseif-else-statements.
+    <p> figured out how to implement nested scopes, will actually implement them soon. i plan on using nested envs while 
+        walking the AST to figure out where to store everything in memory at runtime. i'll post a better explanation when i 
+        acutally write up the code. it's easy to say "i know how to do X", it's another to actually do X. maybe i'm 
+        overlooking something. i'll try implementing if-statements and while-loops tmr/tonight. once i have those, it'll be 
+        easy to do any other kind of loop,  and to extend if-statements to if-else-statements and 
+        if-elseif-....-elseif-else-statements.
     </p>
     <p> right now i'm doing a bunch of job appls, need something for this summer, so i don't have a lot of spare time. </p>
-    <p> implemented lexical scoping and if-statements, after redoing my resume. i think i need to implement assignment before i
-        can move on to else statements and loops, otherwise what's the point if i can't assign to global variables inside a local
-        scope.
+    <p> implemented lexical scoping and if-statements, after redoing my resume. i think i need to implement assignment 
+        before i can move on to else statements and loops, otherwise what's the point if i can't assign to global variables 
+        inside a local scope.
     </p>
     <p> i think i should do automatic semicolon insertion, à la Go. it would make typing things out a lot easier. </p>
     <h1> 06/01/2018 </h1>
-    <p> added <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, and <code>&lt;=</code>. i basically reused the same macro as for the 
-        binary operators, although i changed it a bit, because i wanted to return a bool, not an int.
+    <p> added <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, and <code>&lt;=</code>. i basically reused the same 
+        macro as for the binary operators, although i changed it a bit, because i wanted to return a bool, not an int.
     </p>
-    <p> added <code>==</code> and <code>!=</code>, which are for value equality. (what i mean by value equality, is (e.g.) two strings
-        are value-equal if they contain the same characters, even if they are stored in different spots in memory. i'll clarify more
-        when i add operators for reference equality later or when i add more complicated types like strings.) i'll add reference 
-        equality later, probably as <code>===</code> and <code>!==</code>.
+    <p> added <code>==</code> and <code>!=</code>, which are for value equality. (what i mean by value equality, is (e.g.) 
+        two strings are value-equal if they contain the same characters, even if they are stored in different spots in 
+        memory. i'll clarify more when i add operators for reference equality later or when i add more complicated types 
+        like strings.) i'll add reference equality later, probably as <code>===</code> and <code>!==</code>.
     </p>
     <p> oh, semantics of value equality: </p>
     <ul>
@@ -121,8 +136,8 @@
         everything (empty string, empty list, empty anything, None, false, 0, etc) be falsey. it just feels like too many.
     </p>
     <p> once i figure out scopes i'll add while-loops and if statements. </p>
-    <p> actually, i guess adding <code>!</code>, <code>and</code>, <code>or</code>, comparators, etc is probably the next step now that i have 
-      the ternary operator and booleans. 
+    <p> actually, i guess adding <code>!</code>, <code>and</code>, <code>or</code>, comparators, etc is probably the next 
+      step now that i have the ternary operator and booleans. 
     </p>
     <p> added <code>!</code>, <code>and</code>, <code>or</code>. will work on comparators later. 
         <code>and</code> and <code>or</code> shortcircuit, which took me a while to figure out how to implement
@@ -137,8 +152,8 @@
         but hopefully it gives an idea.
     </p>
     <p> maybe there's a better way to do this, but nothing comes to mind. </p>
-    <p> cleaned up the code for the binary operators a lot by making it into a macro, since it was basically the same for add,
-        multiply and subtract.
+    <p> cleaned up the code for the binary operators a lot by making it into a macro, since it was basically the same for 
+        add, multiply and subtract.
     </p>
     <h1> 04/01/2018 </h1>
     <p> added booleans. </p>
