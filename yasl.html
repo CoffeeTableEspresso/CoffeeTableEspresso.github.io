@@ -61,6 +61,18 @@
     <h3> <a name="3.3">3.3 &ndash; Statements </a> </h3>
     <h3> <a name="3.4">3.4 &ndash; Expressions </a> </h3>
     <h4> <a name="3.4.1">3.4.1 &ndash; Arithmetic Operators </a> </h4>
+    <p> YASL supports the following arithmetic operators:
+      <ul>
+        <li><b>+</b>: addition</li>
+        <li><b>-</b>: subtraction</li>
+        <li><b>*</b>: multiplication</li>
+        <li><b>/</b>: float division</li>
+        <li><b>-</b>: unary minus</li>
+      </ul>
+    <p> all operators, with the exception of float division, which always returns a float, work as follows:
+      If both operands are integers, the result is an integer. Otherwise, the operands are converted to floats and the 
+      result is a float.
+    </p>
     <h4> <a name="3.4.2">3.4.2 &ndash; Logical Operators </a> </h4>
     <h4> <a name="3.4.3">3.4.3 &ndash; Precedence </a> </h4>
   </div>
