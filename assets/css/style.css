@@ -18,6 +18,9 @@ code {
 
 ul {
     list-style-type: none;
+}
+
+div ul {
     margin: 0;
 }
 
