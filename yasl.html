@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="my website">
 <base href="/">
-<title>CoffeeTableEspresso - YASL</title>
+<title>YASL - Documentation</title>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -49,16 +49,34 @@
     <h2> <a name="2">2 &ndash; Basic Concepts </a> </h2>
     <p> This section describes the basic concepts of the language. </p>
     <h3> <a name="2.1">2.1 &ndash; Values &amp; Types </a> </h3>
-    <p> YASL is <i>dynamically typed</i>. There are no type definitions. All values carry their own type. </p>
-    <p> The basic types in YASL are: <i>nil</i>, <i>boolean</i>, <i>int64</i>, and <i>float64</i>. The type <i>nil</i> has a
-      a single value <b>nil</b>, whose many use is being different from every other value. The type <i>boolean</i> has two
-      values, <b>true</b> and <b>false</b>. <i>int64</i> represents integers to 64-bits of precision. <i>float64</i> represents
-      floating-point values using 64-bits of precision.
+    <p> YASL is <em>dynamically typed</em>. There are no type definitions. All values carry their own type. </p>
+    <p> The basic types in YASL are: <em>nil</em>, <em>boolean</em>, <em>int64</em>, and <em>float64</em>. The type <em>nil</em> 
+      has a single value <b>nil</b>, whose main use is being different from every other value. The type <em>boolean</em> has two
+      values, <b>true</b> and <b>false</b>. <em>int64</em> represents integers to 64-bits of precision. <em>float64</em> 
+      represents floating-point values using 64-bits of precision.
     </p>
     <h2> <a name="3">3 &ndash; The Language </a> </h2>
+    <p> This section describes the lexis, syntax, and semantics of YASL. Language constructs will be explained using the usual 
+      EBNF notation.
+    </p>
     <h3> <a name="3.1">3.1 &ndash; Lexical Conventions </a> </h3>
+    <p> Names in YASL consist of a  numbers, letters, and underscores. </p>
+    <p> the following <em>keywords</em> are reserved and cannot be used as names: </p>
+    <pre>
+     and    class   defun   else    elseif    false   
+     if     nil     or      return  true      while   
+    </pre>
     <h3> <a name="3.2">3.2 &ndash; Variables </a> </h3>
+    <p> Variables store values. There are two kinds of varialbes in YASL: local and global. </p>
+    <p> All variables are global unless not declared in the global scope, in which case the variable is local. </p>
     <h3> <a name="3.3">3.3 &ndash; Statements </a> </h3>
+    <p> YASL has <em>if-</em> and <em>while-</em> statements with the following syntax:
+      <code> stmt = "while" expr "{" {stmt} "}"
+             stmt = "if" expr "{" {stmt} "}" {"elseif" expr "{" {stmt} "}"} ["else" "{" {stmt} "}"]
+      </code> </p>
+    <p> Both <b>false</b> and <b>nil</b> are considered falsey, and all other values are truthy. 
+      In particular, <b>0</b> and <b>0.0</> are truthy. 
+    </p>
     <h3> <a name="3.4">3.4 &ndash; Expressions </a> </h3>
     <h4> <a name="3.4.1">3.4.1 &ndash; Arithmetic Operators </a> </h4>
     <p> YASL supports the following arithmetic operators:
@@ -74,7 +92,24 @@
       result is a float.
     </p>
     <h4> <a name="3.4.2">3.4.2 &ndash; Logical Operators </a> </h4>
+    <p> The logical operators in YASL are <b>!</b>, <b>and</b>, and <b>or</or>.  Like the control structures, the logical 
+      operators consider <b>false</b> and <b>nil</b> as falsey, and anything else as truthy.
+    </p>
+    <p> <b>!</b> always returns a boolean. <b>and</b> returns its first argument if that argument is falsey, otherwise it returns
+      its second argument. <b>or</b> returns its first argument if that argument is truthy, otherwise it returns its second 
+      argument.
+    </p>
     <h4> <a name="3.4.3">3.4.3 &ndash; Precedence </a> </h4>
+    <p> The following table shows the precedence of YASL operators, from highest to lowest: </p>
+    <pre>
+      ?:
+      or
+      and
+      &lt;    &gt;    &lt;=   &gt;=   !=    ==
+      +       -
+      *       /
+      !       -
+    </pre>
   </div>
   
 </body>
