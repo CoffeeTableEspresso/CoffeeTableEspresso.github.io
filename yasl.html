@@ -37,7 +37,9 @@
         <ul>
           <li> <a href="yasl.html#3.4.1">3.4.1 &ndash; Arithmetic Operators </a> </li>
           <li> <a href="yasl.html#3.4.2">3.4.2 &ndash; Logical Operators </a> </li>
-          <li> <a href="yasl.html#3.4.3">3.4.3 &ndash; Precedence </a> </li>
+          <li> <a href="yasl.html#3.4.3">3.4.3 &ndash; Comparison Operators </a> </li>
+          <li> <a href="yasl.html#3.4.4">3.4.4 &ndash; Other Operators </a> </li>
+          <li> <a href="yasl.html#3.4.5">3.4.5 &ndash; Precedence </a> </li>
         </ul>
       </ul>
     </ul>
@@ -50,14 +52,14 @@
     <p> This section describes the basic concepts of the language. </p>
     <h3> <a name="2.1">2.1 &ndash; Values &amp; Types </a> </h3>
     <p> YASL is <em>dynamically typed</em>. There are no type definitions. All values carry their own type. </p>
-    <p> The basic types in YASL are: <em>nil</em>, <em>boolean</em>, <em>int64</em>, and <em>float64</em>. The type <em>nil</em> 
-      has a single value <b>nil</b>, whose main use is being different from every other value. The type <em>boolean</em> has two
-      values, <b>true</b> and <b>false</b>. <em>int64</em> represents integers to 64-bits of precision. <em>float64</em> 
-      represents floating-point values using 64-bits of precision.
+    <p> The basic types in YASL are: <em>nil</em>, <em>boolean</em>, <em>int64</em>, and <em>float64</em>. The type 
+      <em>nil</em> has a single value <b>nil</b>, whose main use is being different from every other value. The type 
+      <em>boolean</em> has two values, <b>true</b> and <b>false</b>. <em>int64</em> represents integers to 64-bits of 
+      precision. <em>float64</em> represents floating-point values using 64-bits of precision.
     </p>
     <h2> <a name="3">3 &ndash; The Language </a> </h2>
-    <p> This section describes the lexis, syntax, and semantics of YASL. Language constructs will be explained using the usual 
-      EBNF notation.
+    <p> This section describes the lexis, syntax, and semantics of YASL. Language constructs will be explained using the
+      usual EBNF notation.
     </p>
     <h3> <a name="3.1">3.1 &ndash; Lexical Conventions </a> </h3>
     <p> Names in YASL consist of a  numbers, letters, and underscores. </p>
@@ -87,28 +89,47 @@
         <li><b>/</b>: float division</li>
         <li><b>-</b>: unary minus</li>
       </ul>
-    <p> all operators, with the exception of float division, which always returns a float, work as follows:
-      If both operands are integers, the result is an integer. Otherwise, the operands are converted to floats and the 
-      result is a float.
+    <p> all binary arithmetic operators, with the exception of float division, (which always returns a float,) work as 
+      follows: If both operands are integers, the result is an integer. Otherwise, the operands are converted to floats 
+      and the result is a float.
     </p>
     <h4> <a name="3.4.2">3.4.2 &ndash; Logical Operators </a> </h4>
     <p> The logical operators in YASL are <b>!</b>, <b>and</b>, and <b>or</or>.  Like the control structures, the logical 
       operators consider <b>false</b> and <b>nil</b> as falsey, and anything else as truthy.
     </p>
-    <p> <b>!</b> always returns a boolean. <b>and</b> returns its first argument if that argument is falsey, otherwise it returns
-      its second argument. <b>or</b> returns its first argument if that argument is truthy, otherwise it returns its second 
-      argument.
+    <p> <b>!</b> always returns a boolean. <b>and</b> returns its first argument if that argument is falsey, otherwise it 
+      returns its second argument. <b>or</b> returns its first argument if that argument is truthy, otherwise it returns its 
+      second argument.
     </p>
-    <h4> <a name="3.4.3">3.4.3 &ndash; Precedence </a> </h4>
+    <h4> <a name ="3.4.3">3.4.4 &ndash; Comparison Operators </a> </h4>
+    <p> YASL supports the following comparison operators: </p>
+      <ul>
+        <li><b>==</b>: equality </li>
+        <li><b>!=</b>: inequality </li>
+        <li><b>&gt;</b>: greater-than</li>
+        <li><b>&lt;</b>: less-than</li>
+        <li><b>&gt;=</b>: greater-than or equal</li>
+        <li><b>&lt;=</b>: less-than or equal</li>
+      </ul>
+    <p> Comparisons between numeric types will behave as expected, and <em>int64</em> can be compared with 
+      <em>float64</em>.
+    </p>
+    <p> comparing anythign with <b>nil</b> (including <b>nil</b> with itself) returns <b>nil</nil>. </p>
+    <h4> <a name="3.4.4">3.4.4 &ndash; Other Operators </a> </h4>
+    <p> YASL supports the ternary operator, with the usual notation.  YASL also supports a nil coalescing operator
+      (<b>??</b>), which returns its left operand if it is not <b>nil</b>, and returns its right operand otherwise.
+    </p>
+    <p> Both these operators are right associative. </p>
+    <h4> <a name="3.4.5">3.4.5 &ndash; Precedence </a> </h4>
     <p> The following table shows the precedence of YASL operators, from highest to lowest: </p>
     <pre>
-      ?:
+      ?:      ??
       or
       and
       &lt;    &gt;    &lt;=   &gt;=   !=    ==
       +       -
       *       /
-      !       -
+      !       - (unary)
     </pre>
   </div>
   
