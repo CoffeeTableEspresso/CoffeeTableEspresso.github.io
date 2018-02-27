@@ -21,6 +21,22 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 27/02/2018 </h1>
+    <p> refactored strings to make them easier to deal with internally. i've decided that the empty string 
+      <code>&quot;&quot;</code> should be falsey (bringing my falsey values up to <code>false</code>, <code>undef</code>,
+      and <code>&quot;&quot;</code>), in order to let me do things like <code> while line = &lt;stdin&gt; { ... } </code>, 
+      which reads a line from <code>stdin</code>,  assigns its value to <code>line</code>, and terminates when the user 
+      presses enter without giving any input.  a similar construct should work for reading from arbitrary filehandles. 
+      this is nice for reading files; a similar construct in say, python, is much more verbose. (of course, python has 
+      other nicer constructs for doing the same kind of thing.) the <code>&lt;...&gt;</code> operator is taken from Perl. 
+      in general i want to avoid Perl's complexity, but i think in a few cases it makes sense to have dedicated operators 
+      to do some things.
+    </p>
+    <p>
+      i need to start adding file stuff to YASL soon. i'm going to leave off dealing with the rest of the 
+      string functions until i need them, because they're not that interesting and i can't do much with them if i can't 
+      get intput. 
+    </p>
     <h1> 19/02/2018 </h1>
     <p> got lists working, as well as hashtables, and added brackets as a way of indexing into both lists and hashes. i've 
       sort-of finalised the opcodes for constants, which let me do some nice bit masking, as well as the opcodes for 
