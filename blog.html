@@ -21,6 +21,16 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 28/02/2018 </h1>
+    <p> getting equality to work out with the semantics i want is hard. even Python doesn't implement it as nicely as i'd
+      like. try making two empty lists, <code>x,y = [], []</code>, then appending each list to itself, i.e.
+      <code>x.append(x)</code>, <code>y.append(y)</code>. then compare them: <code>x == y</code>. 
+      <code>RuntimeError: maximum recursion depth exceeded in comparison</code>. not a very common example, but i still
+      don't think you should get an error for equality comparison ever.
+    </p>
+    <p> going to implement string functions soon, and fix hashtables so they don't take mutable keys by default. (adding a 
+      <code>id(...)</code> function will probably also happen.
+    </p>
     <h1> 27/02/2018 </h1>
     <p> refactored strings to make them easier to deal with internally. i've decided that the empty string 
       <code>&quot;&quot;</code> should be falsey (bringing my falsey values up to <code>false</code>, <code>undef</code>,
