@@ -21,6 +21,18 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 01/04/2018 </h1>
+    <p> added basic i/o stuff: <code>stdin</code>, <code>stdout</code>, <code>stderr</code>, <code>open(...)</code>, 
+      <code>file.close(...)</code>, <code>file.write(...)</code>, <code>file.read(...)</code>,
+      <code>file.readline(...)</code>. i have a double free bug somewhere, i'm gonna try to find
+      it once i'm home and have my PC. I also want to do a refactoring. CLion stopped working on my laptop for unknown 
+      reasons, and i don't want to refactor my C code by hand in PyCharm.
+    </p>
+    <p> i want to add <code>popen(...)</code> too, (it'll basically be the same as in C,) but i'm gonna refactor thing a bit 
+      first, because a few parts of my code 
+      are getting kinda messy. i want to split all the methods up based on the builtin type they belong to, and add an
+      C object for files. i also have to decide exactly how <code>popen(...)</code> should should work in YASL.
+    </p>
     <h1> 30/04/2018 </h1>
     <p> added input from users: <code>input ...</code>. i should probably make this and <code>print</code> a function later 
       on. 
