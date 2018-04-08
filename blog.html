@@ -21,6 +21,28 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 09/04/2018 </h1>
+    <p> my friend suggested an idea for a language: Python, but where you can inline an SQL-like language, and have it work
+      flawlessly with the Python. i've actually had a need for this, and even implemented a similar thing with my 
+      <a href="https://github.com/CoffeeTableEspresso/CourseBrowserImproved">CourseBrowserImproved</a> project. if 
+      i forked the <a href="https://github.com/python/cpython">main Python repo</a>, i could probably do it pretty easily.
+      i might give it a try over the summer.
+    </p>
+    <h1> 08/04/2018 </h1>
+    <p> for my software engineering club, i've been given permission to start (and lead) a programming language team. the 
+      idea is we spend 8 months and write a compiler/interpreter for a language. not sure of any details beyond that. i've 
+      had a few people interested so far, plus i can recruit from outside the club, so hopefully i have a team. this is my 
+      first real leadership role ever, so hopefully it goes through and works out.
+    </p>
+    <p> i've linked a few friends to YASL and they've had positive reactions. i think once i get a few more features working,
+      plus some sample code/tutorials, i'll put a link to YASL on reddit, to get some advice on it.
+    </p>
+    <h1> 07/04/2018 </h1>
+    <p> i'm almost at a point where i can start using YASL for writing actual programs, which is very exciting. </p>
+    <p> figured out how to add <code>break</code> and <code>continue</code> to YASL. i had to refactor the compiler to keep 
+      track of how far i've gone in the bytecode. once i know where i am in the bytecode, i can basically use a GOTO with a
+      small offset to jump to the start of the loop. i just have to implement it, and work out a few small details. 
+    </p>
     <h1> 01/04/2018 </h1>
     <p> added basic i/o stuff: <code>stdin</code>, <code>stdout</code>, <code>stderr</code>, <code>open(...)</code>, 
       <code>file.close(...)</code>, <code>file.write(...)</code>, <code>file.read(...)</code>,
@@ -96,7 +118,7 @@
     <p> i'm also gonna have to implement a bunch of standard library stuff in C. </p>
     <h1> 04/04/2018 </h1>
     <p> one of my friends said he wanted to help out with my 
-      <a href="https://github.com/CoffeeTableEspresso/CourseBrowserImproved">CourseBroswerImproved</a> project. i originally
+      <a href="https://github.com/CoffeeTableEspresso/CourseBrowserImproved">CourseBrowserImproved</a> project. i originally
       got it to a point that i was happy with, but now that i've learned more about languages and parsing, i think i could
       add in some of the features that i originally thought were too complicated, and with his help, coding everything 
       would be a lot faster. I'd also love to fix up a few issues I had, such as it not running on Windows, due to my 
