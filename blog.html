@@ -21,6 +21,22 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 10/04/2018 </h1>
+    <p> i think i'll add "patterns" as a builtin type in YASL, with all the features you'd expect from a modern regex 
+      extension. i'd have to decide how literals would look, i'm thinking something like <code>p"..."</code>, for example
+      <code>p"[A-Z][0-9][A-Z] [0-9][A-Z][0-9]"</code> would be a (verbose) pattern that matches a (canadian) postal code.
+    </p>
+    <p> for operations, i think <a href="https://en.wikipedia.org/wiki/Alternation_(formal_language_theory)">alternation</a>
+      and <a href="https://en.wikipedia.org/wiki/Concatenation">concatenation</a> deserve their own builtin binary infix 
+      operators. <code>a | b</code> seems like the obvious choice for the alternation of <code>a</code> and <code>b</code>,
+      but i'm not quite sure what i want concatenation to look like. on the one hand, reusing concatenation with string 
+      concatenation would be nice. on the other, i wanted string concatenation to automatically convert everything to 
+      strings, which is the exact opposite of what i want to happen when i try to concatenate a pattern with a string. also,
+      not sure what other operators i want to support on patterns.
+    </p>
+    <p> i have a rough idea of what methods i want patterns to support, but i'd like to make a list to make sure i don't miss
+      anything before i start implementing them.
+    </p>
     <h1> 09/04/2018 </h1>
     <p> my friend suggested an idea for a language: Python, but where you can inline an SQL-like language, and have it work
       flawlessly with the Python. i've actually had a need for this, and even implemented a similar thing with my 
