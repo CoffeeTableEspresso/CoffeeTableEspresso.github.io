@@ -110,7 +110,7 @@
     </p>
     <h4> <a name="3.4.2">3.4.2 &ndash; Logical Operators </a> </h4>
     <p> The logical operators in YASL are <b>!</b>, <b>and</b>, and <b>or</b>.  Like the control structures, the logical 
-      operators consider <b>false</b> and <b>nil</b> as falsey, and anything else as truthy.
+      operators consider <b>false</b>, <b>undef</b>, and <b>""</b> as falsey, and anything else as truthy.
     </p>
     <p> <b>!</b> always returns a boolean. <b>and</b> returns its first argument if that argument is falsey, otherwise it 
       returns its second argument. <b>or</b> returns its first argument if that argument is truthy, otherwise it returns its 
@@ -119,8 +119,8 @@
     <h4> <a name ="3.4.3">3.4.4 &ndash; Comparison Operators </a> </h4>
     <p> YASL supports the following comparison operators: </p>
       <ul>
-        <li><b>===</b>: equality </li>
-        <li><b>!==</b>: inequality </li>
+        <li><b>===</b>: iudentity </li>
+        <li><b>!==</b>: non-identity </li>
         <li><b>==</b>: equality </li>
         <li><b>!=</b>: inequality </li>
         <li><b>&gt;</b>: greater-than</li>
@@ -131,7 +131,10 @@
     <p> Comparisons between numeric types will behave as expected, and <em>int64</em> can be compared with 
       <em>float64</em>.
     </p>
-    <p> comparing anythign with <b>undef</b> (including <b>undef</b> with itself) returns <b>nil</b>. </p>
+    <p> <code>===</code> and <code>!==</code> are stricter versions of <code>==</code> and <code>!=</code>, comparing
+      type, value, and identity (if applicable). 
+    </p>
+    <p> comparing anythign with <b>undef</b> (including <b>undef</b> with itself) returns <b>undef</b>. </p>
     <h4> <a name="3.4.4">3.4.4 &ndash; Other Operators </a> </h4>
     <p> YASL supports the ternary operator, with the usual notation.  YASL also supports a nil-coalescing operator
       (<b>??</b>), which returns its left operand if it is not <b>undef</b>, and returns its right operand otherwise.
