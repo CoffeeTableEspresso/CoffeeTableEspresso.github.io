@@ -36,3 +36,15 @@ a:visited {
 a:active {
     color: red;
 }
+
+table {
+    border-collapse: collapse;    
+}
+
+th, td {
+    text-align: left;
+}
+
+table, th, td {
+    border: 2em white;
+}    
