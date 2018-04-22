@@ -43,6 +43,5 @@ th, td {
 }
 
 table, th, td {
-    border-color: white;
-    border: 1em;
+    border: 1px solid white;
 }    
