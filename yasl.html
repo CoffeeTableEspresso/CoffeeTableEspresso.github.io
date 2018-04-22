@@ -142,15 +142,93 @@
     <p> Both these operators are right associative. </p>
     <h4> <a name="3.4.5">3.4.5 &ndash; Precedence </a> </h4>
     <p> The following table shows the precedence of YASL operators, from highest to lowest: </p>
-    <pre>
-      ?:    ??
-      or
-      and
-      &lt;      &gt;      &lt;=     &gt;=     !=      ==     ===    !==
-      +     -
-      *     /             //        %
-      !     - (unary)
-    </pre>
+    <table>
+      <tr>
+        <th> Precedence </th>
+        <th> Operators </th>
+        <th> Description </th>
+      </tr>
+      <tr>
+        <td> 1 </td>
+        <td> ()<br/>[]<br/>. </td>
+        <td> Function Calls<br/>Indexing<br/>Member Access</td>
+      </tr>
+      <tr>
+        <td> 2 </td>
+        <td> ^ </td>
+        <td> Exponentiation </td>
+      </tr>
+      <tr>
+        <td> 3 </td>
+        <td> +<br/>-<br/>#<br/>!<br/>~ </td>
+        <td> Unary Plus<br/>Unary Minus<br/>Length<br/>Logical Negation<br/>Bitwise Negation</td>
+      </tr>
+      <tr>
+        <td> 4 </td>
+        <td> *<br/>/<br/>//<br/>%<br/> </td>
+        <td>  Multiplication<br/>Float Division<br/>Integer Division<br/>Remainder</td>
+      </tr>
+      <tr>
+        <td> 5 </td>
+        <td> +<br/>- </td>
+        <td> Addition<br/>Subtraction </td>
+      </tr>
+      <tr>
+        <td> 6 </td>
+        <td> &lt;&lt;<br/>&gt;&gt; </td>
+        <td> Left Logical Shift<br/>Right Logical Shift</td>
+      </tr>
+      <tr>
+        <td> 7 </td>
+        <td> ||<br/>|||</td>
+        <td> Concatenation<br/>Hard Concatenation </td>
+      </tr>
+      <tr>
+        <td> 8 </td>
+        <td> &gt;=<br/>&gt;<br/>&lt;=<br/>&lt; </td>
+        <td> Comparison Operators </td>
+      </tr>
+      <tr>
+        <td> 9 </td>
+        <td> ==<br/>!=<br/>===<br/>!==</td>
+        <td> Comparison Operators </td>
+      </tr>
+      <tr>
+        <td> 10 </td>
+        <td> &amp;</td>
+        <td> Bitwise And </td>
+      </tr>
+      <tr>
+        <td> 11 </td>
+        <td> ~ </td>
+        <td> Bitwise Xor </td>
+      </tr>
+      <tr>
+        <td> 12 </td>
+        <td> | </td>
+        <td> Bitwise Or </td>
+      </tr>
+      <tr>
+        <td> 13 </td>
+        <td> and </td>
+        <td> Logical And </td>
+      </tr>
+      <tr>
+        <td> 14 </td>
+        <td> or </td>
+        <td> Logical Or </td>
+      </tr>
+      <tr>
+        <td> 15 </td>
+        <td> ?:<br/>?? </td>
+        <td> Ternary Operator<br/>Undef Coalescing Operator </td>
+      </tr>
+      <tr>
+        <td> 16 </td>
+        <td> = </td>
+        <td> Assignment </td>
+      </tr>
+    </table>
     <!-- 
     <h4> <a name="3.4.6">3.4.6 &ndash; Function Calls </a> </h4>
     <h4> <a name="3.4.7">3.4.7 &ndash; Function Definitons </a> </h4> 
