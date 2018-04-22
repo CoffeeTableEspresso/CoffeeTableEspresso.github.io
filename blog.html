@@ -21,6 +21,129 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 22/04/2018 </h1>
+    <p> i've decided to go with this for YASL operators: </p>
+    <table>
+      <tr>
+        <th> Precedence </th>
+        <th> Operators </th>
+        <th> Description </th>
+        <th> Associativity </th>
+        <th> Overloadable </th>
+      </tr>
+      <tr>
+        <td> 1 </td>
+        <td> ()<br/>[]<br/>. </td>
+        <td> Function Calls<br/>Indexing<br/>Member Access</td>
+        <td> Left </td>
+        <td> No<br/>Yes<br/>No</td>
+      </tr>
+      <tr>
+        <td> 2 </td>
+        <td> ^ </td>
+        <td> Exponentiation </td>
+        <td> Right </td>
+        <td> Yes </td>
+      </tr>
+      <tr>
+        <td> 3 </td>
+        <td> +<br/>-<br/>#<br/>!<br/>~ </td>
+        <td> Unary Plus<br/>Unary Minus<br/>Length<br/>Logical Negation<br/>Bitwise Negation</td>
+        <td> Right </td>
+        <td> Yes </td>
+      </tr>
+      <tr>
+        <td> 4 </td>
+        <td> *<br/>/<br/>//<br/>%<br/> </td>
+        <td>  Multiplication<br/>Float Division<br/>Integer Division<br/>Remainder</td>
+        <td> Left </td>
+        <td> Yes </td>
+      </tr>
+      <tr>
+        <td> 5 </td>
+        <td> +<br/>- </td>
+        <td> Addition<br/>Subtraction </td>
+        <td> Left </td>
+        <td> Yes </td>
+      </tr>
+      <tr>
+        <td> 6 </td>
+        <td> &lt;&lt;<br/>&gt;&gt; </td>
+        <td> Left Logical Shift<br/>Right Logical Shift</td>
+        <td> Left </td>
+        <td> Yes </td>
+      </tr>
+      <tr>
+        <td> 7 </td>
+        <td> ||<br/>|||</td>
+        <td> Concatenation<br/>Hard Concatenation </td>
+        <td> Right </td>
+        <td> Yes<br/>No </td>      
+      </tr>
+      <tr>
+        <td> 8 </td>
+        <td> &gt;=<br/>&gt;<br/>&lt;=<br/>&lt; </td>
+        <td> Comparison Operators </td>
+        <td> Left </td>
+        <td> Yes </td>
+      </tr>
+      <tr>
+        <td> 9 </td>
+        <td> ==<br/>!=<br/>===<br/>!==</td>
+        <td> Comparison Operators </td>
+        <td> Left </td>
+        <td> Yes<br/>Yes<br/>No<br/>No </td>
+      </tr>
+      <tr>
+        <td> 10 </td>
+        <td> &amp;</td>
+        <td> Bitwise And </td>
+        <td> Left </td>
+        <td> Yes </td>
+      </tr>
+      <tr>
+        <td> 11 </td>
+        <td> ~ </td>
+        <td> Bitwise Xor </td>
+        <td> Left </td>
+        <td> Yes </td>
+      </tr>
+      <tr>
+        <td> 12 </td>
+        <td> | </td>
+        <td> Bitwise Or </td>
+        <td> Left </td>
+        <td> Yes </td>
+      </tr>
+      <tr>
+        <td> 13 </td>
+        <td> and </td>
+        <td> Logical And </td>
+        <td> Left </td>
+        <td> No </td>
+      </tr>
+      <tr>
+        <td> 14 </td>
+        <td> or </td>
+        <td> Logical Or </td>
+        <td> Left </td>
+        <td> No </td>
+      </tr>
+      <tr>
+        <td> 15 </td>
+        <td> ?:<br/>?? </td>
+        <td> Ternary Operator<br/>Undef Coalescing Operator </td>
+        <td> Right </td>
+        <td> No </td>
+      </tr>
+      <tr>
+        <td> 16 </td>
+        <td> = </td>
+        <td> Assignment </td>
+        <td> Right </td>
+        <td> No </td>
+      </tr>
+    </table>
     <h1> 21/04/2018 </h1>
     <p> finished my last exam today. i have about two weeks free to work on stuff. got exponentiation (<code>x^y</code>),
       as well as the bitwise operators: bor (<code>x|y</code>, bxor (<code>x~y</code>), band (<code>x&amp;y</code>),
