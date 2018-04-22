@@ -37,10 +37,6 @@ a:active {
     color: red;
 }
 
-table {
-    border-collapse: collapse;    
-}
-
 th, td {
     text-align: left;
     padding: 2em;
