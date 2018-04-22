@@ -21,6 +21,17 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 21/04/2018 </h1>
+    <p> finished my last exam today. i have about two weeks free to work on stuff. got exponentiation (<code>x^y</code>),
+      as well as the bitwise operators: bor (<code>x|y</code>, bxor (<code>x~y</code>), band (<code>x&amp;y</code>),
+      bnot (<code>~x</code>), and logical shifts: left shift (<code>x&lt;&lt;y</code>), right shift (<code>&gt;&gt;</code>), 
+      working. note that i said logical shifts: these will have the same behaviour regardless of the sign of the operands.
+    </p>
+    <p> i've also decided to have a "hard concat" operator <code>|||</code>. it takes two operands, calls the
+      <code>.tostr()</code> method on each, then concatenates the result with a space inbetween. i.e. <code>x ||| y</code> is
+      equivalent to <code>x.tostr() || " " || y.tostr()</code>. e.g. <code>"the valid days are" ||| ["M", "W", "Th"]</code>
+      returns <code>"the valid days are [\"M\", \"W\", \"Th\"]"</code>.
+    </p>
     <h1> 17/04/2018 </h1>
     <p> thinking of adding another concat operator: <code>x|||y</code>. this would be equivalent to <code>x||" "||y</code>. 
       not sure if this is strictly necessary, so i'll hold off on adding it for now.
