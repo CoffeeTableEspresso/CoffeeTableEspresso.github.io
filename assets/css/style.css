@@ -43,9 +43,9 @@ table {
 
 th, td {
     text-align: left;
-    padding: 10em;
+    padding: 2em;
 }
 
 table, th, td {
-    border: 2pt white;
+    border-color: white;
 }    
