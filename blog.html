@@ -21,6 +21,20 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 23/04/2018 </h1>
+    <p> gonna lower some constructs in YASL today. specifically, indexing to method calls. "lowering" is the concept of taking 
+      a more complicated langauge construct (e.g. <code>for(int i = a; i < b; i++) { ... }</code>), and turning it into an
+      equivalent, but simpler, construct (e.g. <code>{int i = a; while (i < b) { ...; i++; } }</code>). note that this is all
+      done internally to the compiler; the user still has for-loops, and there's no indication lowering was done. this has 
+      several advantages: 
+    </p>
+    <ol>
+      <li> less work. e.g. reusing your while-loop code for for-loops. </li>
+      <li> easy-to-maintain. e.g. if you decide to change the semantics of loops, you only need to do it in one place. </li>
+      <li> consistentcy. e.g. because the loops are all implemented the same internally, there are no surprises in the way
+        they behave for users.
+      </li>
+    </ol>
     <h1> 22/04/2018 </h1>
     <p> this morning i added the assignment versions of operators (by this i mean <code>+=</code> is the "assignment version"
       of <code>+</code>. it was very straightforward, basically just had to add 1 rule to the parser. i forgot how much i 
