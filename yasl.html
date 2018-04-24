@@ -155,84 +155,84 @@
         <td> ()<br/>[]<br/>. </td>
         <td> Function Calls<br/>Indexing<br/>Member Access</td>
         <td> Left </td>
-        <td> No<br/>Yes<br/>No</td>
+        <td> No<br/>__set/__get<br/>No</td>
       </tr>
       <tr>
         <td> 2 </td>
         <td> ^ </td>
         <td> Exponentiation </td>
         <td> Right </td>
-        <td> Yes </td>
+        <td> __pow </td>
       </tr>
       <tr>
         <td> 3 </td>
         <td> +<br/>-<br/>#<br/>!<br/>~ </td>
         <td> Unary Plus<br/>Unary Minus<br/>Length<br/>Logical Negation<br/>Bitwise Negation</td>
         <td> Right </td>
-        <td> Yes </td>
+        <td> __pos<br/>__neg<br/>__len<br/>__not<br/>__bnot </td>
       </tr>
       <tr>
         <td> 4 </td>
         <td> *<br/>/<br/>//<br/>%<br/> </td>
         <td>  Multiplication<br/>Float Division<br/>Integer Division<br/>Remainder</td>
         <td> Left </td>
-        <td> Yes </td>
+        <td> __mul<br/>__fdiv<br/>__idiv<br/>__mod </td>
       </tr>
       <tr>
         <td> 5 </td>
         <td> +<br/>- </td>
         <td> Addition<br/>Subtraction </td>
         <td> Left </td>
-        <td> Yes </td>
+        <td> __add<br/>__sub </td>
       </tr>
       <tr>
         <td> 6 </td>
         <td> &lt;&lt;<br/>&gt;&gt; </td>
         <td> Left Logical Shift<br/>Right Logical Shift</td>
         <td> Left </td>
-        <td> Yes </td>
+        <td> __lshift<br/>__rshift </td>
       </tr>
       <tr>
         <td> 7 </td>
         <td> ||<br/>|||</td>
         <td> Concatenation<br/>Hard Concatenation </td>
         <td> Right </td>
-        <td> Yes<br/>No </td>      
+        <td> __concat<br/>No </td>      
       </tr>
       <tr>
         <td> 8 </td>
         <td> &gt;=<br/>&gt;<br/>&lt;=<br/>&lt; </td>
         <td> Comparison Operators </td>
         <td> Left </td>
-        <td> Yes </td>
+        <td> __ge<br/>__gt<br/>__le<br/>__lt </td>
       </tr>
       <tr>
         <td> 9 </td>
         <td> ==<br/>!=<br/>===<br/>!==</td>
         <td> Comparison Operators </td>
         <td> Left </td>
-        <td> Yes<br/>Yes<br/>No<br/>No </td>
+        <td> __eq<br/>__neq<br/>No<br/>No </td>
       </tr>
       <tr>
         <td> 10 </td>
         <td> &amp;</td>
         <td> Bitwise And </td>
         <td> Left </td>
-        <td> Yes </td>
+        <td> __band </td>
       </tr>
       <tr>
         <td> 11 </td>
         <td> ~ </td>
         <td> Bitwise Xor </td>
         <td> Left </td>
-        <td> Yes </td>
+        <td> __bxor </td>
       </tr>
       <tr>
         <td> 12 </td>
         <td> | </td>
         <td> Bitwise Or </td>
         <td> Left </td>
-        <td> Yes </td>
+        <td> __bor </td>
       </tr>
       <tr>
         <td> 13 </td>
