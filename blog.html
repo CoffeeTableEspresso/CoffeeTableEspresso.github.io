@@ -21,6 +21,11 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 24/04/2018 </h1>
+    <p> i'm going to rewrite the compiler half of the project in C soon. i'm guessing it will be about 2000 LOC. </p>
+    <p> i also need to figure out how to write a GC soon. currently, any time a user allocates memory for an object, it's a
+      memory leak.
+    </p>
     <h1> 23/04/2018 </h1>
     <p> added <code>break</code> and <code>continue</code>. it was rather difficult to do, and i'm not too happy with my 
       solution. basically, i added a stack to the compiler to keep track of where the last loop started, and then used a goto
