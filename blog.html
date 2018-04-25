@@ -21,6 +21,14 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 25/04/2018 </h1>
+    <p> i started writing the lexer in C, almost have something that can recognise all the right tokens i need for YASL. once
+      i've got that i'll make it read from files and output proper tokens for the parser piece (which i still need to write).
+      the compiler will be by far the hardest since i have a lot of state stored in there and i won't be able to rely so much on
+      Python's nice features. once i have that half written, gonna throw out the Python. i've duplicated a lot of data (e.g. the 
+      opcodes and the indices for methods in the vtables), which isn't ideal. plus if everything is written in C making a REPL
+      will be a lot easier.
+    </p>
     <h1> 24/04/2018 </h1>
     <p> i'm going to rewrite the compiler half of the project in C soon. i'm guessing it will be about 2000 LOC. </p>
     <p> i also need to figure out how to write a GC soon. currently, any time a user allocates memory for an object, it's a
