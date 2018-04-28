@@ -106,13 +106,23 @@
         <li><b>%</b>: modulo</li>
         <li><b>-</b>: unary minus</li>
       </ul>
-    <p> float division always returns a float. integer division and modulo are only defined for integers, and always return 
+    <p> Float division always returns a float. Integer division and modulo are only defined for integers, and always return 
       an integer.
     </p>
-    <p> all other binary arithmetic operator work as 
+    <p> All other binary arithmetic operator work as 
       follows: If both operands are integers, the result is an integer. Otherwise, the operands are converted to floats 
       and the result is a float.
     </p>
+    <h4> <a name="3.4.2">3.4.2 &ndash; Bitwise Operators </a> </h4>
+    <p> YASL supports the following bitwise operators: </p>
+      <ul>
+        <li><b>|</b>: bitwise or</li>
+        <li><b>&</b>: bitwise and</li>
+        <li><b>~</b>: bitwise xor</li>
+        <li><b>~</b>: bitwise negation</li>
+      </ul>
+    <p> all bitwise operators are only defined for integer operands. </p>
+    <p> <b>~</b> is bitwise xor if used as a binary operator, and bitwise negation if used as a unary operator. </p>
     <h4> <a name="3.4.3">3.4.3 &ndash; Logical Operators </a> </h4>
     <p> The logical operators in YASL are <b>!</b>, <b>and</b>, and <b>or</b>.  Like the control structures, the logical 
       operators consider <b>false</b>, <b>undef</b>, and <b>""</b> as falsey, and anything else as truthy.
