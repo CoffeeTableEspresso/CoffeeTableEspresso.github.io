@@ -37,10 +37,11 @@
         <li> <a href="yasl.html#3.4">3.4 &ndash; Expressions </a> </li>
         <ul>
           <li> <a href="yasl.html#3.4.1">3.4.1 &ndash; Arithmetic Operators </a> </li>
-          <li> <a href="yasl.html#3.4.2">3.4.2 &ndash; Logical Operators </a> </li>
-          <li> <a href="yasl.html#3.4.3">3.4.3 &ndash; Comparison Operators </a> </li>
-          <li> <a href="yasl.html#3.4.4">3.4.4 &ndash; Other Operators </a> </li>
-          <li> <a href="yasl.html#3.4.5">3.4.5 &ndash; Precedence </a> </li>
+          <li> <a href="yasl.html#3.4.2">3.4.2 &ndash; Bitwise Operators </a>
+          <li> <a href="yasl.html#3.4.3">3.4.3 &ndash; Logical Operators </a> </li>
+          <li> <a href="yasl.html#3.4.4">3.4.4 &ndash; Comparison Operators </a> </li>
+          <li> <a href="yasl.html#3.4.5">3.4.5 &ndash; Other Operators </a> </li>
+          <li> <a href="yasl.html#3.4.6">3.4.6 &ndash; Precedence </a> </li>
           <!--
           <li> <a href="yasl.html#3.4.6">3.4.6 &ndahs; Function Calls </a> </li>
           <li> <a href="yasl.html#3.4.7">3.4.7 &ndash; Function Definitions </a> </li>
@@ -73,10 +74,14 @@
     <p> Names in YASL consist of a  numbers, letters, and underscores, and may not start with a number. </p>
     <p> the following <em>keywords</em> are reserved and cannot be used as names: </p>
     <pre>
-     and    class   else    elseif  false   for 
-     func   if      or      return  self    true   
-     undef  while   
+     and    bool    break   continue  else    elseif  false   
+     file   float64 fn      for       if      int64   let       
+     list   map     or      print     return  str     struct    
+     true   undef  while   
     </pre>
+    <p> Of these, <em>bool</em>, <em>file</em>, <em>float64</em>, <em>int64</em>, <em>list</em>, <em>map</em>, <em>str</em>,
+      and <em>struct</em> are currently unused, but reserved for future use. 
+    </p>
     <h3> <a name="3.2">3.2 &ndash; Variables </a> </h3>
     <p> Variables store values. There are two kinds of varialbes in YASL: local and global. </p>
     <p> All variables are global unless not declared in the global scope, in which case the variable is local. Variables
@@ -108,7 +113,7 @@
       follows: If both operands are integers, the result is an integer. Otherwise, the operands are converted to floats 
       and the result is a float.
     </p>
-    <h4> <a name="3.4.2">3.4.2 &ndash; Logical Operators </a> </h4>
+    <h4> <a name="3.4.3">3.4.3 &ndash; Logical Operators </a> </h4>
     <p> The logical operators in YASL are <b>!</b>, <b>and</b>, and <b>or</b>.  Like the control structures, the logical 
       operators consider <b>false</b>, <b>undef</b>, and <b>""</b> as falsey, and anything else as truthy.
     </p>
@@ -116,7 +121,7 @@
       returns its second argument. <b>or</b> returns its first argument if that argument is truthy, otherwise it returns its 
       second argument.
     </p>
-    <h4> <a name ="3.4.3">3.4.4 &ndash; Comparison Operators </a> </h4>
+    <h4> <a name ="3.4.4">3.4.4 &ndash; Comparison Operators </a> </h4>
     <p> YASL supports the following comparison operators: </p>
       <ul>
         <li><b>===</b>: iudentity </li>
@@ -134,13 +139,22 @@
     <p> <code>===</code> and <code>!==</code> are stricter versions of <code>==</code> and <code>!=</code>, comparing
       type, value, and identity (if applicable). 
     </p>
-    <p> comparing anythign with <b>undef</b> (including <b>undef</b> with itself) returns <b>undef</b>. </p>
-    <h4> <a name="3.4.4">3.4.4 &ndash; Other Operators </a> </h4>
+    <p> comparing anything with <b>undef</b> (including <b>undef</b> with itself) returns <b>undef</b>. </p>
+    <h4> <a name="3.4.5">3.4.5 &ndash; Other Operators </a> </h4>
+    <p> The <b>#</b> operator returns the size of its argument.  For strings, this is its length, and for maps and lists, this
+      is the number of elements they contain.  Using <b>#</b> on values of any other type is a runtime error.
+    </p>
     <p> YASL supports the ternary operator, with the usual notation.  YASL also supports a nil-coalescing operator
-      (<b>??</b>), which returns its left operand if it is not <b>undef</b>, and returns its right operand otherwise.
+      (<b>??</b>), which returns its left operand if the left operand is not <b>undef</b>, and returns its right operand 
+      otherwise.
     </p>
     <p> Both these operators are right associative. </p>
-    <h4> <a name="3.4.5">3.4.5 &ndash; Precedence </a> </h4>
+    <p> YASL also supports concatenation with the <b>||</b> and <b>|||</b> operators. The difference between the two is that
+      <b>|||</b> will always attempt to coerce both its arguments to strings before concatenating them, and it will place a space
+      between the two strings when it concatenates them. This is useful for concatenating a list and a str, for example.
+    </p>
+    <p> Both concatenation operators are right associative. </p>
+    <h4> <a name="3.4.6">3.4.6 &ndash; Precedence </a> </h4>
     <p> The following table shows the precedence of YASL operators, from highest to lowest: </p>
     <table>
       <tr>
@@ -148,112 +162,112 @@
         <th> Operators </th>
         <th> Description </th>
         <th> Associativity </th>
-        <th> Overloadable </th>
+        <!-- <th> Overloadable </th> -->
       </tr>
       <tr>
         <td> 1 </td>
         <td> ()<br/>[]<br/>. </td>
         <td> Function Calls<br/>Indexing<br/>Member Access</td>
         <td> Left </td>
-        <td> No<br/>__set/__get<br/>No</td>
+        <!-- <td> No<br/>__set/__get<br/>No</td> -->
       </tr>
       <tr>
         <td> 2 </td>
         <td> ^ </td>
         <td> Exponentiation </td>
         <td> Right </td>
-        <td> __pow </td>
+        <!-- <td> __pow </td> -->
       </tr>
       <tr>
         <td> 3 </td>
         <td> +<br/>-<br/>#<br/>!<br/>~ </td>
         <td> Unary Plus<br/>Unary Minus<br/>Length<br/>Logical Negation<br/>Bitwise Negation</td>
         <td> Right </td>
-        <td> __pos<br/>__neg<br/>__len<br/>__not<br/>__bnot </td>
+        <!-- <td> __pos<br/>__neg<br/>__len<br/>__not<br/>__bnot </td> -->
       </tr>
       <tr>
         <td> 4 </td>
         <td> *<br/>/<br/>//<br/>%<br/> </td>
         <td>  Multiplication<br/>Float Division<br/>Integer Division<br/>Remainder</td>
         <td> Left </td>
-        <td> __mul<br/>__fdiv<br/>__idiv<br/>__mod </td>
+        <!-- <td> __mul<br/>__fdiv<br/>__idiv<br/>__mod </td> -->
       </tr>
       <tr>
         <td> 5 </td>
         <td> +<br/>- </td>
         <td> Addition<br/>Subtraction </td>
         <td> Left </td>
-        <td> __add<br/>__sub </td>
+        <!-- <td> __add<br/>__sub </td> -->
       </tr>
       <tr>
         <td> 6 </td>
         <td> &lt;&lt;<br/>&gt;&gt; </td>
         <td> Left Logical Shift<br/>Right Logical Shift</td>
         <td> Left </td>
-        <td> __lshift<br/>__rshift </td>
+        <!-- <td> __lshift<br/>__rshift </td> -->
       </tr>
       <tr>
         <td> 7 </td>
         <td> ||<br/>|||</td>
         <td> Concatenation<br/>Hard Concatenation </td>
         <td> Right </td>
-        <td> __concat<br/>No </td>      
+        <!-- <td> __concat<br/>No </td> -->      
       </tr>
       <tr>
         <td> 8 </td>
         <td> &gt;=<br/>&gt;<br/>&lt;=<br/>&lt; </td>
         <td> Comparison Operators </td>
         <td> Left </td>
-        <td> __ge<br/>__gt<br/>__le<br/>__lt </td>
+        <!-- <td> __ge<br/>__gt<br/>__le<br/>__lt </td> -->
       </tr>
       <tr>
         <td> 9 </td>
         <td> ==<br/>!=<br/>===<br/>!==</td>
         <td> Comparison Operators </td>
         <td> Left </td>
-        <td> __eq<br/>__neq<br/>No<br/>No </td>
+        <!-- <td> __eq<br/>__neq<br/>No<br/>No </td> -->
       </tr>
       <tr>
         <td> 10 </td>
         <td> &amp;</td>
         <td> Bitwise And </td>
         <td> Left </td>
-        <td> __band </td>
+        <!-- <td> __band </td> -->
       </tr>
       <tr>
         <td> 11 </td>
         <td> ~ </td>
         <td> Bitwise Xor </td>
         <td> Left </td>
-        <td> __bxor </td>
+        <!-- <td> __bxor </td> -->
       </tr>
       <tr>
         <td> 12 </td>
         <td> | </td>
         <td> Bitwise Or </td>
         <td> Left </td>
-        <td> __bor </td>
+        <!-- <td> __bor </td> -->
       </tr>
       <tr>
         <td> 13 </td>
         <td> and </td>
         <td> Logical And </td>
         <td> Left </td>
-        <td> No </td>
+        <!-- <td> No </td> -->
       </tr>
       <tr>
         <td> 14 </td>
         <td> or </td>
         <td> Logical Or </td>
         <td> Left </td>
-        <td> No </td>
+        <!-- <td> No </td> -->
       </tr>
       <tr>
         <td> 15 </td>
         <td> ?:<br/>?? </td>
         <td> Ternary Operator<br/>Undef Coalescing Operator </td>
         <td> Right </td>
-        <td> No </td>
+        <!-- <td> No </td> -->
       </tr>
       <tr>
         <td> 16 </td>
@@ -262,7 +276,7 @@
         </td>
         <td> Assignment </td>
         <td> Right </td>
-        <td> No </td>
+        <!-- <td> No </td> -->
       </tr>
     </table>
     <!-- 
