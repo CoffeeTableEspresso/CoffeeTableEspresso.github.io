@@ -21,20 +21,40 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 29/04/2018 </h1>
+    <p> i got a hello world program (<code>print "hello world"</code>) working today, using the C version of the compiler. 
+      no memory leaks so far in that piece of the project. i'm going to have to add a few more structures in order to handle
+      some of the state that i need for the commpiler, e.g. keeping track of which functions and strings i've seen before, 
+      etc.
+    </p>
+    <p> i also think i have figured out how to do constant folding, which would be a nice optimisation, once i'm done the C
+      version of the compiler.
+    </p>
+    <p> i broke 4 000 loc the other day, but 1 200 of it is the Python compiler, so i actually have about 3 000 loc in C so
+      far. i likely will keep the Python version of the compiler around, as it's quite nice for testing new features quickly.
+    </p>
     <h1> 27/04/2018 </h1>
-    <p> i've got the lexer figured out i think, still have to add a few rules but it shouldn't be too bad. gonna start the parser
-      soon, that should be fine too. i'm gonna have to figure out how to make an AST in C, which is gonna suck. once i have this 
+    <p> i've got the lexer figured out i think, still have to add a few rules but it shouldn't be too bad. gonna start the 
+      parser
+      soon, that should be fine too. i'm gonna have to figure out how to make an AST in C, which is gonna suck. once i have 
+      this 
       all done tho, i can make the REPL. 
     </p>
-    <p> i'd love to add enums to YASL. i could have operator overloading on them, too, and methods, which would be very handy.
+    <p> i'd love to add enums to YASL. i could have operator overloading on them, too, and methods, which would be very 
+      handy.
       first priority is writing the compiler in C tho. 
     </p>
     <h1> 25/04/2018 </h1>
-    <p> i started writing the lexer in C, almost have something that can recognise all the right tokens i need for YASL. once
-      i've got that i'll make it read from files and output proper tokens for the parser piece (which i still need to write).
-      the compiler will be by far the hardest since i have a lot of state stored in there and i won't be able to rely so much on
-      Python's nice features. once i have that half written, gonna throw out the Python. i've duplicated a lot of data (e.g. the 
-      opcodes and the indices for methods in the vtables), which isn't ideal. plus if everything is written in C making a REPL
+    <p> i started writing the lexer in C, almost have something that can recognise all the right tokens i need for YASL. 
+      once
+      i've got that i'll make it read from files and output proper tokens for the parser piece (which i still need to 
+      write).
+      the compiler will be by far the hardest since i have a lot of state stored in there and i won't be able to rely so 
+      much on
+      Python's nice features. once i have that half written, gonna throw out the Python. i've duplicated a lot of data (e.g. 
+      the 
+      opcodes and the indices for methods in the vtables), which isn't ideal. plus if everything is written in C making a 
+      REPL
       will be a lot easier.
     </p>
     <h1> 24/04/2018 </h1>
@@ -44,13 +64,16 @@
     </p>
     <h1> 23/04/2018 </h1>
     <p> added <code>break</code> and <code>continue</code>. it was rather difficult to do, and i'm not too happy with my 
-      solution. basically, i added a stack to the compiler to keep track of where the last loop started, and then used a goto
-      as soon as i visited a break or continue, to jump back to that point. i need to do a major cleanup of the compiler soon.
+      solution. basically, i added a stack to the compiler to keep track of where the last loop started, and then used a 
+      goto
+      as soon as i visited a break or continue, to jump back to that point. i need to do a major cleanup of the compiler 
+      soon.
     </p>
     <p> succesfully lowered indexing earlier. got indexing to be merely a way to do calls to a <code>__get</code> and 
       <code>__set</code> methods. i think i'll add a <code>str.__get</code> method as well, while i'm at it.
     </p>
-    <p> gonna lower some constructs in YASL today. specifically, indexing to method calls. "lowering" is the concept of taking 
+    <p> gonna lower some constructs in YASL today. specifically, indexing to method calls. "lowering" is the concept of 
+      taking 
       a more complicated langauge construct (e.g. <code>for(int i = a; i < b; i++) { ... }</code>), and turning it into an
       equivalent, but simpler, construct (e.g. <code>{int i = a; while (i < b) { ...; i++; } }</code>). note that this is all
       done internally to the compiler; the user still has for-loops, and there's no indication lowering was done. this has 
