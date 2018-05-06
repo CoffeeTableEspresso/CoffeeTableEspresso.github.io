@@ -21,6 +21,19 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 06/05/2018 </h1>
+    <p> i got a lot done in the past week. i basically know how to implement the rest of the compiler, once i'm done i'll 
+      clean it up. then i can move on to the REPL.
+    </p>
+    <p> i think i can write a JetBrains plugin to do syntax highlighting and error checking for me, once i have YASL at a
+      good point. i might do that, although it depends on how hard it really is.
+    </p>
+    <p> once i add patterns, i'd also like to add "match" and "not match" operators, <code>=~</code> and <code>!~</code>,
+      with similar semantics to Perl. adding these would make something like <code>x=~y</code> ambiguous: does it mean "x 
+      matches y" or "set x to the bitwise negation of y"? to solve this, i'd probably shuffle around my operators:
+      <code>^</code> would be bitwise negation and xor (as <code>~</code> is now), and <code>**</code> would be 
+      exponentiation, freeing up <code>~</code> for whatever uses i need.
+    </p>
     <h1> 30/04/2018 </h1>
     <p> i got automatic semicolon insertion working today. i even outdid JavaScript. (not like that's hard but still.)
       in JS, something like <code>return x/* big multiline comment starting on same line as return*/ f(x)</code> 
