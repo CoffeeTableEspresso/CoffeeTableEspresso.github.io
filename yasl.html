@@ -34,6 +34,9 @@
         <li> <a href="yasl.html#3.1">3.1 &ndash; Lexical Conventions </a> </li>
         <li> <a href="yasl.html#3.2">3.2 &ndash; Variables </a> </li>
         <li> <a href="yasl.html#3.3">3.3 &ndash; Statements </a> </li>
+        <ul>
+          <li> <a href="yasl.html#3.3.1">3.3.1 &ndash; Function Declarations </a> </li>
+        </ul>
         <li> <a href="yasl.html#3.4">3.4 &ndash; Expressions </a> </li>
         <ul>
           <li> <a href="yasl.html#3.4.1">3.4.1 &ndash; Arithmetic Operators </a> </li>
@@ -42,10 +45,8 @@
           <li> <a href="yasl.html#3.4.4">3.4.4 &ndash; Comparison Operators </a> </li>
           <li> <a href="yasl.html#3.4.5">3.4.5 &ndash; Other Operators </a> </li>
           <li> <a href="yasl.html#3.4.6">3.4.6 &ndash; Precedence </a> </li>
-          <!--
-          <li> <a href="yasl.html#3.4.6">3.4.6 &ndahs; Function Calls </a> </li>
-          <li> <a href="yasl.html#3.4.7">3.4.7 &ndash; Function Definitions </a> </li>
-          -->
+          <li> <a href="yasl.html#3.4.7">3.4.7 &ndash; Function Calls </a> </li>
+          <li> <a href="yasl.html#3.4.8">3.4.8 &ndash; Method Calls </a> </li>
         </ul>
       </ul>
     </ul>
@@ -58,11 +59,11 @@
     <p> This section describes the basic concepts of the language. </p>
     <h3> <a name="2.1">2.1 &ndash; Values &amp; Types </a> </h3>
     <p> YASL is <em>dynamically typed</em>. There are no type definitions. All values carry their own type. </p>
-    <p> The basic types in YASL are: <em>undef</em>, <em>bool</em>, <em>int64</em>, and <em>float64</em>, <em>str8</em>, 
+    <p> The basic types in YASL are: <em>undef</em>, <em>bool</em>, <em>int64</em>, and <em>float64</em>, <em>str</em>, 
       <em>list</em>, and <em>map</em>. The type <em>undef</em> has a single value, <b>undef</b>, which is mainly useful
       because it is different from all other values. The type <em>bool</em> has two values, <b>true</b> and <b>false</b>.
-      <em>int64</em> represents integers with 64-bits of precision. <em>float64</em> represents floating-point values with 
-      64-bits of precision. <em>str8</em> are ascii strings. currently there is no support for unicode strings. <em>list</em>
+      <em>int64</em> represents integers with 64-bits of precision. <em>float64</em> represents IEEE floating-point values with 
+      64-bits of precision. <em>str</em> are ascii strings. currently there is no support for unicode strings. <em>list</em>
       is a resizing array. <em>map</em> is a dictionary of key-value pairs, where a value can be looked up quickly given a 
       key.
     </p>
@@ -74,13 +75,13 @@
     <p> Names in YASL consist of a  numbers, letters, and underscores, and may not start with a number. </p>
     <p> the following <em>keywords</em> are reserved and cannot be used as names: </p>
     <pre>
-     and    bool    break   continue  else    elseif  false   
-     file   float64 fn      for       if      int64   let       
-     list   map     or      print     return  str     struct    
-     true   undef  while   
+     and      bool    break     continue  else    elseif  enum   
+     false    file    float64   fn        for     if      int64     
+     let      list    map       or        print   return  str        
+     struct   true    undef     while   
     </pre>
-    <p> Of these, <em>bool</em>, <em>file</em>, <em>float64</em>, <em>int64</em>, <em>list</em>, <em>map</em>, <em>str</em>,
-      and <em>struct</em> are currently unused, but reserved for future use. 
+    <p> Of these, <em>bool</em>, <em>enum</em>, <em>file</em>, <em>float64</em>, <em>int64</em>, <em>list</em>, <em>map</em>, 
+      <em>str</em>, and <em>struct</em> are currently unused, but reserved for future use. 
     </p>
     <h3> <a name="3.2">3.2 &ndash; Variables </a> </h3>
     <p> Variables store values. There are two kinds of varialbes in YASL: local and global. </p>
@@ -94,6 +95,11 @@
     <p> <b>false</b>, <b>undef</b>, and <b>""</b> (empty string) are considered falsey, and all other values are truthy. 
       In particular, <b>0</b> and <b>0.0</b> are truthy. 
     </p>
+    <h4> <a name="3.3.1">3.3.1 &ndash; Function Declarations </a> </h4>
+    <p> functions can be declared with the following syntax: 
+      <code>fn_decl ::= "fn" ID ":" ID ("," ID)* "->" "{" stmt* "}"</code>. Functions calls are expressions, and implicitly
+      return <b>undef</b> if the function reaches the end of it's body with an explicit return.
+    </p>
     <h3> <a name="3.4">3.4 &ndash; Expressions </a> </h3>
     <h4> <a name="3.4.1">3.4.1 &ndash; Arithmetic Operators </a> </h4>
     <p> YASL supports the following arithmetic operators: </p>
@@ -104,6 +110,7 @@
         <li><b>/</b>: float division</li>
         <li><b>//</b>: integer division</li>
         <li><b>%</b>: modulo</li>
+        <li><b>**</b>: exponentiation</li>
         <li><b>-</b>: unary minus</li>
       </ul>
     <p> Float division always returns a float. Integer division and modulo are only defined for integers, and always return 
@@ -118,11 +125,11 @@
       <ul>
         <li><b>|</b>: bitwise or</li>
         <li><b>&</b>: bitwise and</li>
-        <li><b>~</b>: bitwise xor</li>
-        <li><b>~</b>: bitwise negation</li>
+        <li><b>^</b>: bitwise xor</li>
+        <li><b>^</b>: bitwise negation</li>
       </ul>
-    <p> all bitwise operators are only defined for integer operands. </p>
-    <p> <b>~</b> is bitwise xor if used as a binary operator, and bitwise negation if used as a unary operator. </p>
+    <p> All bitwise operators are only defined for integer operands. </p>
+    <p> <b>^</b> is bitwise xor if used as a binary operator, and bitwise negation if used as a unary operator. </p>
     <h4> <a name="3.4.3">3.4.3 &ndash; Logical Operators </a> </h4>
     <p> The logical operators in YASL are <b>!</b>, <b>and</b>, and <b>or</b>.  Like the control structures, the logical 
       operators consider <b>false</b>, <b>undef</b>, and <b>""</b> as falsey, and anything else as truthy.
@@ -134,7 +141,7 @@
     <h4> <a name ="3.4.4">3.4.4 &ndash; Comparison Operators </a> </h4>
     <p> YASL supports the following comparison operators: </p>
       <ul>
-        <li><b>===</b>: iudentity </li>
+        <li><b>===</b>: identity </li>
         <li><b>!==</b>: non-identity </li>
         <li><b>==</b>: equality </li>
         <li><b>!=</b>: inequality </li>
@@ -152,7 +159,7 @@
     <p> comparing anything with <b>undef</b> (including <b>undef</b> with itself) returns <b>undef</b>. </p>
     <h4> <a name="3.4.5">3.4.5 &ndash; Other Operators </a> </h4>
     <p> The <b>#</b> operator returns the size of its argument.  For strings, this is its length, and for maps and lists, this
-      is the number of elements they contain.  Using <b>#</b> on values of any other type is a runtime error.
+      is the number of elements they contain.  Using <b>#</b> on values of any other type is a type error.
     </p>
     <p> YASL supports the ternary operator, with the usual notation.  YASL also supports a nil-coalescing operator
       (<b>??</b>), which returns its left operand if the left operand is not <b>undef</b>, and returns its right operand 
@@ -161,7 +168,8 @@
     <p> Both these operators are right associative. </p>
     <p> YASL also supports concatenation with the <b>||</b> and <b>|||</b> operators. The difference between the two is that
       <b>|||</b> will always attempt to coerce both its arguments to strings before concatenating them, and it will place a space
-      between the two strings when it concatenates them. This is useful for concatenating a list and a str, for example.
+      between the two strings when it concatenates them. This is useful for concatenating a list and a str, for example. Using
+      <b>||</b> on a list and a string is a type error.
     </p>
     <p> Both concatenation operators are right associative. </p>
     <h4> <a name="3.4.6">3.4.6 &ndash; Precedence </a> </h4>
@@ -183,14 +191,14 @@
       </tr>
       <tr>
         <td> 2 </td>
-        <td> ^ </td>
+        <td> ** </td>
         <td> Exponentiation </td>
         <td> Right </td>
         <!-- <td> __pow </td> -->
       </tr>
       <tr>
         <td> 3 </td>
-        <td> +<br/>-<br/>#<br/>!<br/>~ </td>
+        <td> +<br/>-<br/>#<br/>!<br/>^ </td>
         <td> Unary Plus<br/>Unary Minus<br/>Length<br/>Logical Negation<br/>Bitwise Negation</td>
         <td> Right </td>
         <!-- <td> __pos<br/>__neg<br/>__len<br/>__not<br/>__bnot </td> -->
@@ -246,7 +254,7 @@
       </tr>
       <tr>
         <td> 11 </td>
-        <td> ~ </td>
+        <td> ^ </td>
         <td> Bitwise Xor </td>
         <td> Left </td>
         <!-- <td> __bxor </td> -->
@@ -281,18 +289,22 @@
       </tr>
       <tr>
         <td> 16 </td>
-        <td> =<br/>^=<br/>*=<br/>/=<br/>//=<br/>%=<br/>+=<br/>-=<br/>&gt;&gt;=<br/>&lt;&lt;=<br/>
-             ||=<br/>|||=<br/>&amp;=<br/>~=<br/>|=<br/>??=
+        <td> =<br/>**=<br/>*=<br/>/=<br/>//=<br/>%=<br/>+=<br/>-=<br/>&gt;&gt;=<br/>&lt;&lt;=<br/>
+             ||=<br/>|||=<br/>&amp;=<br/>^=<br/>|=<br/>??=
         </td>
         <td> Assignment </td>
         <td> Right </td>
         <!-- <td> No </td> -->
       </tr>
     </table>
-    <!-- 
-    <h4> <a name="3.4.6">3.4.6 &ndash; Function Calls </a> </h4>
-    <h4> <a name="3.4.7">3.4.7 &ndash; Function Definitons </a> </h4> 
-    -->
+    <h4> <a name="3.4.7">3.4.7 &ndash; Function Calls </a> </h4>
+    <p> Functions can be called with the usual C-style syntax: e.g. <code>open("sample.txt", "a")</code> is a call to the 
+      function <b>open</b>, with two parameters.
+    </p>
+    <h4> <a name="3.4.8">3.4.8 &ndash; Method Calls </a> </h4>
+    <p> Methods can be called with the usual dot syntax: e.g. <code>f.close()</code> calls the methods <b>close</b> on 
+      <b>f</b>.
+    </p>
   </div>
   
 </body>
