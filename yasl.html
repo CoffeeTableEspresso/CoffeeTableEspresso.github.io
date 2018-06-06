@@ -442,7 +442,187 @@
         <td> prompts user for input using <em>msg</em>, then returns user input as string. </td>
       </tr>
     </table>
+    <p> YASL provides the following methods for <em>float64</em>: </p>
+    <table>
+      <tr>
+        <th> Method Name </th>
+        <th> Arguments </th>
+        <th> Purpose </th>
+      </tr>
+      <tr>
+        <td> .toint64() </td>
+        <td> </td>
+        <td> Converts <em>float64</em> to an <em>int64</em>, truncating if necessary. </td>
+      </tr>
+      <tr>
+        <td> .tostr() </td>
+        <td> </td>
+        <td> Converts <em>float64</em> to a <em>str</em>. </td>
+      </tr>
+    </table>
+    <p> YASL provides the following methods for <em>int64</em>: </p>
+    <table>
+      <tr>
+        <th> Method Name </th>
+        <th> Arguments </th>
+        <th> Purpose </th>
+      </tr>
+      <tr>
+        <td> .tofloat64() </td>
+        <td> </td>
+        <td> Converts <em>int64</em> to an <em>float64</em>. </td>
+      </tr>
+      <tr>
+        <td> .tostr() </td>
+        <td> </td>
+        <td> Converts <em>int64</em> to a <em>str</em>. </td>
+      </tr>
+    </table>
+    <p> YASL provides the following methods for <em>bool</em>: </p>
+    <table>
+      <tr>
+        <th> Method Name </th>
+        <th> Arguments </th>
+        <th> Purpose </th>
+      </tr>
+      <tr>
+        <td> .tostr() </td>
+        <td> </td>
+        <td> Converts <em>bool</em> to a <em>str</em>. </td>
+      </tr>
+    </table>
     <p> YASL provides the following methods for <em>str</em>: </p>
+    <table>
+      <tr>
+        <th> Method Name </th>
+        <th> Arguments </th>
+        <th> Purpose </th>
+      </tr>
+      <tr>
+        <td> .tobool() </td>
+        <td> </td>
+        <td> Converts the given string to a bool: false if string is empty, true otherwise. </td>
+      </tr>
+      <tr>
+        <td> .tostr() </td>
+        <td> </td>
+        <td> Does nothing. </td>
+      </tr>
+      <tr>
+        <td> .upcase() </td>
+        <td> </td>
+        <td> Converts the given string to uppercase. </td>
+      </tr>
+      <tr>
+        <td> .downcase() </td>
+        <td> </td>
+        <td> Converts the string to lowercase. </td>
+      </tr>
+      <tr>
+        <td> .isalnum() </td>
+        <td> </td>
+        <td> Returns true if the given string is only letters and digits, false otherwise. </td>
+      </tr>
+      <tr>
+        <td> .isal() </td>
+        <td> </td>
+        <td> Returns true if the given string is only letters, false otherwise. </td>
+      </tr>
+      <tr>
+        <td> .isnum() </td>
+        <td> </td>
+        <td> Returns true if the given string is only digits, false otherwise. </td>
+      </tr>
+      <tr>
+        <td> .isspace() </td>
+        <td> </td>
+        <td> Returns true if the given string is only whitespace characters, false otherwise. </td>
+      </tr>
+      <tr> 
+        <td> .startswith(substr) </td>
+        <td> substr: string to check against the start of given string. </td>
+        <td> Returns true if the start of the given string is <em>substr</em>. </td>
+      </tr>
+      <tr> 
+        <td> .endswith(substr) </td>
+        <td> substr: string to check against the end of given string. </td>
+        <td> Returns true if the end of the given string is <em>substr</em>. </td>
+      </tr>
+      <tr>
+        <td> .search(substr) </td>
+        <td> substr: string to try to find in given string. </td>
+        <td> Returns index of first instance of <em>substr</em> in given string, <b>-1</b> if not found. </td>
+      </tr>
+      <tr>
+        <td> .split(delim) </td>
+        <td> delim: substring to split given string at. </td>
+        <td> Splits given string at every occurance of <em>delim</em>, returning a list of all the substrings. </td>
+      </tr>
+    </table>
+    <p> YASL provides the following methods for <em>list</em>: </p>
+    <table>
+      <tr>
+        <th> Method Name </th>
+        <th> Arguments </th>
+        <th> Purpose </th>
+      </tr>
+      <tr>
+        <td> .append(item) </td>
+        <td> item: value to append to end of list. </td>
+        <td> appends <em>value</em> to end of list. </td>
+      </tr>
+    </table>
+    <p> YASL provides the following methods for <em>map</em>: </p>
+    <table>
+      <tr>
+        <th> Method Name </th>
+        <th> Arguments </th>
+        <th> Purpose </th>
+      </tr>
+      <tr>
+        <td> .keys() </td>
+        <td> </td>
+        <td> Returns a list of all keys found in map. </td>
+      </tr>
+      <tr>
+        <td> .values() </td>
+        <td> </td>
+        <td> Returns a list of all values found in map. </td>
+      </tr>
+    </table>
+    <p> YASL provides the following methods for <em>file</em>: </p>
+    <table>
+      <tr>
+        <th> Method Name </th>
+        <th> Arguments </th>
+        <th> Purpose </th>
+      </tr>
+      <tr>
+        <td> .close() </td>
+        <td> </td>
+        <td> Closes file opened with <em>open</em> </td>
+      </tr>
+      <tr>
+        <td> .pclose() </td>
+        <td> </td>
+        <td> Closes file opened with <em>popen</em> </td>
+      </tr>
+      <tr>
+        <td> .read() </td>
+        <td> </td>
+        <td> Reads entire content of file. </td>
+      </tr>
+      <tr>
+        <td> .readline() </td>
+        <td> </td>
+        <td> Reads next line of file. </td>
+      </tr>
+      <tr>
+        <td> .write(msg) </td>
+        <td> msg: string to write to file. </td>
+        <td> Writes <em>msg</em> to file. </td>
+      </tr>
+    </table>
   </div>
   
 </body>
