@@ -49,6 +49,7 @@
           <li> <a href="yasl.html#3.4.8">3.4.8 &ndash; Method Calls </a> </li>
         </ul>
       </ul>
+      <li> <a href="yasl.html#4">4 &ndash; The Standard Library </a> </li>
     </ul>
   </div>
   
@@ -305,6 +306,35 @@
     <p> Methods can be called with the usual dot syntax: e.g. <code>f.close()</code> calls the methods <b>close</b> on 
       <b>f</b>.
     </p>
+    <h2> <a name="4">4 &ndash; The Standard Library </a> </h2>
+    <p> YASL provides the following builtin functions: </p>
+    <table>
+      <tr>
+        <th> Function Name </th>
+        <th> Arguments </th>
+        <th> Purpose </th>
+      </tr>
+      <tr>
+        <td> open(name, mode) </td>
+        <td> name: name of file to open.<br/>
+             mode: mode to open file in, e.g. "r" for readonly.
+        </td>
+        <td> opens the file given by <em>name</em> in mode given by <em>mode</em>. </td>
+      </tr>
+      <tr>
+        <td> popen(command, mode) </td>
+        <td> command: command to run in shell.<br/>
+             mode: end of process to connect to, either "r" or "w".
+        </td>
+        <td> runs the command given by <em>command</em> in the shell, and returns a stream to either read or write from the pipe
+          , depending on <em>mode</em>. </td>
+      </tr>
+      <tr>
+        <td> input(msg) </td>
+        <td> msg: message to print to prompt user for input. </td>
+        <td> prompts user for input using <em>msg</em>, then returns user input as string. </td>
+      </tr>
+    </table>
   </div>
   
 </body>
