@@ -51,111 +51,101 @@
       </ul>
       <li> <a href="yasl.html#4">4 &ndash; The Standard Library </a> </li>
     </ul>
-82
 
      struct   true    undef     while   
 
-83
+
 
     </pre>
 
-84
 
     <p> Of these, <em>bool</em>, <em>enum</em>, <em>file</em>, <em>float64</em>, <em>int64</em>, <em>list</em>, <em>map</em>, 
 
-85
 
       <em>str</em>, and <em>struct</em> are currently unused, but reserved for future use. 
 
-86
 
     </p>
 
-87
+
 
     <h3> <a name="3.2">3.2 &ndash; Variables </a> </h3>
 
-88
 
     <p> Variables store values. There are two kinds of varialbes in YASL: local and global. </p>
 
-89
+
 
     <p> All variables are global unless not declared in the global scope, in which case the variable is local. Variables
 
-90
-
       are declared with <code>decl_stmt ::= "let" NAME ["=" expr]</code>.</p>
 
-91
 
     <h3> <a name="3.3">3.3 &ndash; Statements </a> </h3>
 
-92
+
 
     <p> YASL has <em>if-</em> and <em>while-</em> statements with the following syntax:
 
-93
+
 
       <code>while_loop ::= "while" expr "{" {stmt} "}"</code>
 
-94
 
       <code>if_stmt ::= "if" expr "{" stmt* "}" ("elseif" expr "{" stmt* "}")* ["else" "{" stmt* "}"]</code>.
 
-95
 
     </p>
 
-96
+
 
     <p> <b>false</b>, <b>undef</b>, and <b>""</b> (empty string) are considered falsey, and all other values are truthy. 
 
-97
+
 
       In particular, <b>0</b> and <b>0.0</b> are truthy. 
 
-98
+
 
     </p>
 
-99
+
 
     <h4> <a name="3.3.1">3.3.1 &ndash; Function Declarations </a> </h4>
 
-100
+
 
     <p> functions can be declared with the following syntax: 
 
-101
+
 
       <code>fn_decl ::= "fn" ID ":" ID ("," ID)* "->" "{" stmt* "}"</code>. Functions calls are expressions, and implicitly
 
-102
+
 
       return <b>undef</b> if the function reaches the end of it's body with an explicit return.
 
-103
+
 
     </p>
 
-104
+
 
     <h3> <a name="3.4">3.4 &ndash; Expressions </a> </h3>
 
-105
+
 
     <h4> <a name="3.4.1">3.4.1 &ndash; Arithmetic Operators </a> </h4>
 
-106
+
 
     <p> YASL supports the following arithmetic operators: </p>
 
-107
+
 
       <ul>
 
-108
+
 
         <li><b>+</b>: addition</li>  </div>
   
