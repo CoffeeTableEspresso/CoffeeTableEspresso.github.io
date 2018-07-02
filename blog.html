@@ -21,6 +21,22 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 01/07/2018 </h1>
+    <p> I've finally figured out how to do foreach loops, by making minor changes to the VM. Basically, I have a second stack
+      that stores all the things I iterate over, and an index for how far in I am. At the start of the foreach loop, I just
+      push the iterable onto the second stack, then increment the index at the end of each loop iteration. The nice part 
+      about this is how lightweight it is, and how it can be reused to do list and table comprehensions.
+    </p>
+    <h1> 28/06/2018 </h1>
+    <p> I finally figured out how to do objects in YASL. Basically, I just have hash-tables, and first class functions,
+      and special syntax for accessing functions, and separate syntax for accessing functions and passing the object as
+      the first parameter. If this seems familar, it's because it's lifted straight from Lua. 
+    </p>
+    <p> Actually implementing it was a bit more difficult. I first had to make all functions first class, including 
+      changing how calls are done. I then had to remove the methods that I previously had, since they were different from
+      the new style that I wanted. I eventually got everything, but I had to basically redo all the functions and methods
+      in YASL.
+    </p>
     <h1> 08/06/2018 </h1>
     <h2> Why Signed Integer Overflow is Undefined in C </h2>
     <p> People often take integer overflow for granted in C/C++, assuming it will simply "wrap around". A closer look
@@ -42,10 +58,12 @@
     <p> One thing to note about sign-magnitude representation is that there is a positive and a negative 0: <code>0000</code>
       is positive 0, and <code>1000</code> is negative 0.
     </p>
-    <p> So what happens when we overflow a sign magnitude number, without any checks to see whether we have overflowed, that is,
+    <p> So what happens when we overflow a sign magnitude number, without any checks to see whether we have overflowed, that 
+      is,
       just throwing away whatever bits might be "carried off the left" of the result? 
     </p>
-    <p> <code>0111</code> is our biggest positive sign magnitude number, so what happens when we add 1? We get <code>1000</code>,
+    <p> <code>0111</code> is our biggest positive sign magnitude number, so what happens when we add 1? We get 
+      <code>1000</code>,
       or negative 0! Completely different from what happens when we overflow 2's complement numbers! 
     </p>
     <h3> 1's Complement Integers </h3>
@@ -54,8 +72,10 @@
     </p>
     <p> For example, to negate <code>0100</code>, you flip the bits: <code>1011</code>. </p>
     <p> Note that, just as with sign magnitude, there are two 0's: <code>0000</code> and <code>1111</code>. </p>
-    <p> Now let's see what happens when we overflow 1's complement integers: The biggest integer (positive 7) <code>0111</code> 
-      plus one gives <code>1000</code>, which is negative 7. This is again different from 2's complement, where we would have
+    <p> Now let's see what happens when we overflow 1's complement integers: The biggest integer (positive 7) 
+      <code>0111</code> 
+      plus one gives <code>1000</code>, which is negative 7. This is again different from 2's complement, where we would 
+      have
       gotten negative 8.
     </p>
     <h3> Conclusion </h3>
@@ -101,7 +121,8 @@
     </p>
     <h1> 29/04/2018 </h1>
     <p> i got a hello world program (<code>print "hello world"</code>) working today, using the C version of the compiler. 
-      no memory leaks so far in that piece of the project. i'm going to have to add a few more structures in order to handle
+      no memory leaks so far in that piece of the project. i'm going to have to add a few more structures in order to 
+      handle
       some of the state that i need for the commpiler, e.g. keeping track of which functions and strings i've seen before, 
       etc.
     </p>
