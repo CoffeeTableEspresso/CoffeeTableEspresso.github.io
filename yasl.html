@@ -51,103 +51,6 @@
       </ul>
       <li> <a href="yasl.html#4">4 &ndash; The Standard Library </a> </li>
     </ul>
-
-     struct   true    undef     while   
-
-
-
-    </pre>
-
-
-    <p> Of these, <em>bool</em>, <em>enum</em>, <em>file</em>, <em>float64</em>, <em>int64</em>, <em>list</em>, <em>map</em>, 
-
-
-      <em>str</em>, and <em>struct</em> are currently unused, but reserved for future use. 
-
-
-    </p>
-
-
-
-    <h3> <a name="3.2">3.2 &ndash; Variables </a> </h3>
-
-
-    <p> Variables store values. There are two kinds of varialbes in YASL: local and global. </p>
-
-
-
-    <p> All variables are global unless not declared in the global scope, in which case the variable is local. Variables
-
-      are declared with <code>decl_stmt ::= "let" NAME ["=" expr]</code>.</p>
-
-
-    <h3> <a name="3.3">3.3 &ndash; Statements </a> </h3>
-
-
-
-    <p> YASL has <em>if-</em> and <em>while-</em> statements with the following syntax:
-
-
-
-      <code>while_loop ::= "while" expr "{" {stmt} "}"</code>
-
-
-      <code>if_stmt ::= "if" expr "{" stmt* "}" ("elseif" expr "{" stmt* "}")* ["else" "{" stmt* "}"]</code>.
-
-
-    </p>
-
-
-
-    <p> <b>false</b>, <b>undef</b>, and <b>""</b> (empty string) are considered falsey, and all other values are truthy. 
-
-
-
-      In particular, <b>0</b> and <b>0.0</b> are truthy. 
-
-
-
-    </p>
-
-
-
-    <h4> <a name="3.3.1">3.3.1 &ndash; Function Declarations </a> </h4>
-
-
-
-    <p> functions can be declared with the following syntax: 
-
-
-
-      <code>fn_decl ::= "fn" ID ":" ID ("," ID)* "->" "{" stmt* "}"</code>. Functions calls are expressions, and implicitly
-
-
-
-      return <b>undef</b> if the function reaches the end of it's body with an explicit return.
-
-
-
-    </p>
-
-
-
-    <h3> <a name="3.4">3.4 &ndash; Expressions </a> </h3>
-
-
-
-    <h4> <a name="3.4.1">3.4.1 &ndash; Arithmetic Operators </a> </h4>
-
-
-
-    <p> YASL supports the following arithmetic operators: </p>
-
-
-
-      <ul>
-
-
-
-        <li><b>+</b>: addition</li>  </div>
   
   <div>
     <h2> <a name="1">1 &ndash; Introduction </a> </h2>
@@ -344,8 +247,8 @@
       </tr>
       <tr>
         <td> 10 </td>
-        <td> ||<br/>|||</td>
-        <td> Concatenation<br/>Hard Concatenation </td>
+        <td> ~ </td>
+        <td> Concatenation </td>
         <td> Right </td>
         <!-- <td> __concat<br/>No </td> -->      
       </tr>
@@ -365,14 +268,14 @@
       </tr>
       <tr>
         <td> 13 </td>
-        <td> and </td>
+        <td> && </td>
         <td> Logical And </td>
         <td> Left </td>
         <!-- <td> No </td> -->
       </tr>
       <tr>
         <td> 14 </td>
-        <td> or </td>
+        <td> || </td>
         <td> Logical Or </td>
         <td> Left </td>
         <!-- <td> No </td> -->
@@ -387,7 +290,7 @@
       <tr>
         <td> 16 </td>
         <td> =<br/>**=<br/>*=<br/>/=<br/>//=<br/>%=<br/>+=<br/>-=<br/>&gt;&gt;=<br/>&lt;&lt;=<br/>
-             ||=<br/>|||=<br/>&amp;=<br/>^=<br/>|=<br/>??=
+             ~=<br/>||=<br/>&&=<br/>&amp;=<br/>^=<br/>|=<br/>??=
         </td>
         <td> Assignment </td>
         <td> Right </td>
