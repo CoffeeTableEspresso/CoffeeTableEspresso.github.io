@@ -39,12 +39,7 @@
         </ul>
         <li> <a href="yasl.html#3.4">3.4 &ndash; Expressions </a> </li>
         <ul>
-          <li> <a href="yasl.html#3.4.2">3.4.2 &ndash; Arithmetic Operators </a> </li>
-          <li> <a href="yasl.html#3.4.3">3.4.3 &ndash; Bitwise Operators </a>
-          <li> <a href="yasl.html#3.4.4">3.4.4 &ndash; Logical Operators </a> </li>
           <li> <a href="yasl.html#3.4.5">3.4.5 &ndash; Comparison Operators </a> </li>
-          <li> <a href="yasl.html#3.4.6">3.4.6 &ndash; Other Operators </a> </li>
-          <li> <a href="yasl.html#3.4.7">3.4.7 &ndash; Precedence </a> </li>
           <li> <a href="yasl.html#3.4.8">3.4.8 &ndash; Function Calls </a> </li>
           <li> <a href="yasl.html#3.4.9">3.4.9 &ndash; Method Calls </a> </li>
         </ul>
@@ -101,43 +96,6 @@
       return <b>undef</b> if the function reaches the end of it's body with an explicit return.
     </p>
     <h3> <a name="3.4">3.4 &ndash; Expressions </a> </h3>
-    <h4> <a name="3.4.2">3.4.2 &ndash; Arithmetic Operators </a> </h4>
-    <p> YASL supports the following arithmetic operators: </p>
-      <ul>
-        <li><b>+</b>: addition</li>
-        <li><b>-</b>: subtraction</li>
-        <li><b>*</b>: multiplication</li>
-        <li><b>/</b>: float division</li>
-        <li><b>//</b>: integer division</li>
-        <li><b>%</b>: modulo</li>
-        <li><b>**</b>: exponentiation</li>
-        <li><b>-</b>: unary minus</li>
-      </ul>
-    <p> Float division always returns a float. Integer division and modulo are only defined for integers, and always return 
-      an integer.
-    </p>
-    <p> All other binary arithmetic operator work as 
-      follows: If both operands are integers, the result is an integer. Otherwise, the operands are converted to floats 
-      and the result is a float.
-    </p>
-    <h4> <a name="3.4.3">3.4.3 &ndash; Bitwise Operators </a> </h4>
-    <p> YASL supports the following bitwise operators: </p>
-      <ul>
-        <li><b>|</b>: bitwise or</li>
-        <li><b>&</b>: bitwise and</li>
-        <li><b>^</b>: bitwise xor</li>
-        <li><b>^</b>: bitwise negation</li>
-      </ul>
-    <p> All bitwise operators are only defined for integer operands. </p>
-    <p> <b>^</b> is bitwise xor if used as a binary operator, and bitwise negation if used as a unary operator. </p>
-    <h4> <a name="3.4.4">3.4.4 &ndash; Logical Operators </a> </h4>
-    <p> The logical operators in YASL are <b>!</b>, <b>and</b>, and <b>or</b>.  Like the control structures, the logical 
-      operators consider <b>false</b>, <b>undef</b>, and <b>""</b> as falsey, and anything else as truthy.
-    </p>
-    <p> <b>!</b> always returns a boolean. <b>and</b> returns its first argument if that argument is falsey, otherwise it 
-      returns its second argument. <b>or</b> returns its first argument if that argument is truthy, otherwise it returns its 
-      second argument.
-    </p>
     <h4> <a name ="3.4.5">3.4.5 &ndash; Comparison Operators </a> </h4>
     <p> YASL supports the following comparison operators: </p>
       <ul>
@@ -157,146 +115,6 @@
       type, value, and identity (if applicable). 
     </p>
     <p> comparing anything with <b>undef</b> (including <b>undef</b> with itself) returns <b>undef</b>. </p>
-    <h4> <a name="3.4.6">3.4.6 &ndash; Other Operators </a> </h4>
-    <p> The <b>#</b> operator returns the size of its argument.  For strings, this is its length, and for maps and lists, this
-      is the number of elements they contain.  Using <b>#</b> on values of any other type is a type error.
-    </p>
-    <p> YASL supports the ternary operator, with the usual notation.  YASL also supports a nil-coalescing operator
-      (<b>??</b>), which returns its left operand if the left operand is not <b>undef</b>, and returns its right operand 
-      otherwise.
-    </p>
-    <p> Both these operators are right associative. </p>
-    <p> YASL also supports concatenation with the <b>||</b> and <b>|||</b> operators. The difference between the two is that
-      <b>|||</b> will always attempt to coerce both its arguments to strings before concatenating them, and it will place a space
-      between the two strings when it concatenates them. This is useful for concatenating a list and a str, for example. Using
-      <b>||</b> on a list and a string is a type error.
-    </p>
-    <p> Both concatenation operators are right associative. </p>
-    <h4> <a name="3.4.7">3.4.7 &ndash; Precedence </a> </h4>
-    <p> The following table shows the precedence of YASL operators, from highest to lowest: </p>
-    <table>
-      <tr>
-        <th> Precedence </th>
-        <th> Operators </th>
-        <th> Description </th>
-        <th> Associativity </th>
-        <!-- <th> Overloadable </th> -->
-      </tr>
-      <tr>
-        <td> 1 </td>
-        <td> ()<br/>[]<br/>. </td>
-        <td> Function Calls<br/>Indexing<br/>Member Access</td>
-        <td> Left </td>
-        <!-- <td> No<br/>__set/__get<br/>No</td> -->
-      </tr>
-      <tr>
-        <td> 2 </td>
-        <td> ** </td>
-        <td> Exponentiation </td>
-        <td> Right </td>
-        <!-- <td> __pow </td> -->
-      </tr>
-      <tr>
-        <td> 3 </td>
-        <td> +<br/>-<br/>#<br/>!<br/>^ </td>
-        <td> Unary Plus<br/>Unary Minus<br/>Length<br/>Logical Negation<br/>Bitwise Negation</td>
-        <td> Right </td>
-        <!-- <td> __pos<br/>__neg<br/>__len<br/>__not<br/>__bnot </td> -->
-      </tr>
-      <tr>
-        <td> 4 </td>
-        <td> *<br/>/<br/>//<br/>%<br/> </td>
-        <td>  Multiplication<br/>Float Division<br/>Integer Division<br/>Remainder</td>
-        <td> Left </td>
-        <!-- <td> __mul<br/>__fdiv<br/>__idiv<br/>__mod </td> -->
-      </tr>
-      <tr>
-        <td> 5 </td>
-        <td> +<br/>- </td>
-        <td> Addition<br/>Subtraction </td>
-        <td> Left </td>
-        <!-- <td> __add<br/>__sub </td> -->
-      </tr>
-      <tr>
-        <td> 6 </td>
-        <td> &lt;&lt;<br/>&gt;&gt; </td>
-        <td> Left Logical Shift<br/>Right Logical Shift</td>
-        <td> Left </td>
-        <!-- <td> __lshift<br/>__rshift </td> -->
-      </tr>
-            <tr>
-        <td> 7 </td>
-        <td> &amp;</td>
-        <td> Bitwise And </td>
-        <td> Left </td>
-        <!-- <td> __band </td> -->
-      </tr>
-      <tr>
-        <td> 8 </td>
-        <td> ^ </td>
-        <td> Bitwise Xor </td>
-        <td> Left </td>
-        <!-- <td> __bxor </td> -->
-      </tr>
-      <tr>
-        <td> 9 </td>
-        <td> | </td>
-        <td> Bitwise Or </td>
-        <td> Left </td>
-        <!-- <td> __bor </td> -->
-      </tr>
-      <tr>
-        <td> 10 </td>
-        <td> ~ </td>
-        <td> Concatenation </td>
-        <td> Right </td>
-        <!-- <td> __concat<br/>No </td> -->      
-      </tr>
-      <tr>
-        <td> 11 </td>
-        <td> &gt;=<br/>&gt;<br/>&lt;=<br/>&lt; </td>
-        <td> Comparison Operators </td>
-        <td> Left </td>
-        <!-- <td> __ge<br/>__gt<br/>__le<br/>__lt </td> -->
-      </tr>
-      <tr>
-        <td> 12 </td>
-        <td> ==<br/>!=<br/>===<br/>!==</td>
-        <td> Comparison Operators </td>
-        <td> Left </td>
-        <!-- <td> __eq<br/>__neq<br/>No<br/>No </td> -->
-      </tr>
-      <tr>
-        <td> 13 </td>
-        <td> && </td>
-        <td> Logical And </td>
-        <td> Left </td>
-        <!-- <td> No </td> -->
-      </tr>
-      <tr>
-        <td> 14 </td>
-        <td> || </td>
-        <td> Logical Or </td>
-        <td> Left </td>
-        <!-- <td> No </td> -->
-      </tr>
-      <tr>
-        <td> 15 </td>
-        <td> ?:<br/>?? </td>
-        <td> Ternary Operator<br/>Undef Coalescing Operator </td>
-        <td> Right </td>
-        <!-- <td> No </td> -->
-      </tr>
-      <tr>
-        <td> 16 </td>
-        <td> =<br/>**=<br/>*=<br/>/=<br/>//=<br/>%=<br/>+=<br/>-=<br/>&gt;&gt;=<br/>&lt;&lt;=<br/>
-             ~=<br/>&amp;=<br/>^=<br/>|=<br/>&&=<br/>||=<br/>??=
-        </td>
-        <td> Assignment </td>
-        <td> Right </td>
-        <!-- <td> No </td> -->
-      </tr>
-    </table>
     <h4> <a name="3.4.8">3.4.8 &ndash; Function Calls </a> </h4>
     <p> Functions can be called with the usual C-style syntax: e.g. <code>open("sample.txt", "a")</code> is a call to the 
       function <b>open</b>, with two parameters.
