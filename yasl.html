@@ -39,14 +39,14 @@
         </ul>
         <li> <a href="yasl.html#3.4">3.4 &ndash; Expressions </a> </li>
         <ul>
-          <li> <a href="yasl.html#3.4.1">3.4.1 &ndash; Arithmetic Operators </a> </li>
-          <li> <a href="yasl.html#3.4.2">3.4.2 &ndash; Bitwise Operators </a>
-          <li> <a href="yasl.html#3.4.3">3.4.3 &ndash; Logical Operators </a> </li>
-          <li> <a href="yasl.html#3.4.4">3.4.4 &ndash; Comparison Operators </a> </li>
-          <li> <a href="yasl.html#3.4.5">3.4.5 &ndash; Other Operators </a> </li>
-          <li> <a href="yasl.html#3.4.6">3.4.6 &ndash; Precedence </a> </li>
-          <li> <a href="yasl.html#3.4.7">3.4.7 &ndash; Function Calls </a> </li>
-          <li> <a href="yasl.html#3.4.8">3.4.8 &ndash; Method Calls </a> </li>
+          <li> <a href="yasl.html#3.4.2">3.4.2 &ndash; Arithmetic Operators </a> </li>
+          <li> <a href="yasl.html#3.4.3">3.4.3 &ndash; Bitwise Operators </a>
+          <li> <a href="yasl.html#3.4.4">3.4.4 &ndash; Logical Operators </a> </li>
+          <li> <a href="yasl.html#3.4.5">3.4.5 &ndash; Comparison Operators </a> </li>
+          <li> <a href="yasl.html#3.4.6">3.4.6 &ndash; Other Operators </a> </li>
+          <li> <a href="yasl.html#3.4.7">3.4.7 &ndash; Precedence </a> </li>
+          <li> <a href="yasl.html#3.4.8">3.4.8 &ndash; Function Calls </a> </li>
+          <li> <a href="yasl.html#3.4.9">3.4.9 &ndash; Method Calls </a> </li>
         </ul>
       </ul>
       <li> <a href="yasl.html#4">4 &ndash; The Standard Library </a> </li>
@@ -101,7 +101,7 @@
       return <b>undef</b> if the function reaches the end of it's body with an explicit return.
     </p>
     <h3> <a name="3.4">3.4 &ndash; Expressions </a> </h3>
-    <h4> <a name="3.4.1">3.4.1 &ndash; Arithmetic Operators </a> </h4>
+    <h4> <a name="3.4.2">3.4.2 &ndash; Arithmetic Operators </a> </h4>
     <p> YASL supports the following arithmetic operators: </p>
       <ul>
         <li><b>+</b>: addition</li>
@@ -120,7 +120,7 @@
       follows: If both operands are integers, the result is an integer. Otherwise, the operands are converted to floats 
       and the result is a float.
     </p>
-    <h4> <a name="3.4.2">3.4.2 &ndash; Bitwise Operators </a> </h4>
+    <h4> <a name="3.4.3">3.4.3 &ndash; Bitwise Operators </a> </h4>
     <p> YASL supports the following bitwise operators: </p>
       <ul>
         <li><b>|</b>: bitwise or</li>
@@ -130,7 +130,7 @@
       </ul>
     <p> All bitwise operators are only defined for integer operands. </p>
     <p> <b>^</b> is bitwise xor if used as a binary operator, and bitwise negation if used as a unary operator. </p>
-    <h4> <a name="3.4.3">3.4.3 &ndash; Logical Operators </a> </h4>
+    <h4> <a name="3.4.4">3.4.4 &ndash; Logical Operators </a> </h4>
     <p> The logical operators in YASL are <b>!</b>, <b>and</b>, and <b>or</b>.  Like the control structures, the logical 
       operators consider <b>false</b>, <b>undef</b>, and <b>""</b> as falsey, and anything else as truthy.
     </p>
@@ -138,7 +138,7 @@
       returns its second argument. <b>or</b> returns its first argument if that argument is truthy, otherwise it returns its 
       second argument.
     </p>
-    <h4> <a name ="3.4.4">3.4.4 &ndash; Comparison Operators </a> </h4>
+    <h4> <a name ="3.4.5">3.4.5 &ndash; Comparison Operators </a> </h4>
     <p> YASL supports the following comparison operators: </p>
       <ul>
         <li><b>===</b>: identity </li>
@@ -157,7 +157,7 @@
       type, value, and identity (if applicable). 
     </p>
     <p> comparing anything with <b>undef</b> (including <b>undef</b> with itself) returns <b>undef</b>. </p>
-    <h4> <a name="3.4.5">3.4.5 &ndash; Other Operators </a> </h4>
+    <h4> <a name="3.4.6">3.4.6 &ndash; Other Operators </a> </h4>
     <p> The <b>#</b> operator returns the size of its argument.  For strings, this is its length, and for maps and lists, this
       is the number of elements they contain.  Using <b>#</b> on values of any other type is a type error.
     </p>
@@ -172,7 +172,7 @@
       <b>||</b> on a list and a string is a type error.
     </p>
     <p> Both concatenation operators are right associative. </p>
-    <h4> <a name="3.4.6">3.4.6 &ndash; Precedence </a> </h4>
+    <h4> <a name="3.4.7">3.4.7 &ndash; Precedence </a> </h4>
     <p> The following table shows the precedence of YASL operators, from highest to lowest: </p>
     <table>
       <tr>
@@ -297,11 +297,11 @@
         <!-- <td> No </td> -->
       </tr>
     </table>
-    <h4> <a name="3.4.7">3.4.7 &ndash; Function Calls </a> </h4>
+    <h4> <a name="3.4.8">3.4.8 &ndash; Function Calls </a> </h4>
     <p> Functions can be called with the usual C-style syntax: e.g. <code>open("sample.txt", "a")</code> is a call to the 
       function <b>open</b>, with two parameters.
     </p>
-    <h4> <a name="3.4.8">3.4.8 &ndash; Method Calls </a> </h4>
+    <h4> <a name="3.4.9">3.4.9 &ndash; Method Calls </a> </h4>
     <p> Methods can be called with the usual dot syntax: e.g. <code>f.close()</code> calls the methods <b>close</b> on 
       <b>f</b>.
     </p>
