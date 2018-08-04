@@ -21,6 +21,17 @@
     <p> mostly me writing about stuff i'm working on for future reference. link to my current project's webpage, 
       <a href="yasl.html">YASL</a>.
     </p>
+    <h1> 03/08/2018 </h1>
+    <p>
+      The YASL executable is currently at 113K, a size I'm happy with for now. I've started writing more and more tests for YASL,
+      eventually I'd like full coverage. 
+    </p>
+    <p>
+      I've decided to do reference counting along with weak references as the garbage collection in YASL. The biggest and most
+      important advantage of this is that it will save a lot of memory at runtime compared to a tracing garbage collector. My 
+      friend and I have already set up the VM for this. We'll attempt to add this this weekend. There are no other memory leaks 
+      in YASL at present, besides the ones that should be garbage collected.
+    </p>
     <h1> 18/07/2018 </h1>
     <p> 
       I've been doing extensive refactors of the YASL VM, and have cut the YASL executable size down to 115K, from 213K. 
