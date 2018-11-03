@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="my website">
+<base href="/">
+<title>CoffeeTableEspresso - home</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  
+  <header>
+    <div>
+      <a href="index.html">home</a>
+      <a href="blog.html">blog</a>
+    </div>
+  </header>
+  
+  <div>
+    <h1> 08/06/2018 </h1>
+    <h2> Why Signed Integer Overflow is Undefined in C </h2>
+    <p> People often take integer overflow for granted in C/C++, assuming it will simply "wrap around". A closer look
+      at the C standard, however, reveals that signed integer overflow is actually undefined.
+    </p>
+    <p> On the surface, there doesn't seem to be a good reason for signed integer overflow to be undefined. After all, 
+      just not doing anything when you overflow signed 2's complement integers will give you the "wrap around" that
+      everyone expects.
+    </p>
+    <p> But there's the key to why it's undefined: 2's complement integers.  As it happens, C is old enough that there
+      were multiple standards for representing signed integers, all of which are equally valid as far as the standard is
+      concerned. I'll discuss 2 here briefly, using 4 bit integers, which wouldn't really be useful in real life, but save 
+      me typing.
+    </p>
+    <h3> Sign-Magnitude Integers </h3>
+    <p> Under sign-magnitude, numbers with the leftmost bit a 0 represent non-negative, as usual. </p>
+    <p> To represent negative numbers, we simply switch the leftmost bit of the positive number to a 1. </p>
+    <p> For example, <code>0100</code> is positive 4, so <code>1100</code> is negative 4. </p>
+    <p> One thing to note about sign-magnitude representation is that there is a positive and a negative 0: <code>0000</code>
+      is positive 0, and <code>1000</code> is negative 0.
+    </p>
+    <p> So what happens when we overflow a sign magnitude number, without any checks to see whether we have overflowed, that 
+      is,
+      just throwing away whatever bits might be "carried off the left" of the result? 
+    </p>
+    <p> <code>0111</code> is our biggest positive sign magnitude number, so what happens when we add 1? We get 
+      <code>1000</code>,
+      or negative 0! Completely different from what happens when we overflow 2's complement numbers! 
+    </p>
+    <h3> 1's Complement Integers </h3>
+    <p> Another possibility for representing signed integers is called 1's complement. To negate a 1's complement integer,
+      you simply flip the bits. 
+    </p>
+    <p> For example, to negate <code>0100</code>, you flip the bits: <code>1011</code>. </p>
+    <p> Note that, just as with sign magnitude, there are two 0's: <code>0000</code> and <code>1111</code>. </p>
+    <p> Now let's see what happens when we overflow 1's complement integers: The biggest integer (positive 7) 
+      <code>0111</code> 
+      plus one gives <code>1000</code>, which is negative 7. This is again different from 2's complement, where we would 
+      have
+      gotten negative 8.
+    </p>
+    <h3> Conclusion </h3>
+    <p> So there you have it, the reason why signed integer overflow is undefined in C/C++, and also the reason why this is 
+      rarely an issue: I can't think of a modern computer that doesn't use 2's complement.
+    </p>
+  </div>
+  
+</body>
+</html>
+
+
+
+
+
