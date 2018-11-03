@@ -20,11 +20,6 @@ ul {
     list-style-type: square;
 }
 
-div > ul {
-    margin: 0;
-    padding: 0;
-}
-
 a:link {
     color: purple;
 }
