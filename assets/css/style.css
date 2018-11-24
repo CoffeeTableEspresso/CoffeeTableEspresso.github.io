@@ -7,10 +7,12 @@ body {
 }
 
 div {
+    max-width: 500px;
     display: block;
     padding-top: 1em;
     padding-left: 1.5em;
 }
+
 
 code {
     background-color: #551140;
