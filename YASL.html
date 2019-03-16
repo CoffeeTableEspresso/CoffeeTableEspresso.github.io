@@ -72,7 +72,7 @@
 </script>
 <script>
     function YASL() {
-        document.getElementById('output').innerHTML = '';
+        document.getElementById('output').value = '';
         var text = document.getElementById('input').value;
         console.log(text);
         Module.callMain(["-c", text]);
