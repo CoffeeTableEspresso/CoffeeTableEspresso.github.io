@@ -33,7 +33,7 @@
                 //text = text.replace('\n', '<br>', 'g');
                 console.log(text);
                 if (element) {
-                    element.value = text + "\n";
+                    element.value += text + "\n";
                     element.scrollTop = element.scrollHeight; // focus on bottom
                 }
             };
@@ -72,6 +72,7 @@
 </script>
 <script>
     function YASL() {
+        document.getElementById('output').innerHTML = '';
         var text = document.getElementById('input').value;
         console.log(text);
         Module.callMain(["-c", text]);
