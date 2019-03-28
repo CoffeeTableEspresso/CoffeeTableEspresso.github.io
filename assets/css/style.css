@@ -22,12 +22,16 @@ ul {
     list-style-type: square;
 }
 
+a:hover {
+    color: #F28C18;    
+}
+
 a:link {
     color: purple;
 }
 
 a:visited {
-    color: hotpink;
+    color: #FF69B4;
 }
 
 a:active {
