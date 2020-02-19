@@ -20,7 +20,7 @@
     <p> I made this website with raw <b>HTML and CSS</b> as a protest against some of the bloated websites we see online 
         today. I tried to make it look vaguely like the standard Ubuntu terminal. I also used the C Preprocessor to
         template this site, in order to make sure no-one ever hires me for a webdev role.
-        (Linkedin version: I used a cUsTom HtML teMpLAtinG tOoL.) Some other programs and tools I like to use:
+        (Linkedin version: I used a HtML teMpLAtinG tOoL tO cReAtE mY sTaTic WeBsITe.) Some other programs and tools I like to use:
     </p>
     <ul>
       <li> <b>vim</b> &mdash; scriptable text editor </li>
