@@ -43,17 +43,18 @@
         <a href="complaints.html">complaints</a>
     </div>
 </header>
-<h1>
-    No, I so do.</h1>
-<form method="post">
-    <textarea></textarea>
+<div>
+    <h1>No, I so do.</h1>
+    <form method="post">
+        <textarea></textarea>
 
+        <p>
+            <input name="moan" type="submit" value="Tell me about it" />
+        </p>
+    </form>
     <p>
-        <input name="moan" type="submit" value="Tell me about it" />
+        Shamelessly stolen from <a href="http://www.stilldrinking.org/">stilldrinking.org</a>.
     </p>
-</form>
-<p>
-    Shamelessly stolen from <a href="http://www.stilldrinking.org/">stilldrinking.org</a>.
-</p>
+</div>
 </body>
 </html>
