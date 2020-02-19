@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="my website">
+    <base href="/">
+    <title>CoffeeTableEspresso &mdash; blog &mdash; 2020-02-20</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header>
+    <div>
+        <a href="index.html">home</a>
+        <a href="blog.html">blog</a>
+    </div>
+</header>
+
+<div>
+    <h1> 2020/02/20 </h1>
+    <h2> Dynamic Array vs. Linked List (or: Stop Asking This in Interviews) </h2>
+    <p> I'm sure you all remember dynamic arrays and linked lists from your DS/A class(es) at school. If not (and just
+        make sure we're all on the same page), I'll quickly summarize here.
+    </p>
+    <p>
+        Dynamic arrays store their elements contiguously in memory. They allocate one giant chuck of memory on the heap,
+        and store everything one after another in that chunk of memory. This gives them good cache locality. They
+        reallocate if they need to add more elements than they have room for. (This piece is important, remember it for
+        later.) <code>std::vector</code> is a C++ example of a dynamic array.
+    </p>
+    <p>
+        Linked Lists store their elements in nodes (each of which is a single element and a pointer to the next element).
+        Because each node is allocated its own chunk of memory, a linked list never has to resize like a dynamic array
+        does. <code>std::forward_list</code> is a C++ example of a linked list. (Similar stuff applies to a doubly linked
+        list as well though.)
+    </p>
+    <h3> Pros &amp; Cons of Dynamic Array (Compared with Linked List) </h3>
+    <p> Pros: </p>
+    <ul>
+        <li>
+            Much better cache locality than a linked list. (Really. Cache locality is so important for performance.)
+        </li>
+        <li> Random access of elements (compared with linear time for linked list). </li>
+        <li> Uses less space, because we don't need to store an extra pointer for each element. </li>
+    </ul>
+    <p> Cons: </p>
+    <ul>
+        <li>
+            Insertions and deletions invalid iterators in a dynamic array (since any insertion or deletion could cause
+            it to resize. (Note that this is not the case with a linked list, since you never have to reallocate memory.)
+        </li>
+    </ul>
+    <p>
+        And that's it. Insertion being constant time for a linked list <i>doesn't even matter since linked lists are so
+        slow overall</i>. (Look up benchmarks, much smarter people than me have done this to death.) It turns out
+        that having a cache miss <i>every single time you look at a new element</i> really slows you down. (And it just
+        gets worse as CPUs get faster.
+    </p>
+    <h3> Conclusion </h3>
+    <p>
+        Please stop asking this question in interviews. It's a bullshit question. The only valid answers are:
+    </p>
+    <ul>
+        <li> "Performance doesn't matter here but a linked list will give me cleaner code" (Probably the best reason.)</li>
+        <li>
+            "We benchmarked vs. a dynamic array and turns out for our super specific use case a linked list was
+            faster." (Sure, if you say so.)
+        </li>
+        <li> "We needed the iterators to still be valid after inserting or deleting." (Might overlap with the "clean code" case above.) </li>
+        <li> "We were implementing <code>malloc</code>." (What year is it again?) </li>
+    </ul>
+    <p>
+        <i>Not:</i> "My data-structures and algorithms prof said so but I never bothered to benchmark it..."
+    </p>
+</div>
+</body>
+</html>
