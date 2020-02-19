@@ -9,8 +9,6 @@
 <body>
 #include "header.htm"
   <div>
-    <img src="assets/images/under-construction.gif">
-
     <h1> About Me </h1>
     <p> I'm a software developer living in <b>Vancouver</b>. I can be found on GitHub as 
       <a href="https://github.com/CoffeeTableEspresso"><b>CoffeeTableEspresso</b></a>. I'm a <b>Combined Honours Mathematics
