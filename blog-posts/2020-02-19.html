@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="my website">
+    <base href="/">
+    <title>CoffeeTableEspresso &mdash; blog &mdash; 06-08-2018</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header>
+    <div>
+        <a href="index.html">home</a>
+        <a href="blog.html.in">blog</a>
+    </div>
+</header>
+
+<div>
+    <h1> 2020/02/19 </h1>
+    <h2> Data-structures That Are Actually Useful </h2>
+    <p>
+        Not exhaustive, but should cover all the important ones. I'm gonna start simple. I'll use C/C++ examples mostly,
+        but you should find the majority of these in most languages. Of course, in scripting languages sometimes they're
+        you're missing some or whatever, but if you cared about performance you wouldn't be using a scripting language
+        so it balances out in the end.
+    </p>
+    <p>
+        I honestly cannot remember the last time I actually needed anything that wasn't either one of the below, or
+        a thin layer on top of one of them...
+    </p>
+    <p>
+        Unless you're actually benchmarking your code, please don't use anything more complicated than these and then
+        say you care about performance.
+    </p>
+    <h2> Static Array </h2>
+    <p>
+        By "static" I mean "the number of elements is known statically (at compile time that is)" and by "array" I mean
+        "the elements are contiguous in memory". This gives it great cache locality, something that it shares with
+        its dynamic cousin below.
+    </p>
+    <p>
+        The fact that its size is known statically is a bit of a restriction, but lets the compiler safely put it on
+        the stack without risking a stack-overflow. This is its one and only advantage over a dynamic array, so
+        if you're using a language where stack v. heap doesn't really matter, don't even bother with this one.
+    </p>
+    <p>
+        Operations on static arrays are pretty great. Appending and indexing (set/get) are both constant time. Inserting
+        and deleting are both linear, but quite fast cause of the cache locality.
+    </p>
+    <p>
+        In C, this looks like:  <code>int arr[10];</code>.
+        In C++, you can also do: <code>std::array&lt;int, 10&gt;arr;</code>.
+    </p>
+    <h2> Dynamic Array </h2>
+    <p>
+        The hip, cool version of the static array. It's isn't known at compile time, but it's elements are still stored
+        contiguously in memory. The elements are on the heap, in order to allow it to grow or shrink at runtime.
+    </p>
+    <p>
+        This should probably be your go-to for storing elements of the same type in some order.
+    </p>
+    <p>
+        Operations are the same as for its stack-allocated cousin the static array.
+    </p>
+    <p>
+        In C++, <code>std::vector&lt;int&gt; v;</code> will get you there.
+    </p>
+    <h2> Hashtable </h2>
+    <p>
+        Sometimes, you want to be able to index in constant time, but your keys just aren't integers. In those cases,
+        let me introduce you to the hashtable.
+    </p>
+    <p>
+        You can index based on keys of arbitrary types, not just integers. Lookups, inserts, and deletes are amortized
+        constant time.
+    </p>
+    <p>
+        I hear Google has a nice version of a hashtable in C++...
+    </p>
+    <h2> Hashset </h2>
+    <p>
+        Just like a hashtable, but with no value for each key (hence taking half the space, but at the cost of not being
+        able to do more than check for containment, rather than lookup based on a key. Runtime complexity should be the
+        same as for a hashtable.
+    </p>
+</div>
+</body>
+</html>

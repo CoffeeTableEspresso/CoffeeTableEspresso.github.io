@@ -16,7 +16,7 @@
             </li>
             <li> <b>Python</b> &mdash; Good general purpose language for scripts and prototypes. </li>
             <li> <b>Julia</b> &mdash; For anything numeric. </li>
-            <li> <b>Bash</b> &mdash; For portable shell scripting. (On most platforms at least.) </li>
+            <li> <b>Bash</b> &mdash; For portable shell scripting. (On most platforms at least. <b>Cough-Cough</b> <sub>Windows can go fuck itself</sub> <b>Cough-Cough</b>) </li>
             <li> <b>Java</b> &mdash; Like C++ but with all the useful parts chopped off. </li>
             <li> <b>JavaScript</b> &mdash; Two words: Stockholm Syndrome. </li>
             <li> <b>TypeScript</b> &mdash; Doesn't really fix JavaScript, but does make it much more bearable.</li>
