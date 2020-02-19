@@ -29,8 +29,8 @@
         a thin layer on top of one of them...
     </p>
     <p>
-        Unless you're actually benchmarking your code, please don't use anything more complicated than these and then
-        say you care about performance.
+        Unless you're actually benchmarking your code, please don't use anything more complicated than these and tell me
+        about "asymptotic run-time".
     </p>
     <h2> Static Array </h2>
     <p>
@@ -44,9 +44,7 @@
         if you're using a language where stack v. heap doesn't really matter, don't even bother with this one.
     </p>
     <p>
-        Operations on static arrays are pretty great. Indexing (both set/get) are both constant time. Appending is
-        amortized constant. (Note that this means you can use this as a stack (the push/pop kind) quite easily.)
-        Inserting and deleting are both linear, but quite fast cause of the cache locality.
+        Operations on static arrays are pretty great. Indexing (both set/get) are both constant time.
     </p>
     <p>
         In C, this looks like:  <code>int arr[10];</code>.
@@ -56,12 +54,16 @@
     <p>
         The hip, cool version of the static array. It's isn't known at compile time, but it's elements are still stored
         contiguously in memory. The elements are on the heap, in order to allow it to grow or shrink at runtime.
+        (There's a reason VLAs are considered a dangerous feature by C programmers; and if C programmers think something
+        is dangerous you <i>know</i> it's dangerous.)
     </p>
     <p>
         This should probably be your go-to for storing elements of the same type in some order.
     </p>
     <p>
-        Operations are the same as for its stack-allocated cousin the static array.
+        Operations are the same as for its stack-allocated cousin the static array. Also should support appending in
+        amortized constant time. Note that this means dynamic arrays can double as a stack (the push/pop kind) quite
+        easily. Inserting and deleting are both linear, but quite fast cause of the cache locality.
     </p>
     <p>
         In C++, <code>std::vector&lt;int&gt; v;</code> will get you there.
@@ -83,6 +85,19 @@
         Just like a hashtable, but with no value for each key (hence taking half the space, but at the cost of not being
         able to do more than check for containment, rather than lookup based on a key. Runtime complexity should be the
         same as for a hashtable.
+    </p>
+    <h2> Tuple </h2>
+    <p>
+        Basically, an anonymous C struct. Fixed number of elements, decided at compile time. Each can have a different
+        type. Elements should be stored contiguously (or as close as possible when considering alignment) in memory.
+    </p>
+    <p>
+        Getting and setting are both constant time of course. There's no concept of deleting or inserting extra
+        elements.
+    </p>
+    <p>
+        C++ gives you one: <code>std::tuple&lt;int, double, std::string&gt;t(1, 3.14, "hello world");</code>. This one
+        contains an <code>int</code>, a <code>double</code>, and a C++ style string.
     </p>
 </div>
 </body>
