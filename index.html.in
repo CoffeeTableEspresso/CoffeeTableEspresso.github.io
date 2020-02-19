@@ -17,11 +17,13 @@
       &amp; Computer Science</b> student at the <b>University of British Columbia</b>, with an interest in programming language 
       theory and compilers.
     </p>
+    <h1> About This Site </h1>
     <p> I made this website with raw <b>HTML and CSS</b> as a protest against some of the bloated websites we see online 
-        today. I tried to make it look vaguely like the standard Ubuntu terminal. I also used the C Preprocessor to
+      today. I tried to make it look vaguely like the standard Ubuntu terminal. I used the <b>C Preprocessor</b> to
         template this site, in order to make sure no-one ever hires me for a webdev role.
-        (Linkedin version: I used a HtML teMpLAtinG tOoL tO cReAtE mY sTaTic WeBsITe.) Some other programs and tools I like to use:
+        (Linkedin version: I used a HtML teMpLAtinG tOoL tO cReAtE mY sTaTic WeBsITe.)
     </p>
+    <h1> Stuff I Like</h1>
     <ul>
       <li> <b>vim</b> &mdash; scriptable text editor </li>
       <li> 
@@ -42,13 +44,12 @@
     </p>
     <h1> Blog </h1>
     <p> Here's my blog: <a href="blog.html">blog</a>. </p>
-    <h1> My Thoughts on Programming languages </h1>
+    <h1> My Thoughts on Programming Languages </h1>
     <p> Anyone who talks with me knows I criticise almost every programming language I have ever
       used. <a href="programming-languages.html">Here's my thoughts on some languages.</a> Don't @me.
     </p>
 
   </div>
-
 
 </body>
 </html>
