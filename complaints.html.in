@@ -3,20 +3,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="description" content="my website">
     <base href="/">
-    <title>Complaints</title>
     <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-<header>
-    <div>
-        <a href="index.html">home</a>
-        <a href="blog.html">blog</a>
-        <a href="complaints.html">complaints</a>
-    </div>
-</header>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
     <title>I really do care</title>
 
     <style>
@@ -53,8 +40,14 @@
 
     </script>
 </head>
-
 <body>
+<header>
+    <div>
+        <a href="index.html">home</a>
+        <a href="blog.html">blog</a>
+        <a href="complaints.html">complaints</a>
+    </div>
+</header>
 <h1>
     No, I so do.</h1>
 <form method="post">
