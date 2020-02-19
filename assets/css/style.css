@@ -56,5 +56,6 @@ img {
 .alert-content {
     background-color: #fccf03;
     color: #551140;
-    padding: 0.1em;
+    padding: 0.2em;
+    align-content: center;
 }
