@@ -45,13 +45,13 @@ th, td {
 
 table, th, td {
     border: 0.1em solid white;
-}    
-
-footer {
-    align-content: center;
 }
 
-img {
+.text-image {
+    display: inline-block;
+    text-align: center;
+}
+
+.text-image > img{
     display: block;
-    margin: 0 auto;
 }
