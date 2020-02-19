@@ -11,7 +11,7 @@
 <header>
     <div>
         <a href="index.html">home</a>
-        <a href="blog.html.in">blog</a>
+        <a href="blog.html">blog</a>
     </div>
 </header>
 
@@ -44,8 +44,9 @@
         if you're using a language where stack v. heap doesn't really matter, don't even bother with this one.
     </p>
     <p>
-        Operations on static arrays are pretty great. Appending and indexing (set/get) are both constant time. Inserting
-        and deleting are both linear, but quite fast cause of the cache locality.
+        Operations on static arrays are pretty great. Indexing (both set/get) are both constant time. Appending is
+        amortized constant. (Note that this means you can use this as a stack (the push/pop kind) quite easily.)
+        Inserting and deleting are both linear, but quite fast cause of the cache locality.
     </p>
     <p>
         In C, this looks like:  <code>int arr[10];</code>.
