@@ -13,7 +13,6 @@ div {
     padding-left: 1.5em;
 }
 
-
 code {
     background-color: #551140;
 }
@@ -50,6 +49,7 @@ table, th, td {
 .text-image {
     display: inline-block;
     text-align: center;
+    align-content: center;
 }
 
 .text-image > img{
