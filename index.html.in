@@ -49,6 +49,6 @@
     </p>
 
   </div>
-
+#include "footer.htm"
 </body>
 </html>

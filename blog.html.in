@@ -26,5 +26,6 @@
       </li>
     </ul>
   </div>
+#include "footer.htm"
 </body>
 </html>
