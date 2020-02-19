@@ -7,12 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<header>
-    <div>
-        <a href="index.html">home</a>
-        <a href="blog.html">blog</a>
-    </div>
-</header>
+#include "header.htm"
     <div>
         <ul>
             <li> <b>C</b> &mdash; One of my favourite languages. Portable and low-level. </li>

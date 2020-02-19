@@ -7,34 +7,30 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<header>
-    <div>
-        <a href="index.html">home</a>
-        <a href="blog.html">blog</a>
-    </div>
-</header>
+#include "header.htm"
   <div>
     <img src="assets/images/under-construction.gif">
+
     <h1> About Me </h1>
     <p> I'm a software developer living in <b>Vancouver</b>. I can be found on GitHub as 
       <a href="https://github.com/CoffeeTableEspresso"><b>CoffeeTableEspresso</b></a>. I'm a <b>Combined Honours Mathematics
-      &amp; Computer Science</b> student at the <b>University of British Columbia</b>, with an interest in programming language
+      &amp; Computer Science</b> student at the <b>University of British Columbia</b>, with an interest in programming language 
       theory and compilers.
     </p>
-    <p> I made this website with raw <b>HTML and CSS</b> as a protest against some of the bloated websites we see online
-        today. I tried to make it look vaguely like the standard Ubuntu terminal. Some other programs and tools I like to use:
+    <p> I made this website with raw <b>HTML and CSS</b> as a protest against some of the bloated websites we see online 
+        today. I tried to make it look vaguely like the standard Ubuntu terminal. Some other programs and tools I like to use: 
     </p>
     <ul>
       <li> <b>vim</b> &mdash; scriptable text editor </li>
-      <li>
+      <li> 
         <b>Azure Pipelines</b> &mdash; continuous integration for GitHub projects. Easy to use with support for Windows,
-        Linux, and MacOS.
+        Linux, and MacOS. 
       </li>
       <li>
         <b> JetBrains IDEs </b> &mdash; my favourite IDEs
       </li>
     </ul>
-    <h1> Projects </h1>
+    <h1> Projects </h1> 
     <p> I work on many projects, but my main focus currently is <a href="https://github.com/yasl-lang/yasl"><b>YASL</b></a>,
         a small embeddable scripting language I've built from scratch in pure C99.
     </p>
@@ -48,6 +44,9 @@
     <p> Anyone who talks with me knows I criticise almost every programming language I have ever
       used. <a href="programming-languages.html">Here's my thoughts on some languages.</a> Don't @me.
     </p>
+
   </div>
+
+
 </body>
 </html>

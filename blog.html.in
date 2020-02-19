@@ -7,12 +7,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<header>
-    <div>
-        <a href="index.html">home</a>
-        <a href="blog.html">blog</a>
-    </div>
-</header>
+#include "header.htm"
   <div>
     <h1> Blog </h1>
     <p> Me writing on various (mostly CS/Math) topics. </p>
