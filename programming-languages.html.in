@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-#include "header.htm"
+#include "header.shtml"
     <div>
         <ul>
             <li> <b>C</b> &mdash; One of my favourite languages. Portable and low-level. </li>
@@ -32,6 +32,6 @@
             <li> <b>Go</b> &mdash; The concurrency is just about the only decent part of the language. </li>
         </ul>
     </div>
-#include "footer.htm"
+#include "footer.shtml"
 </body>
 </html>

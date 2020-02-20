@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-#include "header.htm"
+#include "header.shtml"
   <div>
     <h1> About Me </h1>
     <p> I'm a software developer living in <b>Vancouver</b>. I can be found on GitHub as 
@@ -29,8 +29,8 @@
         Linux, and MacOS. I use Azure Pipelines to test out <a href="https://github.com/yasl-lang/yasl">YASL</a>.
       </li>
       <li>
-        <b> JetBrains IDEs </b> &mdash; My go-to IDEs. I use these whenever they have support for a language I'm using (
-        which is most languages I usually use).
+        <b> JetBrains IDEs </b> &mdash; My go-to IDEs. I use these whenever they have support for a language I'm using
+        (which is most languages I usually use).
       </li>
     </ul>
     <h1> Projects </h1> 
@@ -44,6 +44,6 @@
     <h1> Blog </h1>
     <p> Here's my blog: <a href="blog.html">blog</a>. </p>
   </div>
-#include "footer.htm"
+#include "footer.shtml"
 </body>
 </html>

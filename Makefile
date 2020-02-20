@@ -1,10 +1,10 @@
-all: index blog programming-languages
-
-index:
-	gcc -E -x c -P index.html.in > index.html
+all: blog index programming-languages
 
 blog:
 	gcc -E -x c -P blog.html.in > blog.html
+
+index:
+	gcc -E -x c -P index.html.in > index.html
 
 programming-languages:
 	gcc -E -x c -P programming-languages.html.in > programming-languages.html
