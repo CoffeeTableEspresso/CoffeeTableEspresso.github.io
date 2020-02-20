@@ -13,6 +13,9 @@
     <p> Me writing on various (mostly CS/Math) topics. </p>
     <ul>
       <li>
+        <a href="blog-posts/2020-02-21.html"><b>2020-02-20</b></a> &mdash; Why <code>iostream</code> is Awful
+      </li>
+      <li>
         <a href="blog-posts/2020-02-20.html"><b>2020-02-20</b></a> &mdash; Dynamic Array vs. Linked List (or: Stop Asking This in Interviews)
       </li>
       <li>
