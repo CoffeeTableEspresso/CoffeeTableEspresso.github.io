@@ -74,7 +74,7 @@
         Under POSIX, any single call to <code>printf</code> is an atomic operation, meaning you'll never have
         output from one thread intermixed with output from another. With <code>iostream</code>, something like
         <code>cout &lt;&lt; "A" &lt;&lt; "B" &lt;&lt; endl;</code> is 3 function calls, and you could get arbitrary
-        output from another thread printed in between any of them.
+        output from another thread printed in between any of them. Perfect.
     </p>
     <h3> "But <code>printf</code> isn't Type-safe" </h3>
     <p>
@@ -84,11 +84,11 @@
         literally never had a type error from using <code>printf</code>. This is, by far, the weakest excuse for not
         using <code>printf</code> I've ever heard.
     </p>
-    <code> Extensibility </code>
+    <h3> Extensibility </h3>
     <p>
         This is the <i>only</i> advantage of <code>iostream</code> as far as I'm concerned. Just overload
         <code>&lt;&lt;</code> for whatever type you need, boom, custom printing for your type. Quite elegant. Except for
-        then you need to use <code>iostream</code>, which makes me sad.
+        then you need to use <code>iostream</code>. Dammit.
     </p>
     <p>
         In practice, I've rarely ever actually overloaded <code>&lt;&lt;</code> for custom printing, but that's besides
