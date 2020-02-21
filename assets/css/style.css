@@ -62,7 +62,15 @@ img {
 
 blockquote {
     background: #551140;
-    border-left: 1em solid white;
+    border-left: 0.3em solid white;
     margin: 1.5em;
     padding: 0.5em;
+}
+
+blockquote:before {
+    content: '\201C';
+}
+
+blockquote:after {
+    content: '\201D';
 }
