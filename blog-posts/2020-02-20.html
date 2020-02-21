@@ -17,59 +17,92 @@
 
 <div>
     <h1> 2020/02/20 </h1>
-    <h2> Dynamic Array vs. Linked List (or: Stop Asking This in Interviews) </h2>
-    <p> I'm sure you all remember dynamic arrays and linked lists from your DS/A class(es) at school. If not (and just
-        make sure we're all on the same page), I'll quickly summarize here.
+    <h2> Why <code>iostream</code> is Awful </h2>
+    <p>
+        Pretty much every piece of <code>iostream</code> is damaged beyond repair. I honestly can't believe people still
+        recommend it for IO in C++. (At the very least, it's what's taught in intro C++ courses.) I'm going to just
+        assume anyone reading is familiar with <code>iostream</code> and just dive right in.
+    </p>
+    <h3> Global State </h3>
+    <p>
+        The first obvious problem is the global state. Whose brain-dead idea was this? Consider the following code:
+    </p>
+    <p><code>
+        cout &lt;&lt; hex &lt;&lt; 0x10 &lt;&lt; endl; <br>
+        f(); <br>
+        cout &lt;&lt; dec;
+    </code></p>
+    <p>
+        Seems straightforward, but what if <code>f</code> throws an exception? Then we're fucked. Everything is in
+        hex because that last line never runs. Or, more realistically, what if we simply forget that last line?
+    </p>
+    <p> Compare this with <code>printf</code>:</p>
+    <p><code>
+        printf("%x\n", 0x10); <br>
+        f();
+    </code></p>
+    <p>
+        Nice and simple. No possible way to forget to reset to decimal, because <i>there's no global state we have to
+        worry about</i>.
+    </p>
+    <h3> Performance </h3>
+    <p>
+        Look up some benchmarks of <code>iostream</code> vs. <code>printf</code>. I'll wait. One reason for that?
+        Every <code>&lt;&lt;</code> is a <i>separate virtual function call</i>, compared with the single function call
+        for <code>printf</code>. And each of those involves syscalls.
     </p>
     <p>
-        Dynamic arrays store their elements contiguously in memory. They allocate one giant chuck of memory on the heap,
-        and store everything one after another in that chunk of memory. This gives them good cache locality. They
-        reallocate if they need to add more elements than they have room for. (This piece is important, remember it for
-        later.) <code>std::vector</code> is a C++ example of a dynamic array.
+        Syncing <code>iostream</code> with <code>stdio</code> by default obviously doesn't help things, but you'll see
+        a performance difference either way.
     </p>
     <p>
-        Linked Lists store their elements in nodes (each of which is a single element and a pointer to the next element).
-        Because each node is allocated its own chunk of memory, a linked list never has to resize like a dynamic array
-        does. <code>std::forward_list</code> is a C++ example of a linked list. (Similar stuff applies to a doubly linked
-        list as well though.)
+        Obviously, IO is normally a bottleneck anyways, so this point is fairly minor compared to some other ones below.
     </p>
-    <h3> Pros &amp; Cons of Dynamic Array (Compared with Linked List) </h3>
-    <p> Pros: </p>
-    <ul>
-        <li>
-            Much better cache locality than a linked list. (Really. Cache locality is so important for performance.)
-        </li>
-        <li> Random access of elements (compared with linear time for linked list). </li>
-        <li> Uses less space, because we don't need to store an extra pointer for each element. </li>
-    </ul>
-    <p> Cons: </p>
-    <ul>
-        <li>
-            Insertions and deletions invalid iterators in a dynamic array (since any insertion or deletion could cause
-            it to resize. (Note that this is not the case with a linked list, since you never have to reallocate memory.)
-        </li>
-    </ul>
+    <h3> Bad Syntax </h3>
     <p>
-        And that's it. Insertion being constant time for a linked list <i>doesn't even matter since linked lists are so
-        slow overall</i>. (Look up benchmarks, much smarter people than me have beaten this horse to death already.) It
-        turns out that having a cache miss <i>every single time you look at a new element</i> really slows you down.
-        (And it just gets worse as CPUs get faster.)
+        Say I've got a bitfield and I want to mask it and print the result. With <code>printf</code>, that looks like
+        this: <code>printf("%x\n", f & m);</code>. Fairly straightforward. With <code>iostream</code>, we need to do
+        this: <code>cout &lt;&lt; hex &lt;&lt; f &amp; m &lt;&lt; endl &lt;&lt; dec;</code>.
+    </p>
+    <p>
+        Except, wait a minute. That doesn't compile. Why not? Oh, right <code>&lt;&lt;</code> is a bitshift operator as
+        well, so it has the wrong precedence compared with <code>&amp;</code>. Oops. Maybe the Java people are right
+        about operator overloading.
+    </p>
+    <h3> Thread Safety </h3>
+    <p>
+        Under POSIX, any single call to <code>printf</code> is an atomic operation, meaning you'll never have
+        output from one thread intermixed with output from another. With <code>iostream</code>, something like
+        <code>cout &lt;&lt; "A" &lt;&lt; "B" &lt;&lt; endl;</code> is 3 function calls, and you could get arbitrary
+        output from another thread printed in between any of them. Perfect.
+    </p>
+    <h3> "But <code>printf</code> isn't Type-safe" </h3>
+    <p>
+        It's $current_year. I've never used a compiler that will let me (a) compile <code>printf</code> with anything
+        besides a string literal and (b) compile any type-mismatches in <code>printf</code>. (Yes, this is with
+        <code>-Wall -Werror</code>, but if you're not compiling with those already you have bigger problems.) I've
+        literally never had a type error from using <code>printf</code>. This is, by far, the weakest excuse for not
+        using <code>printf</code> I've ever heard.
+    </p>
+    <h3> Extensibility </h3>
+    <p>
+        This is the <i>only</i> advantage of <code>iostream</code> as far as I'm concerned. Just overload
+        <code>&lt;&lt;</code> for whatever type you need, boom, custom printing for your type. Quite elegant. Except for
+        then you need to use <code>iostream</code>. Dammit.
+    </p>
+    <p>
+        In practice, I've rarely ever actually overloaded <code>&lt;&lt;</code> for custom printing, but that's besides
+        the point.
+    </p>
+    <h3> "So You Want Me to Use <code>printf</code>?" </h3>
+    <p>
+        Not necessarily. While I would prefer using <code>printf</code> to using <code>iostream</code>, these aren't the
+        only options. Lots of libraries support a type-safe and extensible version of <code>printf</code>. C++20 is
+        bringing us <a href="https://en.cppreference.com/w/cpp/utility/format">some really nice formatting options</a>.
     </p>
     <h3> Conclusion </h3>
-    <p>
-        Please stop asking this question in interviews. It's a bullshit question. The only valid answers are:
-    </p>
-    <ul>
-        <li> "Performance doesn't matter here but a linked list will give me cleaner code" (Probably the best reason.)</li>
-        <li>
-            "We benchmarked vs. a dynamic array and turns out for our super specific use case a linked list was
-            faster." (Sure, if you say so.)
-        </li>
-        <li> "We needed the iterators to still be valid after inserting or deleting." (Might overlap with the "clean code" case above.) </li>
-        <li> "We were implementing <code>malloc</code>." (What year is it again?) </li>
-    </ul>
-    <p>
-        <i>Not:</i> "My data-structures and algorithms prof said so but I never bothered to benchmark it..."
+    <p> All I'll say here is that it's pretty telling that most languages have something close to <code>printf</code>,
+        but I can't think of a language that copied <code>iostream</code>.
     </p>
 </div>
 </body>
