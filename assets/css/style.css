@@ -59,3 +59,12 @@ img {
     align-content: center;
     text-align: center;
 }
+
+blockquote {
+    background: #551140;
+    border-left: 5em solid #fccf03;
+    /* margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+     */
+}
