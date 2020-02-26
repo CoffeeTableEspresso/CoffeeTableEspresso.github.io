@@ -76,3 +76,9 @@ blockquote:after {
     content: '\201D';
 }
 */
+
+footer {
+    font-size: 0.8em;
+    text-align: center;
+    align-content: center;
+}
