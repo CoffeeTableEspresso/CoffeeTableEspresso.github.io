@@ -23,28 +23,28 @@
         BLOG_POST(2020-03-24, Quarantine Time, Part III)
       </li>
       <li>
-        <a href="blog-posts/2020-03-22.html"><b>2020-03-22</b></a> &mdash; Quarantine Time, Part II
+        BLOG_POST(2020-03-22, Quarantine Time, Part II)
       </li>
       <li>
-        <a href="blog-posts/2020-03-20.html"><b>2020-03-20</b></a> &mdash; Quarantine Time
+        BLOG_POST(2020-03-20, Quarantine Time)
       </li>
       <li>
-        <a href="blog-posts/2020-02-21.html"><b>2020-02-21</b></a> &mdash; The Only Interview I've Ever Enjoyed
+        BLOG_POST(2020-02-21, The Only Interview I&apos;ve Ever Enjoyed)
       </li>
       <li>
-        <a href="blog-posts/2020-02-20.html"><b>2020-02-20</b></a> &mdash; Why <code>iostream</code> is Awful
+        BLOG_POST(2020-02-20, Why <code>iostream</code> is Awful)
       </li>
       <li>
-        <a href="blog-posts/2020-02-19.html"><b>2020-02-19</b></a> &mdash; Dynamic Array vs. Linked List (or: Stop Asking This in Interviews)
+        BLOG_POST(2020-02-19, Dynamic Array vs. Linked List (or: Stop Asking This in Interviews))
       </li>
       <li>
-        <a href="blog-posts/2020-02-18.html"><b>2020-02-18</b></a> &mdash; Data-structures That Are Actually Useful
+        BLOG_POST(2020-02-18, Data-structures That Are Actually Useful)
       </li>
       <li>
-        <a href="blog-posts/2018-11-08.html"><b>2018-11-08</b></a> &mdash; Why Little Endian is More Natural (or: English Does Numbers Wrong)
+        BLOG_POST(2018-11-08, Why Little Endian is More Natural (or: English Does Numbers Wrong))
       </li>
       <li>
-        <a href="blog-posts/2018-06-08.html"><b>2018-06-08</b></a> &mdash; Why Signed Integer Overflow is Undefined Behaviour in C
+        BLOG_POST(2018-06-08, Why Signed Integer Overflow is Undefined Behaviour in C)
       </li>
     </ul>
   </div>

@@ -1,7 +1,7 @@
 all: blog index programming-languages
 
 blog:
-	gcc -E -x c -P blog.html.in > blog.html
+	gcc -E -x assembler-with-cpp -P blog.html.in > blog.html
 
 index:
 	gcc -E -x c -P index.html.in > index.html
