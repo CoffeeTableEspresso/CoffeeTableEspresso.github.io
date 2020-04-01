@@ -1,3 +1,4 @@
+#include "include.shtml"
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,11 +13,14 @@
     <h1> Blog </h1>
     <p> Me writing on various (mostly CS/Math) topics. </p>
     <ul>
-    <li>
-      <a href="blog-posts/2020-03-29.html"><b>2020-03-29</b></a> &mdash; Horror Movies
-          </li>
       <li>
-        <a href="blog-posts/2020-03-24.html"><b>2020-03-24</b></a> &mdash; Quarantine Time, Part III
+        BLOG_POST(2020-04-01, Quarantine Time, Part IV)
+      </li>
+      <li>
+        BLOG_POST(2020-03-29, Horror Movies)
+      </li>
+      <li>
+        BLOG_POST(2020-03-24, Quarantine Time, Part III)
       </li>
       <li>
         <a href="blog-posts/2020-03-22.html"><b>2020-03-22</b></a> &mdash; Quarantine Time, Part II
