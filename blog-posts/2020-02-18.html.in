@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
 <header>
     <div>
         <a href="index.html">home</a>
         <a href="blog.html">blog</a>
     </div>
 </header>
+
 <div>
     <h1> 2020/02/18 </h1>
     <h2> Data-structures That Are Actually Useful </h2>
@@ -45,7 +47,7 @@
         Operations on static arrays are pretty great. Indexing (both set/get) are both constant time.
     </p>
     <p>
-        In C, this looks like: <code>int arr[10];</code>.
+        In C, this looks like:  <code>int arr[10];</code>.
         In C++, you can also do: <code>std::array&lt;int, 10&gt;arr;</code>.
     </p>
     <h2> Dynamic Array </h2>

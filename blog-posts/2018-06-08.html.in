@@ -7,12 +7,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<header>
-<div>
-    <a href="index.html">home</a>
-    <a href="blog.html">blog</a>
-</div>
-</header>
+
+#include "min-header.shtml"
+
 <div>
     <h1> 2018/06/08 </h1>
     <h2> Why Signed Integer Overflow is Undefined Behaviour in C </h2>
@@ -60,5 +57,11 @@
         rarely an issue: I can't think of a modern computer that doesn't use 2's complement.
     </p>
 </div>
+
 </body>
 </html>
+
+
+
+
+

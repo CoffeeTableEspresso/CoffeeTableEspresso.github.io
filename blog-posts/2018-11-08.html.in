@@ -7,22 +7,24 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  
   <header>
     <div>
       <a href="index.html">home</a>
       <a href="blog.html">blog</a>
     </div>
   </header>
+  
   <div>
     <h1> 2018/11/08 </h1>
     <h2> Why Little Endian is More Natural (or: English Does Numbers Wrong) </h2>
     <p>People often treat big endian as if it's more natural than little endian because English (more of less) uses a big endian
-      system. Putting aside the fact that just because English does something doesn't make it more natural, let's look at
+      system. Putting aside the fact that just because English does something doesn't make it more natural, let's look at 
       <em>why</em> English uses a big endian system.
     </p>
     <h3>Brief History of Numbers in English</h3>
     <p>Modern English got its numerals from Arabic. Numbers are represented the same in Arabic and Egnlish (i.e. "102" represents
-      one hundred and two in both English and Arabic). The interesting part of this is that Arabic is read right-to-left instead
+      one hundred and two in both English and Arabic). The interesting part of this is that Arabic is read right-to-left instead 
       of
       left-to-right, meaning that Arabic used a little-endian system (since they'd start reading "102" from the right, which is 
       the
@@ -32,7 +34,7 @@
     <p>But this doesn't say anything about whether English was little- or big-endian before it borrowed numerals from Arabic.
       However, the evidence seems to suggest English used to be little-endian, and it was only the use of Arabic numerals that
       switched us to big-endian. Where is this evidence? Right under our noses, in words like "nineteen" (or, "nine ten", before
-      we corrupted the pronunciation). Most Germanic languages (the family of languages most closely related to English) besides
+      we corrupted the pronunciation). Most Germanic languages (the family of languages most closely related to English) besides 
       English actually go a step further than English in this regard: In German, for example "121" is "einhunderteinundzwanzig"
       ("ein-hundert ein und zwanzig", if we put spaces between the words), or "one hundred one and twenty" if we translate
       literally. In other words, the 10s and 1s columns are "flipped" with regards to how it's written. Why? For the same reason
@@ -40,8 +42,8 @@
     </p>
     <h3>But Why Would Little-Endian Be More Natural?</h3>
     <p>There's two reasons to prefere a little-endian system over a big-endian one for natural language. Firstly, When doing
-      addition, we start at the small end of the number (because we need to carry), so in English we end up reading
-      right-to-left when doing math, and left-to-right in other cases. Second, when reading a number out loud, we first have to
+      addition, we start at the small end of the number (because we need to carry), so in English we end up reading 
+      right-to-left when doing math, and left-to-right in other cases. Second, when reading a number out loud, we first have to 
       count the digits. Try reading "1 234 567" out loud: the first thing you did was count the number of digits so you knew
       what column the "1" was in. If we wrote our numbers in a little-endian way, this wouldn't be an issue: simply start
       reading; the first digit is always the 1s column, so there's no need to even count the number of digits.
@@ -57,5 +59,6 @@
       all of you like they are now ruined for me.
     </p>
   </div>
+  
 </body>
 </html>

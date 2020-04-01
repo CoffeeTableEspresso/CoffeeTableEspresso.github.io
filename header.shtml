@@ -1,9 +1,6 @@
 <header>
     <div style="padding-left: 0em; padding-top: 0em">
-        <div>
-            <a href="index.html">home</a>
-            <a href="blog.html">blog</a>
-        </div>
+#include "top-bar.shtml"
         <div>
         <p class="alert-content">
           <font size="+2"><b>⚠️</b></font> We’ll stop supporting this browser soon. For the best experience please
