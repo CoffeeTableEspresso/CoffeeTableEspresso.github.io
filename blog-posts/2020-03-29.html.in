@@ -8,12 +8,7 @@
 </head>
 <body>
 
-<header>
-    <div>
-        <a href="index.html">home</a>
-        <a href="blog.html">blog</a>
-    </div>
-</header>
+#include "min-header.shtml"
 
 <div>
     <h1> 2020/03/29 </h1>
