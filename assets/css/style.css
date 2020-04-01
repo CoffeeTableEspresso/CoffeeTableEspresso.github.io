@@ -52,6 +52,16 @@ img {
     margin: 0 auto;
 }
 
+.spoiler {
+    color: #551140;
+    background-color: #551140;
+}
+
+.spoiler:hover {
+    background-color: #551140;
+    color: white;
+}
+
 .alert-content {
     background-color: #fccf03;
     color: #551140;
