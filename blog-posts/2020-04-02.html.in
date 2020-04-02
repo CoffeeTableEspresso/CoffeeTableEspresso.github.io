@@ -1,0 +1,133 @@
+#define DATE 2020-04-02
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="my website" />
+    <base href="/">
+    <title>CoffeeTableEspresso &mdash; blog &mdash; DATE</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+#include "min-header.shtml"
+
+<div>
+    <h1> DATE </h1>
+    <h2> Using the C Preprocessor to Template HTML (or: Why I'm Not a Web Developer)</h2>
+    <p>
+        I'm not a huge fan of web development. I find it fairly uninteresting to move boxes around by a few pixels.
+        I'm not particularly good at design either (in case this website didn't give it away).
+    </p>
+    <p>
+        So as a big "fuck you" to all my web dev friends, I've used 0 JavaScript on this website, <em>and</em>, to make
+        matters worse, I've templated it using the
+        <a href="https://en.wikipedia.org/wiki/C_preprocessor">C Preprocessor</a> (<em>cpp</em> for short).
+    </p>
+    <h3> What Do We Want From an HTML Templater?</h3>
+    <p>
+        For my purposes, I need the very minimum. Basically, I just want to avoid copy-pasting the same shit all over
+        my website. Simple text substitution is all I need.
+    </p>
+    <p>
+        (You'd sure hope that's all I need based on how my website looks.)
+    </p>
+    <h3>What is cpp?</h3>
+    <p>
+        cpp is the preprocessor for C and C++ (in case the name didn't give it away). It's the first step of compiling
+        a C or C++ program. Basically, anything with <code>#</code> is handled by cpp. cpp copy-pastes any files you
+        included with <code>#include</code>, and expands any macros you defined with <code>#define</code>. (I'll get
+        into details later, don't worry.)
+    </p>
+    <p>
+        cpp can also be invoked on its own, without invoking the compiler proper, which is what I've done here. If
+        you're using gcc, you can do this with <code>gcc -E filename</code>. I'm fairly sure all C or C++ compilers
+        support something similar.
+    </p>
+    <h3>What Does cpp Do?</h3>
+    <p>
+        I'll focus just on the cpp features I actually care about here, for the purposes of HTML templating. cpp does
+        more than just described here, but I'm trynna keep this post short.
+    </p>
+    <h4><code>#include</code></h4>
+    <p>
+        cpp replaces <code>#include "example.txt"</code> with the contents of the file named <code>example.txt</code>.
+        cpp also expands any directives inside <code>example.txt</code> as it's doing this.
+    </p>
+    <p>
+        We'll use this later to define macros will we use in multiple files (as we would in C), and to paste some
+        HTML from one file to another.
+    </p>
+    <h4><code>#define</code></h4>
+    <p>
+        If you have <code>#define BEFORE AFTER</code> in your file, cpp will replace every instance of
+        <code>BEFORE</code> with <code>AFTER</code>. cpp will also expand any directives in AFTER, once it's done
+        this replacement (but will <em>not</em> expand recursively). So <code>#define BEFORE BEFORE</code> just expands
+        to <code>BEFORE</code> instead of causing an infinite loop. (In fact, cpp isn't Turing Complete, so you
+        <em>can't</em> get an infinite loop.)
+    </p>
+    <p>
+        The more interesting version of <code>#define</code> is the one that takes a parameter:
+        <code>#define BEFORE(param) AFTER</code> (note that <code>AFTER</code> should contain some occurrences of
+        <code>param</code> for this example to be interesting. This version of <code>#define</code> expands out
+        <code>param</code> first, then replaces all occurrences of <code>param</code> in <code>AFTER</code> (except the
+        ones used by <code>#</code> or <code>##</code>, which I'll cover below), then replaces <code>BEFORE</code> with
+        the expanded version of <code>AFTER</code>.
+    </p>
+    <p>
+        This is quite a useful feature, since it lets us write macros that vary slightly depending on parameters.
+    </p>
+    <h4><code>#</code> and <code>##</code></h4>
+    <p>
+        This is where things start to get a little out of hand.
+    </p>
+    <p>
+        <code>#</code> lets you pass a token into a macro <em>without</em> it being expanded, and converts it into a
+        string literal. <code>#define STR(x) #x</code> would work as follows, for example: <code>STR(x)</code> expands to
+        <code>"x"</code>, <code>STR(y)</code> expands to <code>"y"</code>, <code>STR(foo)</code> expands to
+        <code>"foo"</code>, and so on. I'm sure you see the pattern.
+    </p>
+    <p>
+        This is not particularly useful on its own, since in all the above cases we could just write the string form
+        instead of bothering with a macro. Where it comes in handy is when it's done indirectly, via other macros.
+    </p>
+    <p>
+        let's have <code>#define XSTR(x) STR(x)</code>. This will first expand <code>x</code>, <em>then</em> turn it
+        to a string. So if we had <code>#define FOO foo</code>, <code>XSTR(FOO)</code> would expand to
+        <code>"foo"</code>, rather than <code>"FOO"</code> (as <code>STR(FOO)</code> would have). (Don't worry, I'll put
+        everything together in a minute here.)
+    </p>
+    <p>
+        <code>##</code> lets you put two tokens together. So <code>#define CAT(x, y) x##y</code> would let us do stuff
+        like <code>CAT(a, b)</code>, which expands to <code>ab</code>. Not very useful on its own, again, but combined
+        with other features, it gives us what we need.
+    </p>
+    <h3> Putting It All Together </h3>
+    <p>
+        The nav bar at the top of every page uses the exact same HTML (as it should). Why bother copy-pasting that onto
+        each page? Just <code>#include "nav-bar.shtml"</code> and we're done. (This is basically what
+        <a href="https://en.wikipedia.org/wiki/Server_Side_Includes">Server Side Includes</a> are, FYI.)
+    </p>
+    <p>
+        The date of a blog post shows up multiple times each post. Why bother writing it multiple times? Just do
+        <code>#define TODAY 2020-04-02</code> at the top of the file. Perfection.
+    </p>
+    <p>
+        Links to each of my blog posts on <a href="blog.html">my blog</a> are all basically the same format. The only
+        thing that varies is the date and title. No problem. Just a quick macro (using <code>#</code> and
+        <code>##</code> to expand thing and we're ready to go.
+    </p>
+    <p>
+        Basically, anything that needs to show up more than once can just be either moved to another file and pasted
+        in, or defined as a macro. It's awful but it works. Honestly for what my website is, I don't think using a
+        proper tool would even change much.
+    </p>
+    <h3> Conclusion </h3>
+    <p>
+        In conclusion, you don't need a real HTML templating language if you don't mind your website looking like shit.
+    </p>
+    <p>
+        wEb DeVELopMenT iS mY PaSSiOn.
+    </p>
+</div>
+</body>
+</html>

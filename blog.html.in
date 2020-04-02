@@ -1,8 +1,8 @@
 #include "include.shtml"
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="my website">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="my website" />
 <base href="/">
 <title>CoffeeTableEspresso &mdash; blog</title>
 <link rel="stylesheet" href="assets/css/style.css">
@@ -13,39 +13,18 @@
     <h1> Blog </h1>
     <p> Me writing on various (mostly CS/Math) topics. </p>
     <ul>
-      <li>
-        BLOG_POST(2020-04-01, Quarantine Time, Part IV)
-      </li>
-      <li>
-        BLOG_POST(2020-03-29, Horror Movies)
-      </li>
-      <li>
-        BLOG_POST(2020-03-24, Quarantine Time, Part III)
-      </li>
-      <li>
-        BLOG_POST(2020-03-22, Quarantine Time, Part II)
-      </li>
-      <li>
-        BLOG_POST(2020-03-20, Quarantine Time)
-      </li>
-      <li>
-        BLOG_POST(2020-02-21, The Only Interview I&apos;ve Ever Enjoyed)
-      </li>
-      <li>
-        BLOG_POST(2020-02-20, Why <code>iostream</code> is Awful)
-      </li>
-      <li>
-        BLOG_POST(2020-02-19, Dynamic Array vs. Linked List (or: Stop Asking This in Interviews))
-      </li>
-      <li>
-        BLOG_POST(2020-02-18, Data-structures That Are Actually Useful)
-      </li>
-      <li>
-        BLOG_POST(2018-11-08, Why Little Endian is More Natural (or: English Does Numbers Wrong))
-      </li>
-      <li>
-        BLOG_POST(2018-06-08, Why Signed Integer Overflow is Undefined Behaviour in C)
-      </li>
+      <li> BLOG_POST(2020-04-02, Using the C Preprocessor to Template HTML (or: Why I&apos;m Not a Web Developer))
+      <li> BLOG_POST(2020-04-01, Quarantine Time, Part IV)
+      <li> BLOG_POST(2020-03-29, Horror Movies)
+      <li> BLOG_POST(2020-03-24, Quarantine Time, Part III)
+      <li> BLOG_POST(2020-03-22, Quarantine Time, Part II)
+      <li> BLOG_POST(2020-03-20, Quarantine Time)
+      <li> BLOG_POST(2020-02-21, The Only Interview I&apos;ve Ever Enjoyed)
+      <li> BLOG_POST(2020-02-20, Why <code>iostream</code> is Awful)
+      <li> BLOG_POST(2020-02-19, Dynamic Array vs. Linked List (or: Stop Asking This in Interviews))
+      <li> BLOG_POST(2020-02-18, Data-structures That Are Actually Useful)
+      <li> BLOG_POST(2018-11-08, Why Little Endian is More Natural (or: English Does Numbers Wrong))
+      <li> BLOG_POST(2018-06-08, Why Signed Integer Overflow is Undefined Behaviour in C)
     </ul>
   </div>
 #include "footer.shtml"
