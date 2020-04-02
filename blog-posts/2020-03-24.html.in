@@ -1,9 +1,10 @@
+#define DATE 2020-03-24
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="description" content="my website">
     <base href="/">
-    <title>CoffeeTableEspresso &mdash; blog &mdash; 2020-03-24</title>
+    <title>CoffeeTableEspresso &mdash; blog &mdash; DATE</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -11,7 +12,7 @@
 #include "min-header.shtml"
 
 <div>
-    <h1> 2020/03/24 </h1>
+    <h1> DATE </h1>
     <h2> Quarantine Time, Part III </h2>
     <a href="blog-posts/2020-03-22.html">← Part II</a>
     <a href="blog-posts/2020-04-01.html">Part IV →</a>
