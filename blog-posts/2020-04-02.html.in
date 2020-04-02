@@ -39,6 +39,12 @@
         into details later, don't worry.)
     </p>
     <p>
+        cpp does very basic text substitution, and is almost completely ignorant of C and C++ syntax, save for knowing
+        that quotes should be closed. (Which is actually a massive pain in the ass cause I use apostrophes sometimes.)
+        It's kind of suitable for templating anything I guess, as long as you're willing to treat that anything
+        as random meaningless text. (Which is exactly what I've done for my website.)
+    </p>
+    <p>
         cpp can also be invoked on its own, without invoking the compiler proper, which is what I've done here. If
         you're using gcc, you can do this with <code>gcc -E filename</code>. I'm fairly sure all C or C++ compilers
         support something similar.
