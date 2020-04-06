@@ -9,7 +9,7 @@ index:
 programming-languages:
 	gcc -E -x assembler-with-cpp -P programming-languages.html.in > programming-languages.html
 
-blog-posts: 2018-06-08 2018-11-08 2020-02-18 2020-02-19 2020-02-20 2020-02-21 2020-03-20 2020-03-22 2020-03-24 2020-03-29 2020-04-01 2020-04-02
+blog-posts: 2018-06-08 2018-11-08 2020-02-18 2020-02-19 2020-02-20 2020-02-21 2020-03-20 2020-03-22 2020-03-24 2020-03-29 2020-04-01 2020-04-02 2020-04-05
 
 2018-06-08:
 	gcc -E -x assembler-with-cpp -P -I. blog-posts/2018-06-08.html.in > blog-posts/2018-06-08.html
@@ -46,6 +46,9 @@ blog-posts: 2018-06-08 2018-11-08 2020-02-18 2020-02-19 2020-02-20 2020-02-21 20
 
 2020-04-02:
 	gcc -E -x assembler-with-cpp -P -I. blog-posts/2020-04-02.html.in > blog-posts/2020-04-02.html
+
+2020-04-05:
+	gcc -E -x assembler-with-cpp -P -I. blog-posts/2020-04-05.html.in > blog-posts/2020-04-05.html
 
 clean:
 	rm *.html
