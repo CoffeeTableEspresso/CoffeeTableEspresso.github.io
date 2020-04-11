@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 
-body, blockquote footer {
+body {
     font-family: 'Ubuntu Mono', monospace;
     background-color: #300a24;
     color: white;
