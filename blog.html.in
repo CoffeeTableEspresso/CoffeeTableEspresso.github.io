@@ -14,6 +14,7 @@
     <p> Me writing on various (mostly CS/Math) topics. Most of them are incoherent rants with little to no value. Don't
       take this blog too seriously.
     <ul>
+      <li> BLOG_POST(2020-04-10, Why I Hate Java)
       <li> BLOG_POST(2020-04-05, Quarantine Time, Part V)
       <li> BLOG_POST(2020-04-02, Using the C Preprocessor to Template HTML (or: Why I&apos;m Not a Web Developer))
       <li> BLOG_POST(2020-04-01, Quarantine Time, Part IV)
