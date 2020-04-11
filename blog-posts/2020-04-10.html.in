@@ -15,10 +15,10 @@
     <h1> DATE </h1>
     <h2> Why I Hate Java </h2>
     <div>
-    <blockquote>
-        There are only two kinds of languages: the ones people complain about and the ones nobody uses.
-    </blockquote>
-        &mdash; Bjarne Stroustrup, The C++ Programming Language
+        <blockquote>
+            There are only two kinds of languages: the ones people complain about and the ones nobody uses.
+        </blockquote>
+        <footer> &mdash; Bjarne Stroustrup, The C++ Programming Language </footer>
     </div>
     <p>
         Let me preface this by saying that this is just my biased opinion, and a lot of my disdain for
