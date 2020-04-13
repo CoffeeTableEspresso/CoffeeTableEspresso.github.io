@@ -1,0 +1,30 @@
+#define DATE 2020-04-13
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="my website">
+    <base href="/">
+    <title>CoffeeTableEspresso &mdash; blog &mdash; DATE</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+#include "min-header.shtml"
+
+<div>
+    <h1> DATE </h1>
+    <h2> Low Effort Recruiter Spam </h2>
+    <p> I don't remember when I started getting spam from recruiters, just that nothing good has ever come of it.</p>
+    <p>
+        I got one this morning where the recruiter managed to misspell my name. You know, the name that's included in
+        its entirety in my email address and resume?
+    </p>
+    <p>
+        But no, double-checking that you've spelt someone's name correctly is apparently too much effort. Just send out
+        the spam.
+    </p>
+    <h3> Conclusion </h3>
+    <p> Show some fucking pride in your work you lazy shits. </p>
+</div>
+</body>
+</html>

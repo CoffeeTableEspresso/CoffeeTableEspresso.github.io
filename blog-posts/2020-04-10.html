@@ -28,7 +28,7 @@
         me not liking the kinds of problems that Java is most suited for. I should also mention that I could write a
         similar post about many, many other languages (and probably will at some point).
     </p>
-    <h2> Verbosity/Boilerplate </h2>
+    <h3> Verbosity/Boilerplate </h3>
     <p>
         Java just rambles on and on and on. Stuff like writing <code>public</code> in front of <em>every</em> single
         public method. Having to specify the type multiple times for each variable (at least until <code>var</code>
@@ -38,14 +38,14 @@
         <code>new</code> when making a new instance of a class, even though there's only one way to make a new instance
         in Java.
     </p>
-    <h2> Generics </h2>
+    <h3> Generics </h3>
     <p>
         Java handled generics in just about the worst way imaginable. Instead of generating code with the generic type
         filled in, and using that, Java relies on casts to implement generics. This has a runtime cost, first of all,
         but also hobbles generics. I can't create an object of a generic type inside a generic method, for instance, or
         check whether something is of a generic type at runtime.
     </p>
-    <h2> Missing Features </h2>
+    <h3> Missing Features </h3>
     <p>
         Say what you will about C++, at least it lets me do what I want. Programming in Java after using C++ for a while
         feels like I've had an arm chopped off. No more method overloading, you might abuse it. No unsigned types,
@@ -58,15 +58,15 @@
         into Java. I'm sure that'll turn out great. It seems like Java people are slowly adding back all the things
         Java originally left out in the name of "simplicity".
     </p>
-    <h2> UTF-16 </h2>
+    <h3> UTF-16 </h3>
     <p>
         Ah, the worst of both worlds. Some stuff doesn't fit in a single character, but also, you can't index in
         constant time. Wonderful. (This isn't really a concern in practice, just really, really bugs me for some
         reason.)
     </p>
-    <h2> "But Java is Cross-Platform" </h2>
+    <h3> "But Java is Cross-Platform" </h3>
     <p> Oh, as opposed to pretty much every other modern language which isn't? </p>
-    <h2> Conclusion </h2>
+    <h3> Conclusion </h3>
     <p>
         I generally don't like programming in Java because it's just not suited for the kinds of problems I like.
         I did an FTP client in Java once, and a server in C. The Java client involved me having to put 2 or 3 layers of
