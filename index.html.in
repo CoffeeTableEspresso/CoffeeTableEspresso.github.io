@@ -22,8 +22,9 @@
       today. I tried to make it look vaguely like the standard Ubuntu terminal. I used the
       <a href="blog-posts/2020-04-02.html"><b>C Preprocessor</b> to template this site</a>, in order to make sure
       no-one ever hires me for a webdev role. (Linkedin version: I used an HtML teMpLAtinG tOoL tO cReAtE mY sTaTic
-      WeBsITe.) Also, yes, that is the deprecated <code>marquee</code> tag at the top of the page. I had to polyfill
-      the blink tag unfortunately, since modern web browsers have plunged us into a <code>blink</code>-less dark age.
+      WeBsITe.) Also, yes, that is the deprecated <code>marquee</code> tag at the top of the page. I had to animate
+      the blink tag with <b>CSS</b> unfortunately, since modern web browsers have plunged us into a
+      <code>&lt;blink&gt;</code>-less dark age.
     </p>
     <h2> Stuff I Like</h2>
     <ul>
