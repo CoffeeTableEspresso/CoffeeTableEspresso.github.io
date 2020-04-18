@@ -94,12 +94,12 @@ footer {
 }
 
 blink {
-    animation: 2s linear infinite blinking_effect;
+    animation: 1s linear infinite blinking_effect;
 }
 
 @keyframes blinking_effect {
     0% {
-        visibility: hidden;
+        visibility: visible;
     }
     50% {
         visibility: hidden;

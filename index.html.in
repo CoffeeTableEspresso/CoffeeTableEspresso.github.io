@@ -10,6 +10,7 @@
 #include "header.shtml"
   <div>
     <marquee><h1>Welcome To My Website!</h1></marquee>
+    <marquee><blink>marquee <em>&amp;</em> blink!!? What is this, a crossover episode?</blink></marquee>
     <h2> About Me </h2>
     <p> I'm a software developer living in <b>Vancouver</b>. I can be found on GitHub as 
       <a href="https://github.com/CoffeeTableEspresso"><b>CoffeeTableEspresso</b></a>. I'm a <b>Combined Honours Mathematics
