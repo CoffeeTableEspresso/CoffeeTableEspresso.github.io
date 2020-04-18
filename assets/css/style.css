@@ -94,7 +94,7 @@ footer {
 }
 
 blink {
-    animation: 2s linear infinite blinking_effect;
+    animation: blinking_effect 1s steps(1) infinite;
 }
 
 @keyframes blinking_effect {
