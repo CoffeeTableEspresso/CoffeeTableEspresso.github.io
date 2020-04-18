@@ -117,7 +117,7 @@ footer {
     }
 }
 
-blink, .blink {
+.blink {
     -webkit-animation: blinking_effect 750ms steps(1) infinite;
     animation: blinking_effect 750ms steps(1) infinite;
 }
