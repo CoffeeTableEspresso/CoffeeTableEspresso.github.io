@@ -102,9 +102,9 @@ blink {
         visibility: visible;
     }
     50% {
-        visibility: hidden;
+        visibility: visible;
     }
     100% {
-        visibility: visible;
+        visibility: hidden;
     }
 }
