@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 
+:root {
+    --bg-color: #300a24;
+    --bg-color-sec: #551140;
+}
+
 body {
     font-family: 'Ubuntu Mono', monospace;
     background-color: #300a24;
@@ -58,7 +63,6 @@ img {
 }
 
 .spoiler:hover {
-    background-color: #551140;
     color: white;
 }
 

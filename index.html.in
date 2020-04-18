@@ -9,6 +9,7 @@
 <body>
 #include "header.shtml"
   <div>
+    <!-- Yes, I cheated. Chrome was being a real bitch about <blink> so I had to make do with just a blink class instead -->
     <marquee><h1 class="blink">Welcome To My Website!</h1></marquee>
     <p>(<code>&lt;marquee&gt;</code> <em>and</em> <code>&lt;blink&gt;</code> on the same webpage!!? What is this, a crossover episode?)</p>
     <h2> About Me </h2>
