@@ -93,23 +93,6 @@ footer {
     align-content: center;
 }
 
-blink {
-    -webkit-animation: blinking_effect 750ms steps(1) infinite;
-    animation: blinking_effect 750ms steps(1) infinite;
-}
-
-@-webkit-keyframes blinking_effect {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 @keyframes blinking_effect {
     0% {
         opacity: 1;
@@ -120,4 +103,8 @@ blink {
     100% {
         opacity: 1;
     }
+}
+
+blink, .blink {
+    animation: blinking_effect 750ms steps(1) infinite;
 }
