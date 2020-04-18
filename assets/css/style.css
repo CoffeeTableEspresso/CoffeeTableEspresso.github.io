@@ -99,12 +99,12 @@ blink {
 
 @keyframes blinking_effect {
     0% {
-        visibility: visible;
+        opacity: 1;
     }
     50% {
-        visibility: visible;
+        opacity: 0;
     }
     100% {
-        visibility: hidden;
+        opacity: 1;
     }
 }
