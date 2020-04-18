@@ -95,6 +95,7 @@ footer {
 
 blink {
     animation: blinking_effect 750ms steps(1) infinite;
+    -webkit-animation: blinking_effect 750ms steps(1) infinite;
 }
 
 @keyframes blinking_effect {
@@ -108,3 +109,16 @@ blink {
         opacity: 1;
     }
 }
+
+@-webkit-keyframes blinking_effect {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
