@@ -9,21 +9,21 @@
 <body>
 #include "header.shtml"
   <div>
-    <marquee>My Website!</marquee>
-    <h1> About Me </h1>
+    <marquee><h1>Welcome To My Website!</h1></marquee>
+    <h2> About Me </h2>
     <p> I'm a software developer living in <b>Vancouver</b>. I can be found on GitHub as 
       <a href="https://github.com/CoffeeTableEspresso"><b>CoffeeTableEspresso</b></a>. I'm a <b>Combined Honours Mathematics
       &amp; Computer Science</b> student at the <b>University of British Columbia</b>, with an interest in programming language 
       theory and compilers.
     </p>
-    <h1> About This Site </h1>
+    <h2> About This Site </h2>
     <p> I made this website with raw <b>HTML and CSS</b> as a protest against some of the bloated websites we see online 
       today. I tried to make it look vaguely like the standard Ubuntu terminal. I used the
       <a href="blog-posts/2020-04-02.html"><b>C Preprocessor</b> to template this site</a>, in order to make sure
       no-one ever hires me for a webdev role. (Linkedin version: I used an HtML teMpLAtinG tOoL tO cReAtE mY sTaTic
       WeBsITe.)
     </p>
-    <h1> Stuff I Like</h1>
+    <h2> Stuff I Like</h2>
     <ul>
       <li> <b>vim</b> &mdash; Scriptable text editor. </li>
       <li> 
@@ -35,7 +35,7 @@
         (which is most languages I usually use).
       </li>
     </ul>
-    <h1> Projects </h1> 
+    <h2> Projects </h2>
     <p> I work on many projects, but my main focus currently is <a href="https://github.com/yasl-lang/yasl"><b>YASL</b></a>,
         a small embeddable scripting language I've built from scratch in pure C99.
     </p>
@@ -43,7 +43,7 @@
       <a href="https://yasl-lang.github.io/playground/interpreter.html">here</a>, if you'd like to try YASL without 
       downloading anything.
     </p>
-    <h1> Blog </h1>
+    <h2> Blog </h2>
     <p> Here's my blog: <a href="blog.html">blog</a>. </p>
   </div>
 #include "footer.shtml"
