@@ -80,9 +80,11 @@ img {
 
 .visitor-count > span {
     font-size: 0.9em;
-    padding: 6px 6px 4px;
+    padding: 0.5em 0.5em 0.5em;
     display: inline-block;
-    border-radius: 3px;
+    border-radius: 0.25em;
+    margin-right: -0.05em;
+    margin-left: -0.1em;
     background-color: #551140;
 }
 
