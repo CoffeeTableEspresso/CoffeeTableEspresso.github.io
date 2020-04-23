@@ -76,10 +76,10 @@ img {
 
 .visitor-count {
     text-align: center;
+    font-size: 0.9em;
 }
 
 .visitor-count > span {
-    font-size: 0.9em;
     padding: 0.5em 0.5em 0.5em;
     display: inline-block;
     border-radius: 0.25em;
