@@ -51,6 +51,7 @@
     <h2> Blog </h2>
     <p> Here's my blog: <a href="blog.html">blog</a>. </p>
   </div>
+  <!-- yes, you got me, the visitor count is a lie -->
   <div class="visitor-count">
     You're visitor number:
     <span>0</span>
@@ -58,7 +59,8 @@
     <span>0</span>
     <span>0</span>
     <span>4</span>
-    <span>2</span>
+    <span>2</span>.
+    Thanks for stopping by!
   </div>
 #include "footer.shtml"
 </body>
