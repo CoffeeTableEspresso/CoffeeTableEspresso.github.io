@@ -4,4 +4,5 @@
             This website is certified Y2K compliant.
         </p>
     </div>
+    <p> Last updated: __DATE__</p>
 </footer>
