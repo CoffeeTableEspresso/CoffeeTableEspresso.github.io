@@ -51,6 +51,15 @@
     <h2> Blog </h2>
     <p> Here's my blog: <a href="blog.html">blog</a>. </p>
   </div>
+  <div class="visitor-count">
+    You're visitor number:
+    <span>0</span>
+    <span>0</span>
+    <span>0</span>
+    <span>0</span>
+    <span>4</span>
+    <span>2</span>
+  </div>
 #include "footer.shtml"
 </body>
 </html>

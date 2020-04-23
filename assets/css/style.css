@@ -74,6 +74,17 @@ img {
     text-align: center;
 }
 
+.visitor-count {
+    text-align: center;
+}
+
+.visitor-count > span {
+    padding: 6px 6px 4px;
+    display: inline-block;
+    border-radius: 3px;
+    background-color: #551140;
+}
+
 blockquote {
     background: #551140;
     border-left: 0.5em solid white;
