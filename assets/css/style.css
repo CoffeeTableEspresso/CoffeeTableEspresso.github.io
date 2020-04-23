@@ -5,6 +5,10 @@
     --bg-color-sec: #551140;
 }
 
+html {
+    cursor: url("../images/cursor_color.png"), auto;
+}
+
 body {
     font-family: 'Ubuntu Mono', monospace;
     background-color: #300a24;
