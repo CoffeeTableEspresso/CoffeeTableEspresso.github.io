@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="my website">
+    <base href="/">
+    <title>CoffeeTableEspresso &mdash; home</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+#include "header.shtml"
+    <div>
+        <div>
+            <blockquote>
+                the flashing scrolling bannerc [sic] might give me a seizure
+            </blockquote>
+            <footer> &mdash; Kenta</footer>
+        </div>
+        <div>
+            <blockquote>
+                This site is ... interesting. Shockingly large parts of work is put into this so enjoy it!
+            </blockquote>
+            <footer> &mdash; Carmen </footer>
+        </div>
+        <div>
+            <blockquote>
+                its a style, but not my style LOL
+            </blockquote>
+            <footer> &mdash; John </footer>
+        </div>
+        <div>
+            <blockquote>
+                thanks i got a seizure
+            </blockquote>
+            <footer> &mdash; Yvonne </footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -19,6 +19,12 @@
       theory and compilers.
     </p>
     <h2> About This Site </h2>
+    <div>
+      <blockquote>
+        My website's kind of fun for me. I get to do drawings on that. It's kind of fun.
+      </blockquote>
+      <footer> &mdash; Jeff Bridges</footer>
+    </div>
     <p> I made this website with raw <b>HTML and CSS</b> as a protest against some of the bloated websites we see online 
       today. I tried to make it look vaguely like the standard Ubuntu terminal. I used the
       <a href="blog-posts/2020-04-02.html"><b>C Preprocessor</b> to template this site</a>, in order to make sure

@@ -1,10 +1,13 @@
-all: blog index blog-posts
+all: blog index reviews blog-posts
 
 blog:
 	gcc -E -x assembler-with-cpp -P blog.html.in > blog.html
 
 index:
 	gcc -E -x assembler-with-cpp -P index.html.in > index.html
+
+reviews:
+	gcc -E -x assembler-with-cpp -P reviews.html.in > reviews.html
 
 blog-posts: 2018-06-08 2018-11-08 2020-02-18 2020-02-19 2020-02-20 2020-02-21 2020-03-20 2020-03-22 2020-03-24 2020-03-29 2020-04-01 2020-04-02 2020-04-05 2020-04-10 2020-04-13
 
