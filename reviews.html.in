@@ -10,7 +10,15 @@
 #include "header.shtml"
     <div>
         <h1> Reviews </h1>
-        <p> Feedback I've gotten from people about this site:
+        <div>
+            <blockquote>
+                The greater the decrease in the social significance of an art form, the sharper the distinction between
+                criticism and enjoyment by the public. The conventional is uncritically enjoyed, and the truly new is
+                criticized with aversion.
+            </blockquote>
+            <footer> &mdash; Walter Benjamin </footer>
+        </div>
+        <p> I've gotten lots of feedback from people about this site, all of it very positive:
         <div>
             <blockquote>
                 the flashing scrolling bannerc [sic] might give me a seizure
