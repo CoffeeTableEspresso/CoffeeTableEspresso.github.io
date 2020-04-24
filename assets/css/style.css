@@ -28,11 +28,11 @@ ul {
 }
 
 a:link {
-    color: rebeccapurple;
+    color: #FF69B4;
 }
 
 a:visited {
-    color: #FF69B4;
+    color: pink;
 }
 
 a:active {
