@@ -41,7 +41,13 @@
             </blockquote>
             <footer> &mdash; Geoff </footer>
         </div>
+        <div>
+            <blockquote>
+                In my professional opinion, the only thing it needs is rainbow comic sans.
+            </blockquote>
+            <footer> &mdash; Kat </footer>
+        </div>
     </div>
-#include "gooter.shtml"
+#include "footer.shtml"
 </body>
 </html>
