@@ -65,6 +65,10 @@
             <blockquote> It's ugly </blockquote>
             <footer> &mdash; Vanessa </footer>
         </div>
+        <div>
+            <blockquote> Purple is the colour of Kings </blockquote>
+        <footer> &mdash; Liam</footer>
+        </div>
     </div>
 #include "footer.shtml"
 </body>
