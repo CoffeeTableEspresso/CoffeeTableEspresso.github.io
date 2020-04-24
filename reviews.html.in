@@ -61,6 +61,10 @@
             </blockquote>
             <footer> &mdash; Aidan </footer>
         </div>
+        <div>
+            <blockquote> It's ugly </blockquote>
+            <footer> &mdash; Vanessa </footer>
+        </div>
     </div>
 #include "footer.shtml"
 </body>
