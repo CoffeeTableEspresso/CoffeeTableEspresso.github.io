@@ -75,6 +75,10 @@ img {
     text-align: center;
 }
 
+.alert-content > a:link {
+    color: rebeccapurple;
+}
+
 .visitor-count {
     text-align: center;
     font-size: 0.9em;
