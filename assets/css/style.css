@@ -3,6 +3,7 @@
 :root {
     --bg-color: #300a24;
     --bg-color-sec: #551140;
+    --alert-color:
 }
 
 body {
@@ -27,7 +28,7 @@ ul {
 }
 
 a:link {
-    color: purple;
+    color: rebeccapurple;
 }
 
 a:visited {
@@ -94,7 +95,6 @@ blockquote {
     margin: 1em;
     padding: 0.5em;
 }
-
 
 blockquote:before {
     content: '\201C';
