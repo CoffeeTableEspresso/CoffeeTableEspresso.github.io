@@ -69,6 +69,10 @@
             <blockquote> pUrpLe iS tHe cOLouR oF KiNGs </blockquote>
         <footer> &mdash; Liam</footer>
         </div>
+        <div>
+            <blockquote> it sucks ass </blockquote>
+            <footer> &mdash; Anton </footer>
+        </div>
     </div>
 #include "footer.shtml"
 </body>
