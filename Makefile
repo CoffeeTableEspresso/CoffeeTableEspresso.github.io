@@ -9,7 +9,7 @@ index:
 reviews:
 	gcc -E -x assembler-with-cpp -P reviews.html.in > reviews.html
 
-blog-posts: 2018-06-08 2018-11-08 2020-02-18 2020-02-19 2020-02-20 2020-02-21 2020-03-20 2020-03-22 2020-03-24 2020-03-29 2020-04-01 2020-04-02 2020-04-05 2020-04-10 2020-04-13
+blog-posts: 2018-06-08 2018-11-08 2020-02-18 2020-02-19 2020-02-20 2020-02-21 2020-03-20 2020-03-22 2020-03-24 2020-03-29 2020-04-01 2020-04-02 2020-04-05 2020-04-10 2020-04-13 2020-04-24
 
 2018-06-08:
 	gcc -E -x assembler-with-cpp -P -I. blog-posts/2018-06-08.html.in > blog-posts/2018-06-08.html
@@ -55,6 +55,9 @@ blog-posts: 2018-06-08 2018-11-08 2020-02-18 2020-02-19 2020-02-20 2020-02-21 20
 
 2020-04-13:
 	gcc -E -x assembler-with-cpp -P -I. blog-posts/2020-04-13.html.in > blog-posts/2020-04-13.html
+
+2020-04-24:
+	gcc -E -x assembler-with-cpp -P -I. blog-posts/2020-04-24.html.in > blog-posts/2020-04-24.html
 
 clean:
 	rm *.html

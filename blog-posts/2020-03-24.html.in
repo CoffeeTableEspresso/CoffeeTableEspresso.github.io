@@ -1,3 +1,4 @@
+#include "include.shtml"
 #define DATE 2020-03-24
 <html lang="en">
 <head>
@@ -39,10 +40,8 @@
         a good idea now, it's a slippery slope to just constantly tracking everyone. Big Brother is watching.
     </p>
     <p>
-        On a happier note,
-        <b><span style="background-color: #1b1b1b;color:#ffffff;border-radius:.15em">
-            Stayhome<span style="background-color:#ffa31a;color:#1b1b1b;border-radius:.15em">hub</span></span></b>
-        is offering free premium memberships during the quarantine, so that's something.
+        On a happier note, PH_LOGO(Stayhome, hub) is offering free premium memberships during the quarantine,
+        so that's something.
     </p>
 </div>
 </body>

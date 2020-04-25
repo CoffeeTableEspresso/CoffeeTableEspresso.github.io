@@ -3,3 +3,6 @@
 #define xstr(s) str(s)
 #define str(s) #s
 #define BLOG_POST(date, ...) <a href=xstr(xpaste(date))><b>date</b></a> &mdash; __VA_ARGS__
+#define PH_LOGO(P, H) \
+<b><span style="background-color: #1b1b1b;color:#ffffff;border-radius:.15em">P\
+    <span style="background-color:#ffa31a;color:#1b1b1b;border-radius:.15em">H</span></span></b>

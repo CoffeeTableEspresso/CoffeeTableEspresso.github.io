@@ -1,0 +1,86 @@
+#define DATE 2020-04-24
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="my website">
+    <base href="/">
+    <title>CoffeeTableEspresso &mdash; blog &mdash; DATE</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+#include "header.shtml"
+
+<div>
+    <h1> DATE </h1>
+    <h2> Internet Explorer Returns! </h2>
+    <p>
+        Remember the good old days when certain sites only worked in certain browsers? you know, these ones:
+    </p>
+    <img src="assets/images/internet-explorer.gif" alt="Best Viewed with Internet Explorer">
+    <p>
+        I sure don't, I'm way too young for that. Nevertheless, lately I've noticed a disturbing trend
+        of things not working except in Chrome.
+    </p>
+    <p>
+        Here's a few sites that I've found that are "Chrome-only", in some way:
+    </p>
+    <ul>
+        <li><b>Collaborate Ultra</b> &mdash; I found students unable to connect if they were on Safari.
+        <li><b> Facebook Calls with more than two people</b> &mdash; Really Zuck'? You guys couldn't be
+            bothered to make this work on anything except Chrome?
+        <li><b>PH_LOGO(Porn, hub)</b> &mdash; This works on my PC but not my laptop. Seriously guys?
+            video streaming is supposed to be your thing, this is just laziness.
+        <li><b>Airbnb</b> &mdash; <a href="https://twitter.com/jyasskin/status/935173698046214145">This tweet
+            by Airbnb</a>, in response to someone saying their site wasn't working properly on Safari.
+    </ul>
+    <p>
+        All the complaints I've heard of how bad the web used to be when people made a site only for IE,
+        or only for Navigator. And yet here we are in 2020, doing <em>the exact same shit</em>.
+        Wonderful. Great work everyone.
+    </p>
+    <h2> Why Is This a Problem? </h2>
+    <p>
+        The arguments against just using Chrome are not for technical reasons. Chrome works very,
+        very well. Just as well, if not better, than any other browser.
+    </p>
+    <p>
+        The arguments against Chrome are based on wanting a free and open web. Chrome having a monopoly is
+        bad for that. Just look at:
+    </p>
+    <ul>
+        <li> Chrome working to disable ad-blockers;
+        <li> Chrome removing ads from people other than Google;
+        <li> Chrome influencing web standards since they're the <em>de facto</em> standard.
+    </ul>
+    <p>
+        Can you really sit here and argue that any of the above are actually good?
+    </p>
+    <p>
+        Of course not. The above are good <em>for Google</em>, and <em>only</em> for Google.
+    </p>
+    <h2> What If This is Unavoidable? </h2>
+    <p>
+        What if this is just what happens with web browser? On the developer side, it's certainly easier
+        to test in a single browser. On the user side, it's very easy to download a new browser if
+        there's a problem with your current one.
+    </p>
+    <p>
+        Once you reach a critical mass of users on a browser, it's hard to justify spending lots of
+        time (and hence money) making sure things work on every other possible browser you could find.
+    </p>
+    <p>
+        For users, if you find that one browser <em>just works</em> for everything, and another doesn't,
+        which are you going to choose? Even if the browsers themselves aren't at fault for this, but the
+        developers. End users simply don't care. They just want to be able to browser PH_LOGO(The,Web)
+        without any problems.
+    </p>
+    <h2> Conclusion </h2>
+    <p> We need to do better with making sure sites run perfectly <em>in all browsers</em>.</p>
+    <p>
+        And failing that, we need more regulation for tech monopolies. Having a single company
+        in charge of the future of the Internet doesn't seem like such a good idea to me...
+    </p>
+</div>
+</body>
+</html>
