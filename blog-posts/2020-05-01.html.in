@@ -42,7 +42,7 @@
         If second year students doing a CS degree can't learn C++ in 21 days, I'm not really sure why random people with
         no CS background think they can.
     </p>
-    <h2> "What was the point of this rant?" </h2>
+    <h2> "So what was the point of this rant?" </h2>
     <p>
         You don't see "How to Become a Lawyer in 21 Days" or "How to Become a Pharmacist in 21 days". Law is only so
         complicated because lawyers made up all these complicated words, after all. If they didn't do that, the
@@ -54,6 +54,7 @@
         That's the <a href="https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect">Dunning-Kruger Effect</a>
         at work I guess.
     </p>
+    <p> Or maybe I'm just a dumbass and coding isn't actually that hard. Bah. </p>
 </div>
 #include "footer.shtml"
 </body>
