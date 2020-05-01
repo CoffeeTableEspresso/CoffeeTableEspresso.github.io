@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
 #include "min-header.shtml"
-
 <div>
     <h1> DATE </h1>
     <h2> Quarantine Time, Part II </h2>
@@ -26,5 +24,6 @@
         I've been watching BoJack Horseman. It's a wonderful show, but god it's depressing.
     </p>
 </div>
+#include "footer.shtml"
 </body>
 </html>

@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
 #include "min-header.shtml"
-
 <div>
     <h1> DATE </h1>
     <h2> Quarantine Time, Part VI </h2>

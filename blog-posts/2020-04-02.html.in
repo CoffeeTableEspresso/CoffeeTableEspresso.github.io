@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
 #include "min-header.shtml"
-
 <div>
     <h1> DATE </h1>
     <h2> Using the C Preprocessor to Template HTML (or: Why I'm Not a Web Developer)</h2>
@@ -78,5 +76,6 @@
         wEb DeVELopMenT iS mY PaSSiOn.
     </p>
 </div>
+#include "footer.shtml"
 </body>
 </html>

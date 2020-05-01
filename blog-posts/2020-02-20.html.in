@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
 #include "min-header.shtml"
-
 <div>
     <h1> DATE </h1>
     <h2> Why <code>iostream</code> is Awful </h2>
@@ -101,5 +99,6 @@
         but I can't think of a language that copied <code>iostream</code>.
     </p>
 </div>
+#include "footer.shtml"
 </body>
 </html>

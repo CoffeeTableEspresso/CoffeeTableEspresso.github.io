@@ -1,0 +1,60 @@
+#define DATE 2020-05-01
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="my website">
+    <base href="/">
+    <title>CoffeeTableEspresso &mdash; blog &mdash; DATE</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+#include "min-header.shtml"
+<div>
+    <h1> DATE </h1>
+    <h2> Learn C++ in 21 Days </h2>
+    <p>
+        Uh oh. Looks like I'm in trouble. Turns out it's possible to learn everything there is about coding in under a
+        month. From there, 6 figure jobs await. The only reason everyone doesn't code is because
+        <a href="http://harmful.cat-v.org/software/c++/I_did_it_for_you_all">Evil Programmers have overcomplicated it
+        in the name of job security</a>.
+    </p>
+    <p>
+        A CS degree is obviously a scam as well. Who needs that? It's all a waste of money, when you can just self-teach
+        yourself everything covered in the degree in a few weeks.
+    </p>
+    <p>
+        Maybe if programmers didn't insist on using these vastly over-complicated languages to do everything, we
+        wouldn't need programmers. If only someone could
+        <a href="https://en.wikipedia.org/wiki/COBOL">invent a language with English-like syntax, so that everyone
+        could read and write it</a>.
+    </p>
+    <h2> Obviously I'm Kidding </h2>
+    <p>
+        Simply looking around can prove all the above wrong: If it was so easy to do, we'd have a lot more programmers.
+        Really, the only way you're going to "learn a new language in 21 days" is if you already know how to code.
+    </p>
+    <p>
+        I TAed a second-year course (for you Americans, second year is the <em>second</em> year that you're in uni)
+        that both introduced students to C++, and taught them introductory data-structures and algorithms.
+    </p>
+    <p> I certainly wouldn't hire any of those kids to do C++ work for me, even though they worked on it for 4 months
+        (in addition to already having done 2 other courses where they learned how to code in other languages).
+        If second year students doing a CS degree can't learn C++ in 21 days, I'm not really sure why random people with
+        no CS background think they can.
+    </p>
+    <h2> "What was the point of this rant?" </h2>
+    <p>
+        You don't see "How to Become a Lawyer in 21 Days" or "How to Become a Pharmacist in 21 days". Law is only so
+        complicated because lawyers made up all these complicated words, after all. If they didn't do that, the
+        average person could do it no problem. And how hard is it to give drugs out to people? The doctors already tell
+        them what drugs to give, it's basically impossible to screw up.
+    </p>
+    <p>
+        Honestly, it's kind of frustrating to see my entire field reduced down to "anyone can learn this in 21 days".
+        That's the <a href="https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect">Dunning-Kruger Effect</a>
+        at work I guess.
+    </p>
+</div>
+#include "footer.shtml"
+</body>
+</html>

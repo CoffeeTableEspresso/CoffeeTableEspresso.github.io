@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
 #include "header.shtml"
-
 <div>
     <h1> DATE </h1>
     <h2> Internet Explorer Returns! </h2>

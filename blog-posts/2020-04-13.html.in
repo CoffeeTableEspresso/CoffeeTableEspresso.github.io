@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
 #include "min-header.shtml"
-
 <div>
     <h1> DATE </h1>
     <h2> Low Effort Recruiter Spam </h2>
@@ -23,5 +21,6 @@
     <h3> Conclusion </h3>
     <p> Or just send out spam until something sticks, either or. </p>
 </div>
+#include "footer.shtml"
 </body>
 </html>
