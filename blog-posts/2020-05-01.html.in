@@ -28,7 +28,7 @@
         <a href="https://en.wikipedia.org/wiki/COBOL">invent a language with English-like syntax, so that everyone
         could read and write it</a>.
     </p>
-    <h2> Obviously I'm Kidding </h2>
+    <h3> Obviously I'm Kidding </h3>
     <p>
         Simply looking around can prove all the above wrong: If it was so easy to do, we'd have a lot more programmers.
         Really, the only way you're going to "learn a new language in 21 days" is if you already know how to code.
@@ -42,7 +42,7 @@
         If second year students doing a CS degree can't learn C++ in 21 days, I'm not really sure why random people with
         no CS background think they can.
     </p>
-    <h2> "So what was the point of this rant?" </h2>
+    <h3> "So what was the point of this rant?" </h3>
     <p>
         You don't see "How to Become a Lawyer in 21 Days" or "How to Become a Pharmacist in 21 days". Law is only so
         complicated because lawyers made up all these complicated words, after all. If they didn't do that, the

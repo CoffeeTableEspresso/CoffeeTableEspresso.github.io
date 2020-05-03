@@ -38,7 +38,7 @@
         or only for Navigator. And yet here we are in 2020, doing <em>the exact same shit</em>.
         Wonderful. Great work everyone.
     </p>
-    <h2> Why Is This a Problem? </h2>
+    <h3> Why Is This a Problem? </h3>
     <p>
         The arguments against just using Chrome are not for technical reasons. Chrome works very,
         very well. Just as well, if not better, than any other browser.
@@ -58,7 +58,7 @@
     <p>
         Of course not. The above are good <em>for Google</em>, and <em>only</em> for Google.
     </p>
-    <h2> What If This is Unavoidable? </h2>
+    <h3> What If This is Unavoidable? </h3>
     <p>
         What if this is just what happens with web browser? On the developer side, it's certainly easier
         to test in a single browser. On the user side, it's very easy to download a new browser if
@@ -77,7 +77,7 @@
     <p>
         What if web browsers simply tend towards monopoly, regardless of what people do to try to stop this?
     </p>
-    <h2> Conclusion </h2>
+    <h3> Conclusion </h3>
     <p> We need to do better with making sure sites run perfectly <em>in all browsers</em>.</p>
     <p>
         And failing that, we need more regulation for tech monopolies. Having a single company
