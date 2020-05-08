@@ -1,7 +1,10 @@
-all: blog index reviews blog-posts
+all: blog contact index reviews blog-posts
 
 blog:
 	gcc -E -x assembler-with-cpp -P blog.html.in > blog.html
+
+contact:
+	gcc -E -x assembler-with-cpp -P contact.html.in > contact.html
 
 index:
 	gcc -E -x assembler-with-cpp -P index.html.in > index.html

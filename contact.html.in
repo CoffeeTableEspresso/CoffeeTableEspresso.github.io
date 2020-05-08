@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="my website">
+    <base href="/">
+    <title>CoffeeTableEspresso &mdash; contact</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+#include "header.shtml"
+<div>
+    <h1> Contact </h1>
+    <p>
+        If you'd like to get in touch, please email me at <b>coffeetableespresso@gmail.com</b>.
+    </p>
+    <p>
+        (Recruiter mail is fine, but please don't copy-paste.)
+    </p>
+#include "footer.shtml"
+</div>
+</body>
+</html>
