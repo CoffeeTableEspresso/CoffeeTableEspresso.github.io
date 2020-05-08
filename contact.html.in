@@ -10,6 +10,12 @@
 #include "header.shtml"
 <div>
     <h1> Contact </h1>
+    <div>
+        <blockquote>
+            Email is not going to disappear. Possibly ever. Until the robots kill us all.
+        </blockquote>
+        <footer> &mdash; Paul Buchheit</footer>
+    </div>
     <p>
         You can email me at <b>coffeetableespresso@gmail.com</b>.
     </p>
