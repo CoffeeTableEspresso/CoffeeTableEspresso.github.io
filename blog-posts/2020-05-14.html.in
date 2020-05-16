@@ -1,0 +1,91 @@
+#include "include.shtml"
+#define DATE 2020-05-14
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="my website">
+    <base href="/">
+    <title>CoffeeTableEspresso &mdash; blog &mdash; DATE</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+#include "min-header.shtml"
+<div>
+    <h1> DATE </h1>
+    <h2> SemVer is a Lie (or: <em>Everything</em> is your API) </h2>
+    <p>
+        Semantic Versioning (SemVer) is great in practice. Increment the patch number for bug fixes, the minor number
+        for backwards-compatible new features, and the major version for breaking changes. Any internal changes not
+        visible to the users can be changed whenever, as long as the API stays the same. Sounds great in practice.
+        And works well enough in the real world. Most of the time. There's just a few caveats to be aware of
+        when actually applying it.
+    </p>
+    <h3> Users Don't Give a Shit About Anything Except Whether it Just Works </h3>
+    <p>
+        I know, should be pretty obvious right? If people are using my library (for example), and it breaks, it doesn't
+        matter if I fixed an old bug, introduced a new bug, changed something that's not part of the API, or made a
+        breaking change. <em>I still broke things for my users.</em> Let me repeat that. <em> It doesn't matter what
+        change I made if it breaks things for my users.</em> Once your library is big enough, <em>every observable
+        behaviour</em> is going to be relied on by someone, and changing any observable behaviour <em>will break
+        someone's code</em>.
+    </p>
+    <p>
+        As an example, consider
+        <a href="https://bugs.chromium.org/p/v8/issues/detail?id=164">this "bug" report from 2008</a>, about the V8
+        changing their JavaScript implementation to no longer keep track of the insertion order of keys in
+        <code>Object</code>s. Nowhere in the ECMAScript standard did it say that <code>Object</code>s should keep track
+        of insertion order. In fact, it specifically mentioned that <code>Object</code>s do not. The change the V8 team
+        should have been totally fine. They didn't change any behaviour that was part of the ECMAScript standard.
+        <code>Object</code>s keeping track of insertion order was an implementation detail.
+    </p>
+    <p>
+        And yet, as the bug report above shows, people <em>did</em> rely on it. They relied on it to the point that V8
+        changed things back, and this behaviour ended up being added to the ECMAScript standard. Because while it
+        wasn't technically part of the API, people <em>could</em> rely on it, so they inevitably did.
+    </p>
+    <p>
+        As another example, I did a co-op at a game's company once. My team worked on a library for network code (among
+        other things). It was half a million LOC, written over 15 years, and with random contributions from random
+        game devs.
+    </p>
+    <p>
+        In short, it was full to the brim with tech debt. In particular, we weren't consistent in our use of host- and
+        network-order throughout our code. This wasn't part of the API, just implementation details. Users of our
+        library shouldn't have even known about this, let alone relied on it.
+    </p>
+    <p>
+        So we decided to clean up this piece of tech debt. We made everything use host-order, and it was beautiful. Our
+        tech debt was fixed, all without affecting our users.
+    </p>
+    <p>
+        This lasts for about a day, until everything came crashing down. Turns out some users had hard-coded values in
+        certain places in ways they shouldn't have, and us changing the order had completely broken all of their code.
+        Doesn't matter that they were completely misusing our API, and shouldn't have even hardcoded those kinds of
+        values in the first place.
+    </p>
+    <p>
+        We promptly rolled things back.
+    </p>
+    <h3> Conclusion </h3>
+    <p>
+        Is V8 wrong for changing implementation details of <code>Object</code>s in a way that's totally acceptable
+        according to the ECMAScript Standard? Are people wrong for relying on this behaviour even though they were
+        repeatedly warned not to?
+    </p>
+    <p>
+        Were we wrong to try to clean up tech debt? Were our users wrong to hardcode values like they did?
+    </p>
+    <p>
+        In the end, it doesn't even matter. What matters is that the changes broke <em>a lot</em> of people's code.
+        It's pointless to argue who is "right" or "wrong" here.
+    </p>
+    <p>
+        As a library author, it's your responsibility to avoid breaking people's code with your updates. If people are
+        relying on something, even if it's not technically part of your API, people will be upset over you changing it.
+        Be careful when writing your library, and when making changes to it.
+    </p>
+    <p> Just because it's not part of your API doesn't mean people won't treat it like it is. </p>
+</div>
+#include "footer.shtml"
+</body>
+</html>
