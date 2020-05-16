@@ -1,0 +1,57 @@
+#include "include.shtml"
+#define DATE 2020-05-15
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="my website">
+    <base href="/">
+    <title>CoffeeTableEspresso &mdash; blog &mdash; DATE</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+#include "min-header.shtml"
+<div>
+    <h1> DATE </h1>
+    <h2> Drug Testing is Bullshit </h2>
+    <p>
+        Ah jeez, looks like it's time for another round of "things I probably shouldn't say on my blog if I ever want
+        to get hired". Oh well. Let's dive right in.
+    </p>
+    <h3> "Drug Tests" are Really Just "Weed Tests" </h3>
+    <p>
+        If you look at how long drugs stay in your system, most are gone in a day or two <em>at most</em>. (If you're
+        doing cocaine right before you're drug tested, you deserve to fail honestly.) The one exception is weed. Weed
+        stays in your system for a looooooooong time. Like up to a fucking month. Are you kidding me?
+        <em>A fucking month.</em>
+    </p>
+    <p> Why you even want to bother testing for weed is beyond me. It's completely legal in a lot of places, for one
+        thing. Second, if I want to smoke weed on my own time, it's none of my employer's business. Hell, if I wanna
+        do lines of coke of a prostitute's ass in my own time, it's none of my employer's business.
+    </p>
+    <h3> Drugs Tests Are an Invasion of Privacy </h3>
+    <p>
+        Say I do a drug test, and test positive for weed. Or painkillers for that matter. I failed the drug test, I'm
+        out of a job. Of course, there are valid, legal reasons to be taking weed or painkillers. Just because I have
+        them in my system doesn't mean I'm a filthy druggie. They could very well be prescribed to me by my doctor. I'm
+        sure a lot of people with chronic injuries get prescribed painkillers.
+    </p>
+    <p>
+        The only way to prove this though, is to show whoever gave me the test my medical records. Employers aren't
+        normally allowed to look at my medical records when hiring, yet if I fail a drug test because of something
+        I'm taking for medical reasons, it's either that or be out of a job.
+    </p>
+    <h3> It's Really None of My Employer's Business Anyways </h3>
+    <p>
+        Oh great, I tested positive for weed. A drug that I smoked on my own time. It's not affecting my performance.
+        Hell, it's probably not even a crime nowadays. And yet I'm not allowed to, for fear of failing a drug test.
+    </p>
+    <h3> Conclusion </h3>
+    <p>
+        I'm not really interested in a job if there's gonna be drug tests. Not because I can't pass, but because they're
+        total bullshit. I wouldn't let my family starve to avoid a drug test, obviously, but I hope to not be that
+        desperate for work.
+    </p>
+</div>
+#include "footer.shtml"
+</body>
+</html>
