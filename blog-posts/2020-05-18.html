@@ -82,11 +82,11 @@ T v_get(Vect *v, size_t idx) {
         We can do this with a little bit of preprocessor magic:
     </p>
     <pre><code>
-&#35;define Vect(T) v_##T
+&#35;define Vect(T) v&lowbar;##T
 &#35;define CAT(A,B) A##B
-&#35;define CAT_EXPAND(A, B) CAT(A,B)
-&#35;define VECT_FUN_NAME(T, F) CAT_EXPAND(Vect(T), F)
-&#35;define v_init(T) VECT_FUN_NAME(T, _init)
+&#35;define CAT&lowbar;EXPAND(A, B) CAT(A,B)
+&#35;define VECT&lowbar;FUN&lowbar;NAME(T, F) CAT&lowbar;EXPAND(Vect(T), F)
+&#35;define v&lowbar;init(T) VECT&lowbar;FUN&lowbar;NAME(T, &lowbar;init)
 &sol;&sol; ... and so on for the rest of the functions.
 </code></pre>
     <p>
