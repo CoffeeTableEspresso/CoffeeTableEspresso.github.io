@@ -1,0 +1,161 @@
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="my website">
+    <base href="/">
+    <title>CoffeeTableEspresso &mdash; blog &mdash; 2020-05-18</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header>
+<div>
+    <a href="index.html">home</a>
+    <a href="blog.html">blog</a>
+    <a href="reviews.html">reviews</a>
+    <a href="contact.html">contact</a>
+</div>
+</header>
+<div>
+    <h1> 2020-05-18 </h1>
+    <h2> "Code Generation" in C (or: The Preprocessor is Actually Pretty Great) </h2>
+    <p>
+        A few days ago, I wanted two different versions a resizing array in C. One for <code>int</code>, one for
+        <code>char</code>. Of course, you can't do this is C. C doesn't have templates, doesn't have generics, doesn't
+        have anything like that. The only thing C <em>does</em> have is macros. So, I set to work.
+    </p>
+    <h3> Something "Close" to Generics in C </h3>
+    <p>
+        First, let's write a simple version of a resizing array for a single type, <code>T</code> (I haven't bothered
+        making this implementation super efficient, since this is just for illustrative purposes). The following goes in
+        <code>vect.c</code>:
+    </p>
+    <pre><code>
+&#35;define VECT_INIT_CAP 8
+&#35;define T int
+typedef struct Vect {
+        size_t count, cap;
+        T *items;
+} Vect;
+Vect v_init(void) {
+        return {
+                0, VECT_INIT_CAP, malloc(VECT_INIT_CAP * sizeof(T))
+        };
+};
+void v_cleanup(Vect *v) {
+        free(v->items);
+}
+void v_push(Vect *v, T t) {
+        if (v->count == v->cap) {
+                v->cap *= 2;
+                v->items = realloc(v->items, v->cap * sizeof(T));
+        }
+        v->items[v->count++] = t;
+}
+T v_pop(Vect *v) {
+        return v->items[--v->count];
+}
+T v_get(Vect *v, size_t idx) {
+        return v->items[idx];
+}
+    </code></pre>
+    <p>
+        Looks good so far. This will work for a single type <code>T</code> (in this case a <code>typedef</code> of
+        <code>int</code>).
+    </p>
+    <p>
+        There's a few problems we need to solve in order to get this working for whatever types we need. First, we need
+        a unique name for function, since C doesn't allow overloading. (So, we can't have both
+        <code>v_push(vect(char), char);</code> <em>and</em> <code>v_push(int), int);</code>, since both have the same
+        name (<code>v_push</code>), and C only allows one function with each name.
+    </p>
+    <p>
+        So, the first step to making this properly generic is to generate a unique name for the <code>struct</code> and
+        functions, based on <code>T</code>.
+    </p>
+    <p>
+        We can do this with a little bit of preprocessor magic:
+    </p>
+    <code><pre>
+&#35;define Vect(T) v_##T
+&#35;define CAT(A,B) A##B
+&#35;define CAT_EXPAND(A, B) CAT(A,B)
+&#35;define VECT_FUN_NAME(T, F) CAT_EXPAND(Vect(T), F)
+&#35;define v_init(T) VECT_FUN_NAME(T, _init)
+&sol;&sol; ... and so on for the rest of the functions.
+    </pre></code>
+    <p>
+        We also replace <code>Vect</code> and the names of the functions with <code>Vect(T)</code> and the appropriate
+        macros for each function.
+    </p>
+    <p>
+        So the signature for our push function is now <code>void v_push(T)(Vect(T) *, T);</code>, for example.
+    </p>
+    <p> Let's break down what's happening with <code>v_push(T)</code>, since it involves <em>a lot</em> of
+        indirection with macros.
+    </p>
+    <p>The preprocessor will do the following replacements (supposing we substitute have <code>T</code> defined as <code>int</code>, as above):</p>
+    <ul>
+        <li><code>v_push(T) -> VECT_FUN_NAME(int, _push)</code></li>
+        <li><code>VECT_FUN_NAME(int, _push) -> CAT_EXPAND(Vect(int), _push)</code></li>
+        <li><code>CAT_EXPAND(Vect(int), _push) -> CAT(v_int, _push)</code></li>
+        <li><code>CAT(v_int, _push) -> v_int_push</code></li>
+    </ul>
+    <p>
+        The reason we need so many levels of indirection here is because of how the preprocessor expands things out.
+        <code>&#35;&#35;</code> will paste the macro arguments literally, so without the extra indirection,
+        <code>CAT</code> would try to paste <code>Vect(int)</code> and <code>_push</code> literally, without expanding
+        them, which is an error.
+    </p>
+    <p>
+        Long story short, we've not got unique names for our vectors and related functions, based on <code>T</code>.
+        (There are some obvious limitations: <code>T</code> has to be a single identifier for this to work. We can get
+        around this by <code>typedef</code>ing more complex types, if we need <code>T</code> to be anything more
+        complicated.)
+    </p>
+    <p>
+        The last step to this is generating a unique version of our vector for each type we want.
+    </p>
+    <p>
+        Fortunately, this is pretty easy. We wrap our implementation in <code>&#35;define VECT_INSTANTIATE(T)</code>,
+        rather than having <code>T</code> explicitly defined. Then, in order to get vectors of type <code>int</code>,
+        we can just add <code>VECT_INSTANTIATE(int)</code> to the bottom of <code>vect.c</code>.
+    </p>
+    <p>
+        The last piece is the header. We add a similar macro to <code>VECT_INSTANTIATE</code> (which I'll call
+        <code>VECT_DECL</code>), which just declares the methods we want.
+    </p>
+    <p>
+        A full implementation can be found
+        <a href="https://github.com/CoffeeTableEspresso/CGenerics">here, on my GitHub</a>.
+    </p>
+    <h3> How Efficient is This? </h3>
+    <p>
+        Since this directly generates a specific version of our vector for each type we need, there's 0 runtime overhead
+        to doing this. There's also no code-bloat, since we get exactly one definition of each version of the vector for
+        each type we need. (This is <em>possibly</em> better than C++, which could instantiate a template
+        multiple times for the same type, but in practice I haven't found this to be a problem with C++.)
+    </p>
+    <p>
+        In fact, the only "overhead" we have compared with C++ is having to write <code>VECT_DECL(T)</code> and
+        <code>VECT_INSTANTIATE(T)</code> for each type we need, and having to write the type of the functions along with
+        each invocation. (This second one could be avoided if you want to add a few extra macros, but then it becomes
+        a bit more of a pain.)
+    </p>
+    <h3> Would You Actually Use This? </h3>
+    <p>
+        In its current form, probably not. It's mostly a POC to show what kind of stuff is possible in C using the
+        preprocessor.
+    </p>
+    <h3> "But I Can Do This in Language X using Code-Generator Y"</h3>
+    <p>
+        Yup, I'm sure you can. And now you've got an extra dependency for your project that you have to deal with,
+        while I've used the built-in code-generator that every C implementation comes with. I'm happy for you though.
+    </p>
+</div>
+<footer>
+    <div>
+        <p> This website is certified Y2K compliant.
+    </div>
+</footer>
+</body>
+</html>
