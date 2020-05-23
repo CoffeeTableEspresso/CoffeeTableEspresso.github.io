@@ -10,72 +10,72 @@
 #include "header.shtml"
     <div>
         <h1> Reviews </h1>
-        <div>
+        <span>
             <blockquote>
                 The greater the decrease in the social significance of an art form, the sharper the distinction between
                 criticism and enjoyment by the public. The conventional is uncritically enjoyed, and the truly new is
                 criticized with aversion.
             </blockquote>
             <footer> &mdash; Walter Benjamin </footer>
-        </div>
+        </span>
         <p> I've gotten lots of feedback from people about this site, all of it very positive:
-        <div>
+        <span>
             <blockquote>
                 the flashing scrolling bannerc [sic] might give me a seizure
             </blockquote>
             <footer> &mdash; Kenta</footer>
-        </div>
-        <div>
+        </span>
+        <span>
             <blockquote>
                 this [site] is awful but the creator is a cool friend so I’ll put up with it
             </blockquote>
             <footer> &mdash; Carms </footer>
-        </div>
-        <div>
+        </span>
+        <span>
             <blockquote>
                 its [sic] a style, but not my style LOL
             </blockquote>
             <footer> &mdash; John </footer>
-        </div>
-        <div>
+        </span>
+        <span>
             <blockquote>
                 thanks i [sic] got a seizure
             </blockquote>
             <footer> &mdash; Yvonne </footer>
-        </div>
-        <div>
+        </span>
+        <span>
             <blockquote>
                 good thing you aren't doing webdev
             </blockquote>
             <footer> &mdash; Geoff </footer>
-        </div>
-        <div>
+        </span>
+        <span>
             <blockquote>
                 In my professional opinion, the only thing it needs is rainbow comic sans.
             </blockquote>
             <footer> &mdash; Kat </footer>
-        </div>
-        <div>
+        </span>
+        <span>
             <blockquote>
                 The color scheme annoys me, but that’s cause it reminds me of those meme pages
             </blockquote>
             <footer> &mdash; Aidan </footer>
-        </div>
-        <div>
+        </span>
+        <span>
             <blockquote> It's ugly </blockquote>
             <footer> &mdash; Vanessa </footer>
-        </div>
-        <div>
+        </span>
+        <span>
             <blockquote> pUrpLe iS tHe cOLouR oF KiNGs </blockquote>
         <footer> &mdash; Liam</footer>
-        </div>
-        <div>
+        </span>
+        <span>
             <blockquote> it sucks ass </blockquote>
             <footer> &mdash; Anton </footer>
-        </div>
-        <div>
+        </span>
+        <span>
             <blockquote> This is how he spends his time? </blockquote>
-        </div>
+        </span>
         <footer> &mdash; Anelia </footer>
     </div>
 #include "footer.shtml"

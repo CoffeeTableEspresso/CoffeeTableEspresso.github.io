@@ -23,12 +23,12 @@
       work.
     </p>
     <h2> About This Site </h2>
-    <div>
+    <span>
       <blockquote>
         I figured I should have a website, because that's what everybody was doing.
       </blockquote>
       <footer> &mdash; Dave Portnoy</footer>
-    </div>
+    </span>
     <p> I made this website with raw <b>HTML and CSS</b> as a protest against some of the bloated websites we see online 
       today. I tried to make it look vaguely like the standard Ubuntu terminal. I used the
       <a href="blog-posts/2020-04-02.html"><b>C Preprocessor</b> to template this site</a>, in order to make sure
