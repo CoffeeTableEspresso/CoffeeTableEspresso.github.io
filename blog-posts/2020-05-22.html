@@ -1,0 +1,164 @@
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="my website">
+    <base href="/">
+    <title>CoffeeTableEspresso &mdash; blog &mdash; 2020-05-22</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header>
+<div>
+    <a href="index.html">home</a>
+    <a href="blog.html">blog</a>
+    <a href="reviews.html">reviews</a>
+    <a href="contact.html">contact</a>
+</div>
+</header>
+<div>
+    <h1> 2020-05-22 </h1>
+    <h2> Why I Hate C++ </h2>
+    <div>
+        <blockquote>
+            C++ is a horrible language. It's made more horrible by the fact that a lot
+            of substandard programmers use it, to the point where it's much much
+            easier to generate total and utter crap with it. Quite frankly, even if
+            the choice of C were to do *nothing* but keep the C++ programmers out,
+            that in itself would be a huge reason to use C.
+        </blockquote>
+        <footer> &mdash; Linus Torvalds, on C++ </footer>
+    </div>
+    <p>
+        While the above quote is clearly hyperbole, I do agree with Mr. Torvalds on one thing: C++ <em>is</em> a
+        horrible language.
+    </p>
+    <p>
+        I should preface this by saying that I use C++ quite often, and I'm not planning on stopping. I'll defend C++
+        to the death against those assholes that want to rewrite everything in Rust. And, yes, I'm well aware of the
+        valid historical reasons C++ is such a mess.
+    </p>
+    <p>
+        And yet, C++ is still awful. Here's why.
+    </p>
+    <h3> C++ is Too Big </h3>
+    <p>
+        First, C++ is really several languages rolled into one. How exactly to split it up depends on who you talk to,
+        but I like to think of C++ as being composed roughly as follows:
+    </p>
+    <ul>
+        <li> (Most of) C (including the preprocessor);
+        <li> A dynamically-typed functional language that's executed at compile-time (C++ templates);
+        <li> A Java-style OOP language (the <code>class</code> in "C with classes");
+        <li> A bunch of random bullshit to try to glue all of the above together.
+    </ul>
+    <p>
+        And of course, we get another layer of shit on top of it every year to try to fix the problems the last layer
+        of shit caused.
+    </p>
+    <p>
+        The fact that C++ is so large already makes fixing things difficult for the committee. Any new feature has to be
+        compatible with old features, which limits both the semantics and the syntax. All the good syntax is already
+        taken, and there's so many conflicts between existing features that any additions to C++ cause a dozen new
+        foot-guns.
+    </p>
+    <p>
+        As a syntax example, consider <code>std::array&lt;int, N&gt; a;</code>. If C++ were being created from scratch,
+        we could have had dedicated syntax for arrays, like many other languages do. Something like
+        <code>int a[N]</code> seems pretty natural to me.
+    </p>
+    <p>
+        As a much worse example, consider lambdas. One of the examples listed on
+        <a href="https://en.cppreference.com/w/cpp/language/lambda">cppreference.com</a> is this:
+        <code><pre>
+auto vglambda = [](auto printer) {
+    return [=](auto&&... ts)
+    {
+        printer(std::forward<decltype(ts)>(ts)...);
+        return [=] { printer(ts...); };
+    };
+};
+        </pre></code>
+    </p>
+    <p>
+        Seriously? This is supposed to make things <em>easier</em>?
+    </p>
+    <p>
+        Or user-defined literals. Yes, the obvious choice for syntax here is <code>operator""</code>. What? What the
+        actual fuck?
+    </p>
+    <p>
+        For a semantics example, I'll just point you to the
+        <a href="https://en.cppreference.com/w/cpp/language/initialization">ccpreference page for initialisation</a>.
+        Go ahead, read through that. That's the type of bullshit you have to deal with to <em>create a variable</em> in
+        C++. <em>Creating a variable</em> should not require memorising pages of bullshit.
+    </p>
+    <h3> Design by Committee </h3>
+    <p>
+        Based on the shit the committee adds, you'd almost feel like they've never actually been assed to write a
+        fucking line of the bullshit that is C++ in their life.
+    </p>
+    <h3> There's Too Many Ways of Doing Everything </h3>
+    <p>
+        Relates to my above points of the language being too big and being designed by committee . Each sub-language
+        has it's own way of doing things, which are fine on their own, except they all have to coexist.
+    </p>
+    <p>
+        We have <code>NULL</code> and <code>nullptr</code>, pointers and references, <code>class</code>es and
+        <code>struct</code>s, <code>template</code>s and <code>constexpr</code>/<code>consteval</code> and the
+        preprocessor, <code>std::array</code> and C-style arrays, <code>std::string</code> and C-style strings,
+        <code>typedef</code> and <code>using</code>, all the fucking casts, all the ways to initialise a variable,
+        <code>auto f() -> int</code> and <code>int f()</code>, <code>static</code> (the "only in this file" meaning)
+        and <code>private</code> and anonymous namespaces, <code>malloc</code>/<code>free</code> and
+        <code>new</code>/<code>delete</code> and all the C++ styles of smart pointers, <code>stdio</code> and
+        <code>iostream</code>, and that's just off the top of my head.
+    </p>
+    <p>
+        The features I listed above aren't <em>exactly</em> the same, but that's the point. They're really, really
+        close, to the point that any (sane) language wouldn't dare include both.
+    </p>
+    <p>
+        And yes, before you start crying about not using C features in C++, I know that you should generally prefer the
+        C++ version of a lot of these features, but that kind of proves my point. Why does C++ have features in it
+        that you're supposed to never, ever use? That's just more to remember and more limits on the semantics of C++.
+    </p>
+    <h3> Template Error Messages </h3>
+    <p>
+        I TAed a C++ course while I was in school. One mistake from students would lead to literally <em>hundreds</em>
+        of lines of errors, most of which was only tangentially related to the actual code where the mistake happened.
+    </p>
+    <p>
+        A large part of that job was <em>interpreting error messages</em> for the students. God.
+    </p>
+    <h3> <code>iostream</code> </h3>
+    <p>
+        The whole thing is awful. So awful I've already written <a href="blog-posts/2020-02-20.html">a post about it</a>.
+        I cannot overstate how much I fucking hate <code>iostream</code>.
+    </p>
+    <h3> Compile Times </h3>
+    <p>
+        At my second job, a clean build took almost 40 minutes. This was for 500k LOC. A lot of this is related to
+        templates, header files, and optimisations, and yet, we see languages like Rust and D actually having reasonable
+        compile times. Hmmmmmmmmmmmmmmmm.
+    </p>
+    <p>
+        All I'll say here is, I don't care if there's valid reasons for C++ compile times, they still fucking suck.
+    </p>
+    <h3> Conclusion </h3>
+    <p>
+        Yup, C++ is awful.
+    </p>
+    <p>
+        Sadly, it's the best we've got for a lot of use-cases. Try writing a fucking game without C++. (A real one, not
+        some <code>pygame</code> bullshit.)
+    </p>
+    <p>
+        So I'll keep using C++ I guess...
+    </p>
+</div>
+<footer>
+    <div>
+        <p> This website is certified Y2K compliant.
+    </div>
+</footer>
+</body>
+</html>
