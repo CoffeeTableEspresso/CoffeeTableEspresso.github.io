@@ -16,7 +16,7 @@
       crossover episode?)
     </p>
     <h2> About Me </h2>
-    <p> I'm a software developer living in <b>Vancouver</b>. I have a <b>Bachelor of Science</b> (<b>Combined Honours
+    <p> I'm a software developer living in <b>Waterloo, ON</b>. I have a <b>Bachelor of Science</b> (<b>Combined Honours
       Mathematics &amp; Computer Science</b>) from the <b>University of British Columbia</b>. I'm interested in
       programming language theory and compilers. I can be found on GitHub as
       <a href="https://github.com/CoffeeTableEspresso"><b>CoffeeTableEspresso</b></a>, if you'd like to see any of my
@@ -29,10 +29,10 @@
       </blockquote>
       <footer> &mdash; Dave Portnoy</footer>
     </span>
-    <p> I made this website with raw <b>HTML and CSS</b> as a protest against some of the bloated websites we see online 
+    <p> I made this website with raw <b>HTML and CSS</b> as a protest against some of the bloated websites we see online
       today. I tried to make it look vaguely like the standard Ubuntu terminal. I used the
       <a href="blog-posts/2020-04-02.html"><b>C Preprocessor</b> to template this site</a>, in order to make sure
-      no-one ever hires me for a webdev role. (Linkedin version: I used an HtML teMpLAtinG tOoL tO cReAtE mY sTaTic
+      no-one ever hires me for a webdev role. (Linkedin version: I used an HtML teMpLAtinG tOoL tO cReAtE a sTaTic
       WeBsITe.) Also, yes, those are the forbidden <code>&lt;marquee&gt;</code> and <code>&lt;blink&gt;</code> tags at
       the top of the page. The <code>&lt;marquee&gt;</code> tag is merely deprecated, but I had to animate the
       <code>&lt;blink&gt;</code> tag with <b>CSS</b> myself, since modern web browsers have plunged us into a

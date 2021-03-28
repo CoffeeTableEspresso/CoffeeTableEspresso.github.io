@@ -68,7 +68,7 @@
 auto vglambda = [](auto printer) {
     return [=](auto&&... ts) // generic lambda, ts is a parameter pack
     {
-        printer(std::forward<decltype(ts)>(ts)...);
+        printer(std::forward&lt;decltype(ts)&gt;(ts)...);
         return [=] { printer(ts...); }; // nullary lambda (takes no parameters)
     };
 };

@@ -73,7 +73,7 @@
 auto vglambda = [](auto printer) {
     return [=](auto&&... ts)
     {
-        printer(std::forward<decltype(ts)>(ts)...);
+        printer(std::forward&lt;decltype(ts)&gt;(ts)...);
         return [=] { printer(ts...); };
     };
 };
