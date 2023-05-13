@@ -40,7 +40,7 @@
     </p>
     <h2> Stuff I Like</h2>
     <ul>
-      <li> <b>vim</b> &mdash; Scriptable text editor. </li>
+      <li> <b>vim</b> &mdash; Best text editor. </li>
       <li> 
         <b>Azure Pipelines</b> &mdash; Continuous integration with support for Windows,
         Linux, and MacOS. I use Azure Pipelines to test out <a href="https://github.com/yasl-lang/yasl">YASL</a>.
@@ -49,6 +49,7 @@
         <b> JetBrains IDEs </b> &mdash; My go-to IDEs. I use these whenever they have support for a language I'm using
         (which is most languages I usually use).
       </li>
+      <li> <b> YASL </b> &mdash; I use this for most of my scripting needs outside of work. </li>
     </ul>
     <h2> Projects </h2>
     <p> I work on many projects, but my main focus currently is <a href="https://github.com/yasl-lang/yasl"><b>YASL</b></a>,
@@ -58,8 +59,6 @@
       <a href="https://yasl-lang.github.io/playground/interpreter.html">here</a>, if you'd like to try YASL without 
       downloading anything.
     </p>
-    <h2> Blog </h2>
-    <p> Here's my blog: <a href="blog.html">blog</a>. </p>
   </div>
   <!-- yes, you got me, the visitor count is a lie -->
   <div class="visitor-count">
